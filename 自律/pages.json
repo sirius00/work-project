@@ -1,0 +1,31 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index"
+		},
+		{
+			"path": "pages/user/phone_reg"
+		},
+		{
+			"path": "pages/user/email_reg"
+		},
+		{
+			"path": "pages/user/phone_direct_log"
+		},
+		{
+			"path": "pages/user/toux"
+		},
+		{
+			"path": "pages/user/reg_profile"
+		},
+		{
+			"path": "pages/home/home"
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "#fff",
+		"navigationBarTitleText": "自律",
+		"navigationBarBackgroundColor": "#030303"
+		// "backgroundColor": "#F8F8F8"
+	}
+}
