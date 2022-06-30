@@ -1,0 +1,126 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 背景板 */
+.bgboard.data-v-00fd18e7 {
+
+	height: 88vh;
+	width: 90vw;
+	border: 6px solid rgb(10, 198, 185);
+	border-radius: 35px;
+	margin: 0.5rem auto;
+}
+/* 背景边框 */
+.board-border.data-v-00fd18e7 {
+	height: 78vh;
+	width: 85vw;
+
+	border-radius: 35px;
+	margin: 0.1rem auto;
+}
+/* 周日期 */
+.week.data-v-00fd18e7 {
+	height: 2rem;
+	line-height: 2rem;
+	width: 100%;
+
+	display: flex;
+	justify-content: space-around;
+	color: rgb(185, 186, 187);
+}
+.todo_board.data-v-00fd18e7 {
+	margin-top: 0.5rem;
+	border-radius: 15px;
+	padding: 0.1rem;
+	height: 24rem;
+	margin: 0.5rem auto;
+}
+.scroll_view.data-v-00fd18e7 {
+	height: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+.add_note.data-v-00fd18e7 {
+	height: 3rem;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+}
+.mini_toux.data-v-00fd18e7 {
+	margin-top: 0.2rem;
+	margin-right: 0.2rem;
+}
+

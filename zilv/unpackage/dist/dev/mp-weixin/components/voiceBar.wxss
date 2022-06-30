@@ -1,0 +1,33 @@
+
+.voice_bar{
+  background-color: coral;
+  width: 15rem;
+  height: 2rem;
+  border-radius: 20px;
+  padding: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+	min-width: 7rem;
+}
+.voice_toux ._img{
+  height: 2rem;
+  width: 2rem;
+}
+.voice_content {
+  height: 2rem;
+  line-height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: calc(100% - 5rem)
+}
+.voice_content ._img {
+  height: 1.2rem;
+  width: 1.2rem;
+	margin-left: 8rem;
+}
+.play_button ._img {
+  height: 2rem;
+  width: 2rem;
+}
+

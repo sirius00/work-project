@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "top-tabbar": "/components/topTabbar/topTabbar",
+    "calendar": "/components/calendar",
+    "voice-bar": "/components/voiceBar",
+    "todo-card": "/components/todo_card",
+    "add-note": "/components/buttons/addNote",
+    "add-voice": "/components/buttons/addVoice"
+  }
+}

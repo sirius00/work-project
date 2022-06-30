@@ -1,0 +1,6 @@
+
+.tabitem {
+	color: #797b7b;
+	line-height: 90rpx;
+}
+

@@ -1,0 +1,1 @@
+<view class="todo_card"><block wx:if="{{check}}"><image src="{{$root.m0}}" data-event-opts="{{[['tap',[['chencBox',['$event']]]]]}}" bindtap="__e" class="_img"></image></block><block wx:if="{{!check}}"><image src="{{$root.m1}}" data-event-opts="{{[['tap',[['chencBox',['$event']]]]]}}" bindtap="__e" class="_img"></image></block><text>测试文字测试撒打了卡久等啦看到啦凯撒的</text></view>

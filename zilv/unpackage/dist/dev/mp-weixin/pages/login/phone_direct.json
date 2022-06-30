@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "welcome-logo": "/components/welcome_logo",
+    "button-one": "/components/button_one",
+    "agruement": "/components/agruement"
+  }
+}

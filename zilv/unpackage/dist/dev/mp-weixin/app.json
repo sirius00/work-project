@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/home/home",
+    "pages/login/phone_direct",
+    "pages/login/phone_login",
+    "pages/login/email_login",
+    "pages/login/add_profile",
+    "pages/login/add_toux",
+    "pages/unregister/recommend",
+    "pages/unregister/timecard",
+    "pages/unregister/test"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#0b0b0b"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/welcome/welcome",
+        "iconPath": "static/img/首页.png",
+        "selectedIconPath": "static/img/首页 (1).png"
+      },
+      {
+        "pagePath": "pages/login/phone_direct",
+        "iconPath": "static/img/聊天.png",
+        "selectedIconPath": "./static/img/聊天 (1).png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
