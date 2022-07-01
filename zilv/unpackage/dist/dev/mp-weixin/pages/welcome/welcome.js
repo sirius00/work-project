@@ -20,9 +20,11 @@
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 5);
+
+
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 4));
-var _welcome = _interopRequireDefault(__webpack_require__(/*! ./pages/welcome/welcome.vue */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;
-createPage(_welcome.default);
+var _welcome = _interopRequireDefault(__webpack_require__(/*! ./pages/welcome/welcome.vue */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // @ts-ignore
+wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;createPage(_welcome.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
@@ -136,7 +138,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var welcomeLogo = function welcomeLogo() {Promise.all(/*! require.ensure | components/welcome_logo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/welcome_logo")]).then((function () {return resolve(__webpack_require__(/*! ../../components/welcome_logo.vue */ 90));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var buttonOne = function buttonOne() {__webpack_require__.e(/*! require.ensure | components/button_one */ "components/button_one").then((function () {return resolve(__webpack_require__(/*! ../../components/button_one.vue */ 98));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var welcomeLogo = function welcomeLogo() {Promise.all(/*! require.ensure | components/welcome_logo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/welcome_logo")]).then((function () {return resolve(__webpack_require__(/*! ../../components/welcome_logo.vue */ 99));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var buttonOne = function buttonOne() {__webpack_require__.e(/*! require.ensure | components/button_one */ "components/button_one").then((function () {return resolve(__webpack_require__(/*! ../../components/button_one.vue */ 107));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

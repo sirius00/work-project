@@ -766,8 +766,8 @@ function populateParameters(result) {var _result$brand =
     appVersion: "1.0.0",
     appVersionCode: "100",
     appLanguage: getAppLanguage(hostLanguage),
-    uniCompileVersion: "3.4.15",
-    uniRuntimeVersion: "3.4.15",
+    uniCompileVersion: "3.4.18",
+    uniRuntimeVersion: "3.4.18",
     uniPlatform: undefined || "mp-weixin",
     deviceBrand: deviceBrand,
     deviceModel: model,
@@ -2461,25 +2461,14 @@ uni$1;exports.default = _default;
 
 /***/ }),
 
-/***/ 108:
-/*!*******************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/check.png ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAyVJREFUaEPtWUtSGzEQfVoNu3CD2CcInCDOCSC7kTeRTxB8gsAJYp+AZmPNLs4JAicInCDmBrBkY6XaJVP2/CSNNWNcRVdRNmWN9F53q38jcOAiDhw/3gns24LRLDBUw5MllmcC4gRADwB/bso9gIWAuAVwN6MZ/7+z7EQgVWlPQHwHcG5BhwBaAJgbmGlGGX9vJI0IKKWOX/DyA8BFo1OLD00SJFdE9BS6XzABqSRr+xrAcehhjvUMfqRJz0P2DSIglfwZUetVOCea9NiXhBcB6zKsddZ+62Jg6AhHYx+X8iIglfzVFfi1dphERtnIpS0nAankBABHmn3IVJOuDRS1BOyFZe3vU77WXexKAtbv/7UQbUKV8ZQg6Vfdh0oCUkkC8C30tJbWV7pSKQGbYVn7b0YMTL8sY5cS6Oji3gH47KshAXE1o9llfn0VAdY+F2RtyY0mrVKVKgHB+cVHFpp030mAq0oD89dnx4ZrVuDXz4aQEBCn+Sq2YIGhGl4aGC7U2pAt8OsDpJJ/AAw8Dhxr0pyXXqVAIFXpXECceWwWuqQUfKrSawHxapG6TQ3M74yyrXKmQEAqye6Tb0ZCwebX7wzebnivSZ/WWkAqaQLQ+kSSWOBXsDTpLaWXWcCLgIEZZZSRI+FFBR+NwBr8xiUsy9rRwccicKtJf8m7Wc4SrYD3JcDTgk+OaFBaq1sS7KeFqBISbWrOftCktwJM4zDq23AwmEjg4RVGQxKZD4lY4K1V3IkstJSoIxEZPLxKCWYqleRB00fffFBGIjZ4AI+adKHAjFZOb5JoATxr37+cbtrQMAm2mm9t42thXhfU0Fg3OtyWkgnYpp7vwocQTbWw9jlB0gtu6q0VuHQ9zLHKRp1zuIMtR7HWgrdsbVlaT+UPdY4WN+4DW6KrOdFNguQi2nC3Y3dyzkNrOzKXX9h5KYfY2NHpmYNfqy841uRsiOUhU6yp9TRBcunjMo3uQJVVbMbm8TeHW+/aye73KCBoiSX3Ft2+5CsjZKvYgYEZCAguuvJN0YOBWb1m5b838ZrVdV+6+N0rjHYBpOkZ7wSaai7Wc/8BDsF1QP7BnWgAAAAASUVORK5CYII="
-
-/***/ }),
-
-/***/ 109:
+/***/ 102:
 /*!**************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/check-active.png ***!
+  !*** /Users/max/Documents/work-project/zilv/static/img/welcome-logo.png ***!
   \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAA1pJREFUaEPtWUtOG0EQfeXPOtwgRnJb7ACJsZRVyAninCDmBMAJYk4QcwLMCSAnCKwieZAwO+S2xHADsx6binoyWPZ4Pt2mZ4IleuOFa6rfq19XVxPWfNGa48c7gf/tQWseEH2xw8RfAewQqKZ+I+QGDPaI6QrAtWzKgQ3yryKw9WerNq1MD8FogaBA6y+GB8JleVI+vf907+l/uCi5EoHabW2jOqn+AHC06saR77p+xT/xdr2xqT5jAo2bRouZzwBsmG6WIT8mooPh3vDSRK8RAeGKnxatnoSzKx15rEtCi4AKmcqkckaglq7iV8kRen7ZP9YJKS0Cdbd+URj4F+aEntyTB1mGyCQgbkQXjMMsRbn8TziVezK1UKQSCBP2IhdwmkqJ6FtaYicSCEvlQw7VRhP6TGzsV/zNpHxIJCD6ogfCd9PdcpFPCaVYAuEJq6z/ZlZ5Ut6MO7FjCRSUuNcAPutaiEAnQ2fYicrHE+iLB+PeRheJkmOcy6Zsi75og6BO9ezF8GRTbmYSUF0lCLfZGleUCMG/fG1IYjfaxS55oOE2OgxWjZr9FQE/I+GK3wD2szZk8PHIGXXn5eIIXDKCvt7uSgJ/I87AaOtsRqBfQ2e40M4sERCuUOETvYzo6E+WsQA+VD6QjtxN9YBwBRugza4k9sAHsKQjF4we5wE9AowD2ZS91APPMnh7BELwc5Vk+dTOAbwtAlfSkV+iYbbgiZzA6xHoiwEI26l5kNCrByRUnDblUlURBtUmcW/GnWzKhQKzehnVvHAoMFbAA9Aqo0YHmQYJW+CVIbQOMuNWIoWETfBBWDGyWwklV3frHoE+ap8HMSRsg2fw48gZLQ3P7LXTcyRsg1eGNGqnV77QEIIqpNvbaHsYgNGFJqgc63ylVATCS70aun4wsVQOsk9+xa8ZX+oVkLUeq8z6nHUebKU2aznEyoLKhH4qum3maHGWD361W9iciHHuV/0ja8PdQsNJYx467wUtD8x/ECa2qve2q9MTEbVzfeB4IRKU2Gm1Y21qTTj1y35HJ2RWyoGkfA1O7Or0iJlbRr3Tv87ysYRSrzQp9Qp/5IsjFD6z7pdQ2mfm2tKliHFHRN4znq/UU+ubeGbNu5Lq6DdOYh2lRcq8EyjS2nF7/QXXX6hAJxwtsgAAAABJRU5ErkJggg=="
+module.exports = "/static/img/welcome-logo.png";
 
 /***/ }),
 
@@ -2612,29 +2601,29 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 152:
-/*!********************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/checkbox_unchecked.png ***!
-  \********************************************************************************/
+/***/ 117:
+/*!*******************************************************************!*\
+  !*** /Users/max/Documents/work-project/zilv/static/img/check.png ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAANJJREFUWEftlsENgkAQRR8VqB1oB3aAVqAdKRVoKVqBWoGWYAlageYnQAJZyZIds5eZCwd2Z/6+heQVZK4i83w8wC8CK2AHLIGpwTVdgQrQs1OhABp+MRgaarHuhwgFUMoSOAN74JEYZg4cgQ1wA3TAtkIBPvXbBfBMHN5s11XegRcwiw1g/Yc0B+v0HSLgAZyAE3ACTsAJOIFsBCQNE+AfQvLuO+aQkp1qkbRQsgOwjVWy7FIqZVMICankNLWEXRTVL0rLUweO2m/9pY8arsUe4Au59j0hTM+qWwAAAABJRU5ErkJggg=="
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAyVJREFUaEPtWUtSGzEQfVoNu3CD2CcInCDOCSC7kTeRTxB8gsAJYp+AZmPNLs4JAicInCDmBrBkY6XaJVP2/CSNNWNcRVdRNmWN9F53q38jcOAiDhw/3gns24LRLDBUw5MllmcC4gRADwB/bso9gIWAuAVwN6MZ/7+z7EQgVWlPQHwHcG5BhwBaAJgbmGlGGX9vJI0IKKWOX/DyA8BFo1OLD00SJFdE9BS6XzABqSRr+xrAcehhjvUMfqRJz0P2DSIglfwZUetVOCea9NiXhBcB6zKsddZ+62Jg6AhHYx+X8iIglfzVFfi1dphERtnIpS0nAankBABHmn3IVJOuDRS1BOyFZe3vU77WXexKAtbv/7UQbUKV8ZQg6Vfdh0oCUkkC8C30tJbWV7pSKQGbYVn7b0YMTL8sY5cS6Oji3gH47KshAXE1o9llfn0VAdY+F2RtyY0mrVKVKgHB+cVHFpp030mAq0oD89dnx4ZrVuDXz4aQEBCn+Sq2YIGhGl4aGC7U2pAt8OsDpJJ/AAw8Dhxr0pyXXqVAIFXpXECceWwWuqQUfKrSawHxapG6TQ3M74yyrXKmQEAqye6Tb0ZCwebX7wzebnivSZ/WWkAqaQLQ+kSSWOBXsDTpLaWXWcCLgIEZZZSRI+FFBR+NwBr8xiUsy9rRwccicKtJf8m7Wc4SrYD3JcDTgk+OaFBaq1sS7KeFqBISbWrOftCktwJM4zDq23AwmEjg4RVGQxKZD4lY4K1V3IkstJSoIxEZPLxKCWYqleRB00fffFBGIjZ4AI+adKHAjFZOb5JoATxr37+cbtrQMAm2mm9t42thXhfU0Fg3OtyWkgnYpp7vwocQTbWw9jlB0gtu6q0VuHQ9zLHKRp1zuIMtR7HWgrdsbVlaT+UPdY4WN+4DW6KrOdFNguQi2nC3Y3dyzkNrOzKXX9h5KYfY2NHpmYNfqy841uRsiOUhU6yp9TRBcunjMo3uQJVVbMbm8TeHW+/aye73KCBoiSX3Ft2+5CsjZKvYgYEZCAguuvJN0YOBWb1m5b838ZrVdV+6+N0rjHYBpOkZ7wSaai7Wc/8BDsF1QP7BnWgAAAAASUVORK5CYII="
 
 /***/ }),
 
-/***/ 153:
-/*!*********************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/checked.png ***!
-  \*********************************************************************/
+/***/ 118:
+/*!**************************************************************************!*\
+  !*** /Users/max/Documents/work-project/zilv/static/img/check-active.png ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAATRJREFUWEftltGNwjAQRGeRAp/QAdCBqcNNQAWUANfBdUCKOOt+7yrAJYQyAlIWGWQphDjxOSZIp+Tb3nmZzEZDePNDb9bHAPDkQKLEegTsAFrE/TycFcDHReq0PPcJYKJWGYB5XHE7jbNc6mUbAJsDuTxGzcdErWrn1jkwAPwPB8w2mSzZ1Peagfsq08EAFOCNgegNoCzeO4BL3IAEOzD+EikIfJZ60/RzahIPBkiU+ByBtmYAg1MXRJt4FwBBoB8Cpi4IH/FgAHMxUcIJ4SveCcAFwcCvXbVy2l05CQ6hHVh1oixkd70ppJ0B6pzweXMLFQWgCuHz5tEBbgO/xSIpMLtIrX2LSzQHfAWr5waAvzjwwlKKUy6PD23bUctp/4JmfCrA+9ZaHhqy0HtRq3cIxABwBVcJMDDNdNLaAAAAAElFTkSuQmCC"
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAA1pJREFUaEPtWUtOG0EQfeXPOtwgRnJb7ACJsZRVyAninCDmBMAJYk4QcwLMCSAnCKwieZAwO+S2xHADsx6binoyWPZ4Pt2mZ4IleuOFa6rfq19XVxPWfNGa48c7gf/tQWseEH2xw8RfAewQqKZ+I+QGDPaI6QrAtWzKgQ3yryKw9WerNq1MD8FogaBA6y+GB8JleVI+vf907+l/uCi5EoHabW2jOqn+AHC06saR77p+xT/xdr2xqT5jAo2bRouZzwBsmG6WIT8mooPh3vDSRK8RAeGKnxatnoSzKx15rEtCi4AKmcqkckaglq7iV8kRen7ZP9YJKS0Cdbd+URj4F+aEntyTB1mGyCQgbkQXjMMsRbn8TziVezK1UKQSCBP2IhdwmkqJ6FtaYicSCEvlQw7VRhP6TGzsV/zNpHxIJCD6ogfCd9PdcpFPCaVYAuEJq6z/ZlZ5Ut6MO7FjCRSUuNcAPutaiEAnQ2fYicrHE+iLB+PeRheJkmOcy6Zsi75og6BO9ezF8GRTbmYSUF0lCLfZGleUCMG/fG1IYjfaxS55oOE2OgxWjZr9FQE/I+GK3wD2szZk8PHIGXXn5eIIXDKCvt7uSgJ/I87AaOtsRqBfQ2e40M4sERCuUOETvYzo6E+WsQA+VD6QjtxN9YBwBRugza4k9sAHsKQjF4we5wE9AowD2ZS91APPMnh7BELwc5Vk+dTOAbwtAlfSkV+iYbbgiZzA6xHoiwEI26l5kNCrByRUnDblUlURBtUmcW/GnWzKhQKzehnVvHAoMFbAA9Aqo0YHmQYJW+CVIbQOMuNWIoWETfBBWDGyWwklV3frHoE+ap8HMSRsg2fw48gZLQ3P7LXTcyRsg1eGNGqnV77QEIIqpNvbaHsYgNGFJqgc63ylVATCS70aun4wsVQOsk9+xa8ZX+oVkLUeq8z6nHUebKU2aznEyoLKhH4qum3maHGWD361W9iciHHuV/0ja8PdQsNJYx467wUtD8x/ECa2qve2q9MTEbVzfeB4IRKU2Gm1Y21qTTj1y35HJ2RWyoGkfA1O7Or0iJlbRr3Tv87ysYRSrzQp9Qp/5IsjFD6z7pdQ2mfm2tKliHFHRN4znq/UU+ubeGbNu5Lq6DdOYh2lRcq8EyjS2nF7/QXXX6hAJxwtsgAAAABJRU5ErkJggg=="
 
 /***/ }),
 
-/***/ 161:
+/***/ 168:
 /*!**************************************************************************!*\
   !*** /Users/max/Documents/work-project/zilv/static/img/Add_note_btn.png ***!
   \**************************************************************************/
@@ -2645,7 +2634,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACO
 
 /***/ }),
 
-/***/ 167:
+/***/ 176:
 /*!***************************************************************************!*\
   !*** /Users/max/Documents/work-project/zilv/static/img/Add_voice_btn.png ***!
   \***************************************************************************/
@@ -2656,38 +2645,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAABRCAYAAACq
 
 /***/ }),
 
-/***/ 2:
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
-/***/ 226:
+/***/ 191:
 /*!*********************************************************************************************************************!*\
   !*** /Users/max/Documents/work-project/zilv/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpwxs.js ***!
   \*********************************************************************************************************************/
@@ -2781,7 +2739,7 @@ mpMixins;exports.default = _default;
 
 /***/ }),
 
-/***/ 227:
+/***/ 192:
 /*!************************************************************************************************************************!*\
   !*** /Users/max/Documents/work-project/zilv/uni_modules/uni-swipe-action/components/uni-swipe-action-item/bindingx.js ***!
   \************************************************************************************************************************/
@@ -3094,7 +3052,7 @@ bindIngXMixins;exports.default = _default;
 
 /***/ }),
 
-/***/ 228:
+/***/ 193:
 /*!***********************************************************************************************************************!*\
   !*** /Users/max/Documents/work-project/zilv/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpother.js ***!
   \***********************************************************************************************************************/
@@ -3361,6 +3319,37 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 otherMixins;exports.default = _default;
+
+/***/ }),
+
+/***/ 2:
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
 
 /***/ }),
 
@@ -9977,14 +9966,14 @@ module.exports = "/static/img/welcome.png";
 
 /***/ }),
 
-/***/ 93:
-/*!**************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/welcome-logo.png ***!
-  \**************************************************************************/
+/***/ 94:
+/*!********************************************************************************!*\
+  !*** /Users/max/Documents/work-project/zilv/static/img/checkbox_unchecked.png ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/static/img/welcome-logo.png";
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAANJJREFUWEftlsENgkAQRR8VqB1oB3aAVqAdKRVoKVqBWoGWYAlageYnQAJZyZIds5eZCwd2Z/6+heQVZK4i83w8wC8CK2AHLIGpwTVdgQrQs1OhABp+MRgaarHuhwgFUMoSOAN74JEYZg4cgQ1wA3TAtkIBPvXbBfBMHN5s11XegRcwiw1g/Yc0B+v0HSLgAZyAE3ACTsAJOIFsBCQNE+AfQvLuO+aQkp1qkbRQsgOwjVWy7FIqZVMICankNLWEXRTVL0rLUweO2m/9pY8arsUe4Au59j0hTM+qWwAAAABJRU5ErkJggg=="
 
 /***/ })
 

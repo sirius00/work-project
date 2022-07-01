@@ -34,8 +34,19 @@
 					  backgroundColor: item.style && item.style.backgroundColor ? item.style.backgroundColor : '#C7C6CD'
 					}" class="uni-swipe_button button-hock" @touchstart="appTouchStart"
 							@touchend="appTouchEnd($event,index,item,'right')"
-							@click.stop="onClickForPC(index,item,'right')"><text class="uni-swipe_button-text"
+							@click.stop="onClickForPC(index,item,'right')">
+							
+							
+							<image class="uni-swipe_img" v-if="item.isImage" :src="item.src" :style="{
+														width:item.style.imgWidth,
+														height:item.style.imgHeight,
+														
+													}" />
+							<text v-else class="uni-swipe_button-text"
 								:style="{color: item.style && item.style.color ? item.style.color : '#FFFFFF',fontSize: item.style && item.style.fontSize ? item.style.fontSize : '16px'}">{{ item.text }}</text>
+						
+						
+						
 						</view>
 					</slot>
 				</view>
@@ -294,7 +305,9 @@
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		padding: 0 20px;
+		padding: 0 5px;
+		border-radius: 10px;
+		margin-left: 3px;
 	}
 
 	.uni-swipe_button-text {

@@ -60,7 +60,9 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 5px;
+  border-radius: 10px;
+  margin-left: 3px;
 }
 .uni-swipe_button-text {
   flex-shrink: 0;
