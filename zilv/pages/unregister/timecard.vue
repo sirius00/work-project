@@ -6,7 +6,7 @@
 					<top-tabbar></top-tabbar>
 				</view>
 				<view class="week">
-					<view v-for="item in weekDay">
+					<view v-for="item in weekDay" :key="index">
 						{{ item }}
 					</view>
 				</view>
@@ -17,21 +17,17 @@
 					<todo-card />
 					<todo-card />
 					<todo-card />
-					<todo-card />
-					<todo-card />
-					<todo-card />
-					<todo-card />
-					<todo-card />
-					<todo-card />
-					<todo-card />
-					<todo-card />
+
 					</scroll-view>
+					<!-- 添加笔记 -->
+					<addnote v-if="addnote"></addnote>
+					<addvoice v-if="addvoice"></addvoice>
 				</view>
 				<view class="add_note">
-					<view class="">
-						<add-note></add-note>
+					<view @click="addNote" >
+						<add-note ></add-note>
 					</view>
-					<view class="">
+					<view @click="addVoice">
 						<add-voice></add-voice>
 					</view>
 				</view>
@@ -47,7 +43,8 @@
 	import todoCard from "@/components/todo_card.vue"
 	import addNote from "@/components/buttons/addNote.vue"
 	import addVoice from "@/components/buttons/addVoice.vue"
-
+	import addnote from "@/components/add/addnote.vue"
+	import addvoice from "@/components/add/addvoice.vue"
 	
 	export default {
 		components: {
@@ -57,16 +54,23 @@
 			todoCard,
 			addNote,
 			addVoice,
-			
+			addnote,
+			addvoice
 		},
 		data() {
 			return {
 				weekDay: [ "一", "二", "三", "四", "五", "六",'日'],
-				
+				addnote: false,
+				addvoice: false
 			}
 		},
 		methods: {
-
+			addNote() {
+				this.addnote = !this.addnote
+			},
+			addVoice() {
+				this.addvoice = !this.addvoice
+			}
 		},
 
 	}

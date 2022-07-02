@@ -3,6 +3,6 @@
   "enablePullDownRefresh": false,
   "usingComponents": {
     "welcome-logo": "/components/welcome_logo",
-    "button-one": "/components/button_one"
+    "button-one": "/components/buttons/button_one"
   }
 }

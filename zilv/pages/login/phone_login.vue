@@ -45,7 +45,7 @@
 	import welcomeLogo from "../../components/welcome_logo.vue"
 	import inputArea from "@/components/inputArea.vue"
 	import agruement from "@/components/agruement.vue"
-	import buttonTwo from "@/components/buttonTwo.vue"
+	import buttonTwo from "@/components/buttons/buttonTwo.vue"
 	export default {
 		components: {
 			welcomeLogo,

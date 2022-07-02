@@ -5,6 +5,6 @@
     "welcome-logo": "/components/welcome_logo",
     "input-area": "/components/inputArea",
     "agruement": "/components/agruement",
-    "button-two": "/components/buttonTwo"
+    "button-two": "/components/buttons/buttonTwo"
   }
 }

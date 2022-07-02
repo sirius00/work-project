@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "line": "/components/todo_line/line"
+  },
+  "component": true
+}

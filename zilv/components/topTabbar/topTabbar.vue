@@ -6,10 +6,11 @@
 		<slot>
 			<tab-item>我的时间卡</tab-item>
 		</slot>
+
 		<slot>
-			<!-- <tab-item>测试</tab-item> -->
+
 		</slot>
-		<!-- <tab-item v-for="item in top">{{item}}</tab-item> -->
+		
 	</view>
 </template>
 
@@ -22,7 +23,7 @@
 		name:"topTabbar",
 		data() {
 			return {
-				top: ['推荐', '我的时间卡']
+			
 			};
 		}
 	}

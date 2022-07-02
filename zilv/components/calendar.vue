@@ -1,9 +1,11 @@
 <template>
 				<view class="date_day">
 					<swiper class="swiper_st">
-							<swiper-item v-for="list in dayList" class="swiper_item" >
-								<view v-for="(item,index) in list" class="day_st" :class="current == index ? 'select_day' : ''" @click="day_select(index)">
+							<swiper-item v-for="list in dayList" class="swiper_item" :key="index">
+								<view v-for="(item,index) in list" class="day_st" :class="current == index ? 'select_day' : ''" @click="day_select(index)" :key="index">
 									{{ item }}
+									<line-area/>
+									
 								</view>
 							</swiper-item>
 					</swiper>
@@ -11,24 +13,29 @@
 </template>
 
 <script>
-export default {
-   data() {
-      return {
-        dayList: [
-				  ['1', '2', '3', '4', '5', '6', '7'],
-				  ['8', '9', '10', '11', '12', '13', '14']
-		  	],
-			  current: 0,
-      }
-   },
-   computed:{
-   },
-   methods:{
-    	day_select(index) {
-			  this.current = index
-	  	}
-   },
-}
+	import lineArea from "@/components/todo_line/linesArea.vue"
+	
+	export default {
+		components: {
+			lineArea,
+		},
+	 data() {
+			return {
+				dayList: [
+					['1', '2', '3', '4', '5', '6', '7'],
+					['8', '9', '10', '11', '12', '13', '14']
+				],
+				current: 0,
+			}
+	 },
+	 computed:{
+	 },
+	 methods:{
+			day_select(index) {
+				this.current = index
+			}
+	 },
+	}
 </script>
 
 <style scoped>
@@ -36,7 +43,6 @@ export default {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
-
 }
 
 .swiper_st {
@@ -57,7 +63,7 @@ export default {
 	text-align: center;
 	display: inline-block;
 
-	box-shadow: 0 0 1px 1px rgb(188, 187, 187,0.2);
+	box-shadow: 0 0 1px 2px rgb(188, 187, 187,0.3);
 	border-radius: 10px;
 
 }

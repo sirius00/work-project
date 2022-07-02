@@ -21,7 +21,7 @@
 
 <script>
 	import welcomeLogo from "../../components/welcome_logo.vue"
-	import buttonOne from "../../components/button_one.vue"
+	import buttonOne from "../../components/buttons/button_one.vue"
 	import agruement from "../../components/agruement.vue"
 	export default {
 		components: {

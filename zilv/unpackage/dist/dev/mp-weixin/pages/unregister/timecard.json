@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "我的时间卡",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "top-tabbar": "/components/topTabbar/topTabbar",
@@ -7,6 +7,8 @@
     "voice-bar": "/components/voiceBar",
     "todo-card": "/components/todo_card",
     "add-note": "/components/buttons/addNote",
-    "add-voice": "/components/buttons/addVoice"
+    "add-voice": "/components/buttons/addVoice",
+    "addnote": "/components/add/addnote",
+    "addvoice": "/components/add/addvoice"
   }
 }
