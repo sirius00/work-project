@@ -1,5 +1,6 @@
 
 .voice_bar{
+	margin-top: 0.4rem;
   background-color: coral;
   width: 15rem;
   height: 2rem;

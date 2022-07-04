@@ -2,10 +2,8 @@
 .todo_card {
 
 	height: 3.5rem;
-	width: 21rem;
 	background-color: rgb(192, 169, 44);
 	border-radius: 10px;
-	/* margin-top: 0.8rem; */
 	display: flex;
 	flex-flow:  row nowrap;
 	align-items: center;

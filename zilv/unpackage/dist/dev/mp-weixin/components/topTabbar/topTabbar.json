@@ -1,6 +1,4 @@
 {
-  "component": true,
-  "usingComponents": {
-    "tab-item": "/components/topTabbar/tabItem"
-  }
+  "usingComponents": {},
+  "component": true
 }

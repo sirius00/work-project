@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "推荐",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "top-tabbar": "/components/topTabbar/topTabbar",

@@ -1,9 +1,10 @@
 <template>
-	<view class="">
+	<view>
 		<view class="bgboard">
 			<view class="board-border ">
 				<view>
-					<top-tabbar></top-tabbar>
+					<top-tabbar :tabBars="tabBars" :tabIndex="tabIndex" ></top-tabbar >
+				
 				</view>
 				<view class="week">
 					<view v-for="item in weekDay" :key="index">
@@ -14,10 +15,6 @@
 				<view class="todo_board">
 					<scroll-view scroll-y class="scroll_view" enable-flex>
 					<todo-card />
-					<todo-card />
-					<todo-card />
-					<todo-card />
-
 					</scroll-view>
 					<!-- 添加笔记 -->
 					<addnote v-if="addnote"></addnote>
@@ -61,7 +58,20 @@
 			return {
 				weekDay: [ "一", "二", "三", "四", "五", "六",'日'],
 				addnote: false,
-				addvoice: false
+				addvoice: false,
+				tabIndex: "timecard",
+				tabBars: [
+					{
+						name: "推荐",
+						id: "tuijian",
+						path: './recommend'
+					},
+					{
+						name: "我的时间卡",
+						id: "timecard",
+						path: "./timecard"
+					}
+				],
 			}
 		},
 		methods: {

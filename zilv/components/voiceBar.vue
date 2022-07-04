@@ -24,13 +24,6 @@ export default {
   },
    data() {
       return {
-        person:{
-          name: '哆啦A梦',
-          voices: [
-            []
-          ],
-          toux:''
-        },
 				playVoice: true,
         playBt: false
       }
@@ -48,6 +41,7 @@ export default {
 
 <style>
 .voice_bar{
+	margin-top: 0.4rem;
   background-color: coral;
   width: 15rem;
   height: 2rem;

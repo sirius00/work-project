@@ -5,6 +5,9 @@ import { $http } from '@escook/request-miniprogram'
 
 uni.$http = $http
 
+//请求根路径
+$http.baseUrl = 'http://localhost:55555'
+
 // 请求拦截器
 $http.beforeRequest = function (options) {
   uni.showLoading({

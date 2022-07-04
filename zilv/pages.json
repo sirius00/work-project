@@ -55,7 +55,7 @@
             "path" : "pages/unregister/recommend",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "推荐",
                 "enablePullDownRefresh": false
             }
             
@@ -84,6 +84,7 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#0b0b0b"
+		
 	},
 	"tabBar": {
 		"list": [{

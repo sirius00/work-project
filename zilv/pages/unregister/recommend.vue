@@ -3,16 +3,34 @@
 		<view class="bgboard">
 			<view class="board-border ">
 				<view>
-					<top-tabbar></top-tabbar>
+					<top-tabbar :tabBars="tabBars"  :tabIndex="tabIndex" ></top-tabbar >
 				</view>
 				<view class="week">
-					<view v-for="item in weekDay">
+					<view v-for="item in weekDay" :key="index">
 						{{ item }}
 					</view>
 				</view>
 				<calendar />
 				<view class="home_voice_bar">
-					<voice-bar />
+					<scroll-view scroll-y="true"  class="scroll_view" >
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+					</scroll-view>
+
 				</view>
 				<view class="text">
 					<text>TODO</text>
@@ -40,11 +58,32 @@
 		data() {
 			return {
 				weekDay: [ "一", "二", "三", "四", "五", "六",'日'],
+				tabIndex: "tuijian",
+				tabBars: [
+					{
+						name: "推荐",
+						id: "tuijian",
+						path: './recommend'
+					},
+					{
+						name: "我的时间卡",
+						id: "timecard",
+						path: "./timecard"
+					}
+				],
+				recommendList:[],
 			}
 		},
-		methods: {
-
+		onLoad() {
+			// 获取推荐用户数据
+			this.getRecommendList()
 		},
+		methods: {
+			async getRecommendList() {
+				const res = await uni.$http.post('/v2/user/push')
+				console.log(res);
+			}
+		}
 
 	}
 </script>
@@ -82,6 +121,16 @@
 
 	.home_voice_bar {
 		margin-top: 1rem;
+		margin-bottom: 1rem; 
+		height: 650rpx;
+		
+	}
+	.scroll_view {
+		height: 100%;
+		display: flex;
+		flex-flow: column ;
+		align-items: center;
+		
 	}
 
 	.text {
@@ -101,10 +150,12 @@
 		position: absolute;
 		bottom: 140rpx;
 		left: 325rpx;
+		/* z-index: -2; */
 	}
 
 	.board-welcome img {
 		height: 4rem;
 		width: 4rem;
+		
 	}
 </style>
