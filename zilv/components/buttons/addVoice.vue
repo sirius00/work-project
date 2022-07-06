@@ -9,7 +9,7 @@
 
 <style scoped>
 	.pic img{
-		height: 100rpx;
-		width: 100rpx;
+		height: 150rpx;
+		width: 150rpx;
 	}
 </style>

@@ -1,9 +1,7 @@
 <template>
 	<view class="lines">
 		<line/>
-		<line/>
-		<line/>
-		<line/>
+
 	</view>
 </template>
 

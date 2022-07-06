@@ -41,7 +41,7 @@ export default {
 
 <style>
 .voice_bar{
-	margin-top: 0.4rem;
+	margin-top: 1.5rem;
   background-color: coral;
   width: 15rem;
   height: 2rem;

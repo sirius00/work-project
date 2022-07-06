@@ -1,6 +1,6 @@
 <template>
-	<view>
-		<view class="add_voice">
+	<view class="zhezhao" v-if="ifvoice" @click="hidevoice">
+		<view class="add_voice" @click.stop="!hidevoice">
 			<view class="">
 				<textarea name="" id="" placeholder="添加事项..." class="addtext"></textarea>
 			</view>
@@ -15,7 +15,6 @@
 				<view>
 					仅自己可见
 				</view>
-				
 			</view>
 			<view class="add_button">
 				添加
@@ -26,26 +25,47 @@
 
 <script>
 	export default {
+		props: {
+			
+		},
 		data() {
 			return {
-				limited: false
+				limited: false,
+			}
+		},
+		computed: {
+			ifvoice () {
+				return this.$store.state.ifvoice
 			}
 		},
 		methods: {
 			limit() {
 				this.limited = !this.limited
+			},
+			hidevoice() {
+				this.$store.commit("addVoice")
 			}
 		}
 	}
 </script>
 
-<style scoped >
+<style scoped>
+	.zhezhao {
+		/* background-color: chartreuse; */
+		position: absolute;
+		height: 100vh;
+		width: 100vw;
+		top: 0;
+		left: 0;
+		z-index: 5;
+	}
+
 	.add_voice {
 		width: 500rpx;
 		height: 550rpx;
 		background-color: #fff;
-		position: absolute;
-		z-index: 10;
+		position: relative;
+		/* z-index: 10; */
 		top: 300rpx;
 		left: 125rpx;
 		border-radius: 15px;
@@ -62,24 +82,27 @@
 		height: 200rpx;
 		width: 400rpx;
 	}
-	.voice img{
+
+	.voice img {
 		height: 150rpx;
 		width: 150rpx;
 	}
+
 	.limit {
 		align-self: flex-start;
 		margin-left: 50rpx;
 		display: flex;
 		flex-flow: row nowrap;
-		 align-items: center;
-		 
+		align-items: center;
+
 	}
+
 	.limit img {
-			height: 40rpx;
-			width: 40rpx;
-			margin-right: 10rpx;
-			margin-top: 4rpx;
-		}
+		height: 40rpx;
+		width: 40rpx;
+		margin-right: 10rpx;
+		margin-top: 4rpx;
+	}
 
 	.add_button {
 		width: 200rpx;

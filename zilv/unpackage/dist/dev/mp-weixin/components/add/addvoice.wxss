@@ -1,10 +1,19 @@
 
+.zhezhao.data-v-3645961a {
+	/* background-color: chartreuse; */
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
 .add_voice.data-v-3645961a {
 	width: 500rpx;
 	height: 550rpx;
 	background-color: #fff;
-	position: absolute;
-	z-index: 10;
+	position: relative;
+	/* z-index: 10; */
 	top: 300rpx;
 	left: 125rpx;
 	border-radius: 15px;
@@ -20,7 +29,7 @@
 	height: 200rpx;
 	width: 400rpx;
 }
-.voice ._img.data-v-3645961a{
+.voice ._img.data-v-3645961a {
 	height: 150rpx;
 	width: 150rpx;
 }
@@ -29,13 +38,13 @@
 	margin-left: 50rpx;
 	display: flex;
 	flex-flow: row nowrap;
-	 align-items: center;
+	align-items: center;
 }
 .limit ._img.data-v-3645961a {
-		height: 40rpx;
-		width: 40rpx;
-		margin-right: 10rpx;
-		margin-top: 4rpx;
+	height: 40rpx;
+	width: 40rpx;
+	margin-right: 10rpx;
+	margin-top: 4rpx;
 }
 .add_button.data-v-3645961a {
 	width: 200rpx;

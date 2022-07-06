@@ -3,8 +3,8 @@
 		<view class="bgboard">
 			<view class="board-border ">
 				<view>
-					<top-tabbar :tabBars="tabBars" :tabIndex="tabIndex" ></top-tabbar >
-				
+					<top-tabbar :tabBars="tabBars" :tabIndex="tabIndex"></top-tabbar>
+
 				</view>
 				<view class="week">
 					<view v-for="item in weekDay" :key="index">
@@ -13,16 +13,18 @@
 				</view>
 				<calendar />
 				<view class="todo_board">
+					
 					<scroll-view scroll-y class="scroll_view" enable-flex>
-					<todo-card />
+						<todo-card v-for="item in taskList" :card="item" :key="item.id"/>
 					</scroll-view>
-					<!-- 添加笔记 -->
-					<addnote v-if="addnote"></addnote>
-					<addvoice v-if="addvoice"></addvoice>
+					
+					<addnote ></addnote>
+					<addvoice ></addvoice>
 				</view>
 				<view class="add_note">
-					<view @click="addNote" >
-						<add-note ></add-note>
+					
+					<view @click="addNote">
+						<add-note></add-note>
 					</view>
 					<view @click="addVoice">
 						<add-voice></add-voice>
@@ -56,12 +58,9 @@
 		},
 		data() {
 			return {
-				weekDay: [ "一", "二", "三", "四", "五", "六",'日'],
-				addnote: false,
-				addvoice: false,
+				weekDay: ["一", "二", "三", "四", "五", "六", '日'],
 				tabIndex: "timecard",
-				tabBars: [
-					{
+				tabBars: [{
 						name: "推荐",
 						id: "tuijian",
 						path: './recommend'
@@ -72,63 +71,78 @@
 						path: "./timecard"
 					}
 				],
+
+			}
+		},
+		computed: {
+			addnote() {
+				return this.$store.state.ifnote
+			},
+			addvoice(){
+				return this.$store.state.ifvoice
+			},
+			taskList() {
+				return this.$store.state.taskList
 			}
 		},
 		methods: {
 			addNote() {
-				this.addnote = !this.addnote
+				this.$store.commit("addNote")
 			},
 			addVoice() {
-				this.addvoice = !this.addvoice
+				this.$store.commit("addVoice")
 			}
 		},
-
 	}
 </script>
 
 <style scoped>
 	/* 背景板 */
 	.bgboard {
-	
 		height: 88vh;
 		width: 90vw;
 		border: 6px solid rgb(10, 198, 185);
 		border-radius: 35px;
 		margin: 0.5rem auto;
+		
+		display: flex;
+		flex-flow: column;
 	}
-	
+
 	/* 背景边框 */
 	.board-border {
 		height: 78vh;
 		width: 85vw;
-	
+
 		border-radius: 35px;
 		margin: 0.1rem auto;
 	}
+
 	/* 周日期 */
 	.week {
 		height: 2rem;
 		line-height: 2rem;
 		width: 100%;
-	
+
 		display: flex;
 		justify-content: space-around;
 		color: rgb(185, 186, 187);
 	}
+
 	.todo_board {
-		margin-top: 0.5rem;
-		border-radius: 15px;
-		padding: 0.1rem;
-		height: 24rem;
-		margin: 0.5rem auto;
+		margin-top: 0.4rem;
+		height: 75%;
+		
 	}
+
 	.scroll_view {
 		height: 100%;
 		display: flex;
 		flex-flow: column nowrap;
 		align-items: center;
-		
+
 	}
+
 	.add_note {
 		height: 3rem;
 		display: flex;
@@ -136,8 +150,14 @@
 		justify-content: flex-end;
 
 	}
-	.mini_toux {
-		margin-top: 0.2rem;
-		margin-right: 0.2rem;
-	}
+	.zhezhao {
+		  background-color: chartreuse;
+		  position: absolute;
+		  height: 100vh;
+		  width: 100vw;
+		  top: 0;
+		  left: 0;
+			z-index: 5;
+	} 
+
 </style>

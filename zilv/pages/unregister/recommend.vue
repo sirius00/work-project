@@ -14,21 +14,7 @@
 				<view class="home_voice_bar">
 					<scroll-view scroll-y="true"  class="scroll_view" >
 						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
+
 					</scroll-view>
 
 				</view>
@@ -80,7 +66,7 @@
 		},
 		methods: {
 			async getRecommendList() {
-				const res = await uni.$http.post('/v2/user/push')
+				const res = await uni.$http.post('/v2/user/push',{uid: 2})
 				console.log(res);
 			}
 		}
@@ -120,9 +106,8 @@
 	}
 
 	.home_voice_bar {
-		margin-top: 1rem;
-		margin-bottom: 1rem; 
-		height: 650rpx;
+		margin-top: 0.4rem;
+		height: 70%;
 		
 	}
 	.scroll_view {

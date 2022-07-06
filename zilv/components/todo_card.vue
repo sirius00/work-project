@@ -2,12 +2,20 @@
 	<view >
 		<uni-swipe-action >
 			<uni-swipe-action-item v-for="(item, index) in swipeList" :right-options="item.options" :key="item.id"
-				@click="swipeClick($event, index)" class="three">
-				<view class="content-box">
+				@click="swipeClick($event, index)" >
+				<view class="content_box">
 					<view class="todo_card">
-						<image src="../static/img/checkbox_unchecked.png" mode="" v-if="check" @click="chencBox"></image>
-						<image src="../static/img/checked.png" mode="" v-if="!check" @click="chencBox"></image>
-						<text>测试文字测试撒打了卡久等啦看到啦凯撒的</text>
+						<image class="todo_card_image" src="../static/img/checkbox_unchecked.png" mode="" v-if="check" @click="chencBox"></image>
+						<image class="todo_card_image" src="../static/img/checked.png" mode="" v-if="!check" @click="chencBox"></image>
+						<view >
+							<input 
+							type="text" class="edit" 
+							:value="card.content" 
+							@blur="check_content(card)" 
+							@input="onKey_taskcontent"
+							>
+						</view>
+						
 					</view>
 				</view>
 			</uni-swipe-action-item>
@@ -20,6 +28,12 @@
 
 <script>
 	export default {
+		props:{
+		// 用户 task_item
+			card: {
+				type: Object
+			}
+		},
 		data() {
 			return {
 				check: true,
@@ -35,8 +49,9 @@
 							imgHeight: '60rpx',
 						}
 					}],
-					
-				}, ]
+				}, ],
+				// 文本框中新输入的文本
+				new_taskcontent: ''
 			}
 		},
 
@@ -60,39 +75,52 @@
 						}
 					});
 				} 
+			},
+			// 获取新输入的文本
+			onKey_taskcontent(e) {
+				this.new_taskcontent = e.target.value
+			},
+			// 检测文本是否发生变化
+			check_content(item) {				
+				if (this.new_taskcontent != item.content) {
+					this.$store.commit("changeTask", {id:item.id, content:this.new_taskcontent})
+					if (this.new_taskcontent == '') {
+						this.$store.commit("changeTask", {id:item.id, content:item.content})
+					}
+				}
 			}
 		}
 	}
 </script>
 
 <style>
-.todo_card {
 
-	height: 3.5rem;
-	background-color: rgb(192, 169, 44);
-	border-radius: 10px;
-	display: flex;
-	flex-flow:  row nowrap;
-	align-items: center;
-}
-.todo_card image {
-	height: 1.5rem;
-	width: 1.5rem;
-	padding-left: 0.5rem;
-}
-.todo_card text {
-  display: block;
-	width: 80%;
-	height: 3.5rem;
-	line-height: 3.5rem;
-	font-size: 16px; 
-  padding-left: 0.5rem; 
-	overflow: hidden;
-}
-	.content-text {
-		font-size: 15px;
+
+	.todo_card {
+		height: 3.5rem;
+		width: 85vw;
+		background-color: rgb(40, 217, 129);
+		border-radius: 10px;
+		display: flex;
+		flex-flow:  row nowrap;
+		align-items: center;
 	}
-	
+	.todo_card_image {
+		height: 1.8rem;
+		width: 1.8rem;
+		padding-left: 0.5rem;
+	}
+
+	.edit {
+		/* display: block; */
+		width: 70vw;
+		height: 3.5rem;
+		/* line-height: 3.5rem; */
+		/* font-size: 16px; */
+		padding-left: 0.5rem; 
+		/* overflow: hidden; */
+	}
+
 	.tianchong {
 		height: 0.8rem;
 		background-color: #fff;

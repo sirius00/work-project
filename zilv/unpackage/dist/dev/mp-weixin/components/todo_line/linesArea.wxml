@@ -1,1 +1,1 @@
-<view class="lines"><line vue-id="599d7032-1" bind:__l="__l"></line><line vue-id="599d7032-2" bind:__l="__l"></line><line vue-id="599d7032-3" bind:__l="__l"></line><line vue-id="599d7032-4" bind:__l="__l"></line></view>
+<view class="lines"><line vue-id="599d7032-1" bind:__l="__l"></line></view>

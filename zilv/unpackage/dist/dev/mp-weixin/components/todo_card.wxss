@@ -1,33 +1,30 @@
 
 .todo_card {
-
 	height: 3.5rem;
-	background-color: rgb(192, 169, 44);
+	width: 85vw;
+	background-color: rgb(40, 217, 129);
 	border-radius: 10px;
 	display: flex;
 	flex-flow:  row nowrap;
 	align-items: center;
 }
-.todo_card image {
-	height: 1.5rem;
-	width: 1.5rem;
+.todo_card_image {
+	height: 1.8rem;
+	width: 1.8rem;
 	padding-left: 0.5rem;
 }
-.todo_card text {
-  display: block;
-	width: 80%;
+.edit {
+	/* display: block; */
+	width: 70vw;
 	height: 3.5rem;
-	line-height: 3.5rem;
-	font-size: 16px; 
-  padding-left: 0.5rem; 
-	overflow: hidden;
-}
-.content-text {
-		font-size: 15px;
+	/* line-height: 3.5rem; */
+	/* font-size: 16px; */
+	padding-left: 0.5rem; 
+	/* overflow: hidden; */
 }
 .tianchong {
-		height: 0.8rem;
-		background-color: #fff;
+	height: 0.8rem;
+	background-color: #fff;
 }
 
 

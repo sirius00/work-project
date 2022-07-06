@@ -1,8 +1,14 @@
 <template>
-	<view>
-		<view class="add_note">
+	<view class="zhezhao" v-if="ifnote" @click="hidenote">
+		<view class="add_note" @click.stop="!hidenote">
 			<view class="">
-				<textarea name="" id="" placeholder="添加事项..." class="addtext"></textarea>
+				<textarea 
+				id="note_content" 
+				placeholder="添加事项..." 
+				class="addtext"
+				@blur="get_text_value"
+				>
+				</textarea>
 			</view>
 			<view class="limit">
 				<view class="">
@@ -14,7 +20,7 @@
 				</view>
 				
 			</view>
-			<view class="add_button">
+			<view class="add_button" @click="add_note">
 				添加
 			</view>
 		</view>
@@ -22,21 +28,54 @@
 </template>
 
 <script>
+
 	export default {
+		props:{
+		
+		},
 		data() {
 			return {
-				limited: false
+				limited: false,
+				text_value: ''
+			}
+		},
+		computed: {
+			ifnote() {
+				return this.$store.state.ifnote
+			},
+			get_last_task_id() {
+				return this.$store.state.taskList.pop().id
 			}
 		},
 		methods: {
 			limit() {
 				this.limited = !this.limited
+			},
+			hidenote() {
+				this.$store.commit("addNote")
+			},
+			get_text_value(e) {
+				this.text_value = e.detail.value
+			},
+			add_note () {
+				let id = this.get_last_task_id
+				
+				console.log(this.get_last_task_id);
 			}
 		}
 	}
 </script>
 
 <style scoped >
+	.zhezhao {
+		/* background-color: chartreuse; */
+		position: absolute;
+		height: 100vh;
+		width: 100vw;
+		top: 0;
+		left: 0;
+		z-index: 5;
+	}
 	.add_note {
 		width: 500rpx;
 		height: 480rpx;
