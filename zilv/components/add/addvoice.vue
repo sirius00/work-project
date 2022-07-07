@@ -4,8 +4,12 @@
 			<view class="">
 				<textarea name="" id="" placeholder="添加事项..." class="addtext"></textarea>
 			</view>
+			
 			<view class="voice">
-				<img src="../../static/add_voice_button.png" alt="">
+				<img src="../../static/add_voice_button.png" alt="" v-if="pic == 'record'" @click="startRecord">
+				<img src="../../static/img/stop-circle.png" v-if="pic == 'endrecord'" @click="endRecord">
+				<img src="../../static/img/play.png" alt="" v-if="pic == 'play'" @click="playVoice">
+				<!-- <img src="../../static/img/stop.png" alt="" v-if="pic == 'stop'" @click="endRecord"> -->
 			</view>
 			<view class="limit">
 				<view class="">
@@ -30,10 +34,32 @@
 		},
 		data() {
 			return {
+				pic : 'record',
 				limited: false,
+				recorderManager: {},
+				innerAudioContext: {},
+				voicePath: ''
 			}
 		},
-		computed: {
+		onLoad (options) {
+			this.recorderManager = uni.getRecorderManager();
+			this.innerAudioContext = uni.createInnerAudioContext();
+			
+			// 为了防止苹果手机静音无法播放
+			uni.setInnerAudioOption({  
+				obeyMuteSwitch: false  
+			})
+			
+			this.innerAudioContext.autoplay = true;
+			
+			console.log("uni.getRecorderManager()",uni.getRecorderManager())
+			let self = this;
+			this.recorderManager.onStop(function (res) {
+				console.log('recorder stop' + JSON.stringify(res));
+				self.voicePath = res.tempFilePath;
+			});
+		},
+ 		computed: {
 			ifvoice () {
 				return this.$store.state.ifvoice
 			}
@@ -42,9 +68,48 @@
 			limit() {
 				this.limited = !this.limited
 			},
+			// 隐藏添加笔记弹窗
 			hidevoice() {
 				this.$store.commit("addVoice")
-			}
+			},
+			
+					startRecord() {
+						console.log('开始录音');
+						this.recorderManager.start();
+					},
+					endRecord() {
+						console.log('录音结束');
+						this.recorderManager.stop();
+					},
+					playVoice() {
+						console.log('播放录音');
+						console.log('this.voicePath',this.voicePath);
+			 
+						if (this.voicePath) {
+							this.innerAudioContext.src = this.voicePath;
+							this.innerAudioContext.play();
+						}
+					},
+
+			// 开始录音
+			// startRecord() {
+			// 	console.log('开始录音');
+			// 	this.recorderManager.start();
+			// 	this.pic = 'endrecord'
+			// },
+			// endRecord() {
+			// 	console.log('录音结束');
+			// 	this.recorderManager.stop();
+			// 	this.pic = 'play'
+			// },
+			// playVoice() {
+			// 	console.log('播放录音');
+			// 	if (this.voicePath) {
+			// 		this.innerAudioContext.src = this.voicePath;
+			// 		this.innerAudioContext.play();
+			// 	}
+			
+			// }
 		}
 	}
 </script>

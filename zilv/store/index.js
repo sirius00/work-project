@@ -13,10 +13,14 @@ const store = new Vuex.Store({
 				id: 1,
 				content: '任务2'
 			},
-			{
-				id: 2,
-				content: '任务3'
-			}
+			// {
+			// 	id: 2,
+			// 	content: '任务3'
+			// },
+			// {
+			// 	id: 4,
+			// 	content: '任务4'
+			// }
 		]
 	},
 	mutations: {
@@ -28,10 +32,11 @@ const store = new Vuex.Store({
 		},
 		changeTask(state, value) {
 			state.taskList[value.id].content = value.content
-			console.log(state.taskList[value.id]);
+			// console.log(state.taskList[value.id]);
 		},
-		addTask(state) {
-			
+		addTask(state,task) {
+			let push_id = task.id + 1
+			state.taskList.push({'id': push_id, 'content': task.content})
 		}
 	},
 	actions: {},

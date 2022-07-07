@@ -20,7 +20,7 @@
 				</view>
 				
 			</view>
-			<view class="add_button" @click="add_note">
+			<view class="add_button" @click="add_task">
 				添加
 			</view>
 		</view>
@@ -44,23 +44,26 @@
 				return this.$store.state.ifnote
 			},
 			get_last_task_id() {
-				return this.$store.state.taskList.pop().id
+				return this.$store.state.taskList.slice(-1).id
 			}
 		},
 		methods: {
+			// 添加权限
 			limit() {
 				this.limited = !this.limited
 			},
 			hidenote() {
 				this.$store.commit("addNote")
 			},
+			// 获取新任务内容
 			get_text_value(e) {
 				this.text_value = e.detail.value
 			},
-			add_note () {
+			// 添加任务
+			add_task () {
 				let id = this.get_last_task_id
-				
-				console.log(this.get_last_task_id);
+				let content = this.text_value
+				this.$store.commit("addTask",{id: id, content: content})
 			}
 		}
 	}

@@ -15,7 +15,7 @@
 				<view class="todo_board">
 					
 					<scroll-view scroll-y class="scroll_view" enable-flex>
-						<todo-card v-for="item in taskList" :card="item" :key="item.id"/>
+						<todo-card v-for="(item, index) in taskList" :card="item" :key="index"/>
 					</scroll-view>
 					
 					<addnote ></addnote>
@@ -71,7 +71,7 @@
 						path: "./timecard"
 					}
 				],
-
+				
 			}
 		},
 		computed: {
@@ -84,6 +84,9 @@
 			taskList() {
 				return this.$store.state.taskList
 			}
+		},
+		watch: {
+
 		},
 		methods: {
 			addNote() {
