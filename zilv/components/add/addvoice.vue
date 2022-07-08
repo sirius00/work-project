@@ -28,6 +28,11 @@
 </template>
 
 <script>
+	const recorderManager = uni.getRecorderManager();
+	const innerAudioContext = uni.createInnerAudioContext();
+	
+	innerAudioContext.autoplay = true;
+	
 	export default {
 		props: {
 			
@@ -36,25 +41,12 @@
 			return {
 				pic : 'record',
 				limited: false,
-				recorderManager: {},
-				innerAudioContext: {},
 				voicePath: ''
 			}
 		},
-		onLoad (options) {
-			this.recorderManager = uni.getRecorderManager();
-			this.innerAudioContext = uni.createInnerAudioContext();
-			
-			// 为了防止苹果手机静音无法播放
-			uni.setInnerAudioOption({  
-				obeyMuteSwitch: false  
-			})
-			
-			this.innerAudioContext.autoplay = true;
-			
-			console.log("uni.getRecorderManager()",uni.getRecorderManager())
+		onLoad () {
 			let self = this;
-			this.recorderManager.onStop(function (res) {
+			recorderManager.onStop(function (res) {
 				console.log('recorder stop' + JSON.stringify(res));
 				self.voicePath = res.tempFilePath;
 			});
@@ -73,43 +65,33 @@
 				this.$store.commit("addVoice")
 			},
 			
-					startRecord() {
-						console.log('开始录音');
-						this.recorderManager.start();
-					},
-					endRecord() {
-						console.log('录音结束');
-						this.recorderManager.stop();
-					},
-					playVoice() {
-						console.log('播放录音');
-						console.log('this.voicePath',this.voicePath);
-			 
-						if (this.voicePath) {
-							this.innerAudioContext.src = this.voicePath;
-							this.innerAudioContext.play();
-						}
-					},
+			startRecord() {
+				console.log('开始录音');
+				this.pic = 'endrecord'
 
-			// 开始录音
-			// startRecord() {
-			// 	console.log('开始录音');
-			// 	this.recorderManager.start();
-			// 	this.pic = 'endrecord'
-			// },
-			// endRecord() {
-			// 	console.log('录音结束');
-			// 	this.recorderManager.stop();
-			// 	this.pic = 'play'
-			// },
-			// playVoice() {
-			// 	console.log('播放录音');
-			// 	if (this.voicePath) {
-			// 		this.innerAudioContext.src = this.voicePath;
-			// 		this.innerAudioContext.play();
-			// 	}
-			
-			// }
+				const options = {
+					duration: this.duration, // 指定录音的时长，单位 ms
+					sampleRate: 16000, // 采样率
+					numberOfChannels: 1, // 录音通道数
+					encodeBitRate: 96000, // 编码码率
+					format: 'mp3', // 音频格式，有效值 aac/mp3
+					frameSize: 10, // 指定帧大小，单位 KB
+
+				recorderManager.start(options);
+			},
+			endRecord() {
+				console.log('录音结束');
+				this.pic = 'play'
+				recorderManager.stop();
+			},
+			playVoice() {
+				console.log('播放录音');
+	
+				if (this.voicePath) {
+					innerAudioContext.src = this.voicePath;
+					innerAudioContext.play();
+				}
+			},
 		}
 	}
 </script>
