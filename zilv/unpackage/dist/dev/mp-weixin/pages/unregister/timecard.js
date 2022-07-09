@@ -114,15 +114,15 @@ var render = function() {
   var _c = _vm._self._c || _h
   var m0 =
     _vm.ifvoice && _vm.pic == "record"
-      ? __webpack_require__(/*! ../../static/add_voice_button.png */ 92)
+      ? __webpack_require__(/*! ../../static/img/record_button.png */ 92)
       : null
   var m1 =
-    _vm.ifvoice && _vm.pic == "endrecord"
-      ? __webpack_require__(/*! ../../static/img/stop-circle.png */ 93)
+    _vm.ifvoice && _vm.pic == "play"
+      ? __webpack_require__(/*! ../../static/img/play_button.png */ 93)
       : null
   var m2 =
-    _vm.ifvoice && _vm.pic == "play"
-      ? __webpack_require__(/*! ../../static/img/play.png */ 94)
+    _vm.ifvoice && _vm.pic == "pause"
+      ? __webpack_require__(/*! ../../static/img/pause.png */ 94)
       : null
   var m3 =
     _vm.ifvoice && !_vm.limited ? __webpack_require__(/*! ../../static/img/limit.png */ 95) : null
@@ -253,9 +253,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
 // import addvoice from "@/components/add/addvoice.vue"
 
 var recorderManager = uni.getRecorderManager();
@@ -289,11 +286,12 @@ innerAudioContext.autoplay = true;var _default =
         path: "./timecard" }],
 
 
+      text_value: '',
 
-      pic: 'record',
-      limited: false,
-      voicePath: '' };
-
+      pic: 'record', //录音相关图标转换
+      limited: false, //任务查看权限
+      voicePath: '' // 音频路径
+    };
   },
   onLoad: function onLoad() {
     var self = this;
@@ -328,6 +326,7 @@ innerAudioContext.autoplay = true;var _default =
       this.$store.commit("addVoice");
     },
 
+
     // 添加声音
     limit: function limit() {
       this.limited = !this.limited;
@@ -336,10 +335,9 @@ innerAudioContext.autoplay = true;var _default =
     hidevoice: function hidevoice() {
       this.$store.commit("addVoice");
     },
-
+    // 长按开始录音
     startRecord: function startRecord() {
       console.log('开始录音');
-      this.pic = 'endrecord';
       var options = {
         duration: this.duration, // 指定录音的时长，单位 ms
         sampleRate: 16000, // 采样率
@@ -348,21 +346,40 @@ innerAudioContext.autoplay = true;var _default =
         format: 'mp3', // 音频格式，有效值 aac/mp3
         frameSize: 10 // 指定帧大小，单位 KB
       };
-
       recorderManager.start(options);
     },
+    // 长按结束录音事件
     endRecord: function endRecord() {
       console.log('录音结束');
       this.pic = 'play';
       recorderManager.stop();
     },
-    playVoice: function playVoice() {
+    playVoice: function playVoice() {var _this = this;
       console.log('播放录音');
 
       if (this.voicePath) {
         innerAudioContext.src = this.voicePath;
         innerAudioContext.play();
       }
+      this.pic = 'pause';
+      //播放结束
+      innerAudioContext.onEnded(function () {
+        console.log('播放结束');
+        _this.pic = 'play';
+      });
+    },
+    //删除录音
+    delVoice: function delVoice() {
+      console.log('删除录音');
+
+      this.voicePath = '';
+      this.pic = 'record';
+      innerAudioContext.stop();
+    },
+
+    //添加语音任务
+    addVoice_task: function addVoice_task() {
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

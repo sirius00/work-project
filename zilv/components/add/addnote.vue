@@ -6,7 +6,8 @@
 				id="note_content" 
 				placeholder="添加事项..." 
 				class="addtext"
-				@blur="get_text_value"
+				@confirm="get_text_value"
+				confirm-type="done"
 				>
 				</textarea>
 			</view>
@@ -57,6 +58,7 @@
 			},
 			// 获取新任务内容
 			get_text_value(e) {
+				// console.log('获取内容');
 				this.text_value = e.detail.value
 			},
 			// 添加任务
@@ -64,6 +66,7 @@
 				let id = this.get_last_task_id
 				let content = this.text_value
 				this.$store.commit("addTask",{id: id, content: content})
+				this.$store.commit("addNote")
 			}
 		}
 	}

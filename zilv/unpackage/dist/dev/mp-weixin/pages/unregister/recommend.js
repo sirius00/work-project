@@ -179,6 +179,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
 {
   components: {
     topTabbar: topTabbar,
@@ -207,10 +211,12 @@ __webpack_require__.r(__webpack_exports__);
   onLoad: function onLoad() {
     // 获取推荐用户数据
     this.getRecommendList();
+    // console.log(this.recommendList);
   },
   methods: {
     getRecommendList: function getRecommendList() {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
                   uni.$http.post('/v2/user/push', { uid: 2 }));case 2:res = _context.sent;
+                // this.recommendList = res
                 console.log(res);case 4:case "end":return _context.stop();}}}, _callee);}))();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

@@ -1,34 +1,35 @@
 
 .voice_bar{
-	margin-top: 1.5rem;
+  margin-top: 1.5rem;
   background-color: coral;
-  width: 15rem;
-  height: 2rem;
+  width: 10rem;
+  height: 2.2rem;
   border-radius: 20px;
-  padding: 0.2rem;
+  padding: 0.4rem;
   display: flex;
   justify-content: space-between;
-	min-width: 7rem;
+  min-width: 7rem;
 }
 .voice_toux ._img{
-  height: 2rem;
-  width: 2rem;
+  height: 65rpx;
+  width: 65rpx;
+  border-radius: 30rpx;
 }
 .voice_content {
-  height: 2rem;
-  line-height: 2rem;
+  height: 65rpx;
+  line-height: 65rpx;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-basis: calc(100% - 5rem)
+  justify-content: flex-end;
+  flex-basis: calc(100% - 5rem);
 }
 .voice_content ._img {
-  height: 1.2rem;
-  width: 1.2rem;
-	margin-left: 8rem;
+    height: 45rpx;
+    width: 45rpx;
+		margin-right: 10rpx;
 }
 .play_button ._img {
-  height: 2rem;
-  width: 2rem;
+	height: 65rpx;
+	width: 65rpx;
 }
 

@@ -14,7 +14,11 @@
 				<view class="home_voice_bar">
 					<scroll-view scroll-y="true"  class="scroll_view" >
 						<voice-bar />
-
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
+						<voice-bar />
 					</scroll-view>
 
 				</view>
@@ -62,11 +66,13 @@
 		},
 		onLoad() {
 			// 获取推荐用户数据
-			this.getRecommendList()
+			this.getRecommendList() 
+			// console.log(this.recommendList);
 		},
 		methods: {
 			async getRecommendList() {
 				const res = await uni.$http.post('/v2/user/push',{uid: 2})
+				// this.recommendList = res
 				console.log(res);
 			}
 		}

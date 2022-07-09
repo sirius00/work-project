@@ -37,6 +37,9 @@ const store = new Vuex.Store({
 		addTask(state,task) {
 			let push_id = task.id + 1
 			state.taskList.push({'id': push_id, 'content': task.content})
+		},
+		addVoiceTask() {
+			
 		}
 	},
 	actions: {},

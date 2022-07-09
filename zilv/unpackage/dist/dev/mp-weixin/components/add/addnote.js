@@ -164,6 +164,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
 var _default =
 
 {
@@ -194,6 +195,7 @@ var _default =
     },
     // 获取新任务内容
     get_text_value: function get_text_value(e) {
+      // console.log('获取内容');
       this.text_value = e.detail.value;
     },
     // 添加任务
@@ -201,6 +203,7 @@ var _default =
       var id = this.get_last_task_id;
       var content = this.text_value;
       this.$store.commit("addTask", { id: id, content: content });
+      this.$store.commit("addNote");
     } } };exports.default = _default;
 
 /***/ }),
