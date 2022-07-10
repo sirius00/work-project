@@ -134,13 +134,34 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   components: {
     voicePlay: voicePlay },
 
   data: function data() {
     return {
-      playVoice: true,
+      playVoice: false,
       playBt: false };
 
   },
@@ -149,7 +170,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   methods: {
     play: function play() {
       this.playBt = !this.playBt;
-
+      this.playVoice = !this.playVoice;
     } } };exports.default = _default;
 
 /***/ }),

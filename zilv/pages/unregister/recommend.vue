@@ -71,9 +71,9 @@
 		},
 		methods: {
 			async getRecommendList() {
-				const res = await uni.$http.post('/v2/user/push',{uid: 2})
-				// this.recommendList = res
-				console.log(res);
+				// const res = await uni.$http.post('/v2/user/push',{uid: 2})
+				
+				// console.log(res);
 			}
 		}
 
