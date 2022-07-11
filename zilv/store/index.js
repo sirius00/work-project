@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const store = new Vuex.Store({
 	state: {
+		recommend_or_timecard: true,
 		ifnote: false,
 		ifvoice: false,
 		taskList: [{
@@ -13,17 +14,12 @@ const store = new Vuex.Store({
 				id: 1,
 				content: '任务2'
 			},
-			// {
-			// 	id: 2,
-			// 	content: '任务3'
-			// },
-			// {
-			// 	id: 4,
-			// 	content: '任务4'
-			// }
 		]
 	},
 	mutations: {
+		change_recommend_or_timecard() {
+			state.recommend_or_timecard = !state.recommend_or_timecard
+		},
 		addNote(state) {
 			state.ifnote = !state.ifnote
 		},

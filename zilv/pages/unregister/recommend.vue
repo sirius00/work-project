@@ -1,10 +1,9 @@
 <template>
-	<view>
-		<view class="bgboard">
-			<view class="board-border ">
-				<view>
-					<top-tabbar :tabBars="tabBars"  :tabIndex="tabIndex" ></top-tabbar >
-				</view>
+	<view class="bgboard">
+		
+<!-- 		<view class="bgboard">
+			<view class="board-border "> -->
+	
 				<view class="week">
 					<view v-for="item in weekDay" :key="index">
 						{{ item }}
@@ -13,28 +12,25 @@
 				<calendar />
 				<view class="home_voice_bar">
 					<scroll-view scroll-y="true"  class="scroll_view" >
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
-						<voice-bar />
+						<voice-bar v-for="index of 7" :key="index" />
 					</scroll-view>
-
+					
 				</view>
-				<view class="text">
+				<view class="text" >
 					<text>TODO</text>
 				</view>
-			</view>
-		</view>
+				
+				
+<!-- 			</view>
+		</view> -->
 
-		<view class="board-welcome">
-			<img src="../../static/img/welcome.png" alt="">
-		</view>
 	</view>
 </template>
 
 <script>
+	// 获取颜色
+
+	
 	import topTabbar from "@/components/topTabbar/topTabbar.vue"
 	import voiceBar from "@/components/voiceBar.vue"
 	import calendar from "@/components/calendar.vue"
@@ -65,40 +61,30 @@
 			}
 		},
 		onLoad() {
+			console.log(color1);
 			// 获取推荐用户数据
-			this.getRecommendList() 
-			// console.log(this.recommendList);
+			// this.getUserPush() 
+			
 		},
 		methods: {
-			async getRecommendList() {
-				// const res = await uni.$http.post('/v2/user/push',{uid: 2})
-				
-				// console.log(res);
-			}
+
+
+			// async getUserPush() {
+			// 	const res = await uni.$http.post('/v2/user/push',{uid: 1})
+			// 	console.log(res.data);
+			// }
 		}
 
 	}
 </script>
 
 <style scoped>
+
 	/* 背景板 */
 	.bgboard {
-
 		height: 80vh;
-		width: 90vw;
-		border: 6px solid rgb(10, 198, 185);
-		border-radius: 35px;
-		margin: 0.5rem auto;
 	}
 
-	/* 背景边框 */
-	.board-border {
-		height: 78vh;
-		width: 85vw;
-
-		border-radius: 35px;
-		margin: 0.1rem auto;
-	}
 
 	/* 周日期 */
 	.week {
@@ -125,28 +111,13 @@
 	}
 
 	.text {
-		position: fixed;
-		bottom: 250rpx;
-		left: 240rpx;
-		height: 5rem;
-		width: 8rem;
 		font-size: 3.5rem;
 		font-weight: bolder;
 		color: rgb(182, 188, 188);
-		z-index: -2;
+		text-align: center;
 	}
 
-	.board-welcome {
 
-		position: absolute;
-		bottom: 140rpx;
-		left: 325rpx;
-		/* z-index: -2; */
-	}
 
-	.board-welcome img {
-		height: 4rem;
-		width: 4rem;
-		
-	}
+
 </style>

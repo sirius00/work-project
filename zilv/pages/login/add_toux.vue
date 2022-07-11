@@ -9,7 +9,7 @@
 			<img :src="toux" alt="无法显示" v-if="flag" @click="changeImage" class="toux">
 		</view>
 		<view>
-			<navigator url="/home_unlog">
+			<navigator url="/pages/unregister/recommend">
 				<button class="last">最后一步了</button>
 			</navigator>
 		</view>

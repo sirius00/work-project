@@ -1,6 +1,6 @@
 <template>
 <view>
-  <view class="voice_bar">
+  <view class="voice_bar" :style="'background-color:' + style" >
     <view class="voice_toux">
       <img src="/static/机器猫(1).png" alt="">
     </view>
@@ -29,8 +29,8 @@
 				<view class="yinjie one"></view>
 			</view>
     </view>
-    <view class="play_button">
-			<img src="/static/img/playCircle.png" alt="" @click="play" v-if="!playBt">
+    <view class="play_button" >
+			<img src="/static/img/playCircle.png" alt=""  @click="play()" v-if="!playBt">
 			<img src="/static/img/zanting.png" alt="" @click="play" v-if="playBt">
     </view>
   </view>
@@ -50,8 +50,21 @@ export default {
       }
    },
    computed:{
+		 style() {
+			 let R = Math.floor(Math.random() * 255);
+			 let G = Math.floor(Math.random() * 255);
+			 let B = Math.floor(Math.random() * 255);
+			 return "rgb(" + R + "," + G + "," + B + ")";
+		 },
    },
+
    methods:{
+		 // style() {
+		 //   let R = Math.floor(Math.random() * 255);
+		 //   let G = Math.floor(Math.random() * 255);
+		 //   let B = Math.floor(Math.random() * 255);
+		 //   return "rgb(" + R + "," + G + "," + B + ")";
+		 // },
     play() {
       this.playBt = !this.playBt
 			this.playVoice = !this.playVoice
@@ -120,22 +133,22 @@ export default {
 	
 	.voice_bar{
 		margin-top: 1.5rem;
-		background-color: coral;
+		/* background-color: #d40079; */
 		width: 10rem;
-		height: 2.2rem;
+		height: 3rem;
 		border-radius: 20px;
-		padding: 0.4rem;
+		padding: 0.6rem;
 		display: flex;
 		justify-content: space-between;
 		min-width: 9rem;
 	}
 	.voice_toux img{
-		height: 65rpx;
-		width: 65rpx;
+		height: 55rpx;
+		width: 55rpx;
 		border-radius: 30rpx;
 	}
 	.voice_content {
-		height: 65rpx;
+		height: 55rpx;
 		line-height: 65rpx;
 		display: flex;
 		align-items: center;
@@ -143,13 +156,13 @@ export default {
 		flex-basis: calc(100% - 5rem);
 	}
 	.voice_content img {
-		height: 45rpx;
-		width: 45rpx;
-		margin-right: 10rpx;
+		  height: 30rpx;
+		  width: 35rpx;
+		  margin-right: 10rpx;
 	}
 
 	.play_button img {
-		height: 65rpx;
-		width: 65rpx;
+		height: 55rpx;
+		width: 55rpx;
 	}
 </style>

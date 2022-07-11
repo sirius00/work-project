@@ -80,23 +80,9 @@
 
 
 
-
 /* 背景板 */
 .bgboard.data-v-2b8a13bc {
-
 	height: 80vh;
-	width: 90vw;
-	border: 6px solid rgb(10, 198, 185);
-	border-radius: 35px;
-	margin: 0.5rem auto;
-}
-/* 背景边框 */
-.board-border.data-v-2b8a13bc {
-	height: 78vh;
-	width: 85vw;
-
-	border-radius: 35px;
-	margin: 0.1rem auto;
 }
 /* 周日期 */
 .week.data-v-2b8a13bc {
@@ -119,25 +105,13 @@
 	align-items: center;
 }
 .text.data-v-2b8a13bc {
-	position: fixed;
-	bottom: 250rpx;
-	left: 240rpx;
-	height: 5rem;
-	width: 8rem;
 	font-size: 3.5rem;
 	font-weight: bolder;
 	color: rgb(182, 188, 188);
-	z-index: -2;
+	text-align: center;
 }
-.board-welcome.data-v-2b8a13bc {
 
-	position: absolute;
-	bottom: 140rpx;
-	left: 325rpx;
-	/* z-index: -2; */
-}
-.board-welcome ._img.data-v-2b8a13bc {
-	height: 4rem;
-	width: 4rem;
-}
+
+
+
 

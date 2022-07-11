@@ -1,15 +1,18 @@
 {
   "pages": [
-    "pages/welcome/welcome",
     "pages/home/home",
+    "pages/unregister/recommend",
+    "pages/welcome/welcome",
     "pages/login/phone_direct",
     "pages/login/phone_login",
     "pages/login/email_login",
     "pages/login/add_profile",
     "pages/login/add_toux",
-    "pages/unregister/recommend",
     "pages/unregister/timecard",
-    "pages/unregister/test"
+    "pages/unregister/test",
+    "pages/profile/profile",
+    "pages/todayGoal/todayGoal",
+    "components/midBox/midBox"
   ],
   "subPackages": [],
   "window": {
@@ -20,14 +23,19 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/welcome/welcome",
-        "iconPath": "static/img/首页.png",
-        "selectedIconPath": "static/img/首页 (1).png"
+        "pagePath": "pages/todayGoal/todayGoal",
+        "iconPath": "static/img/message.png",
+        "selectedIconPath": "./static/img/message_active.png"
       },
       {
-        "pagePath": "pages/login/phone_direct",
-        "iconPath": "static/img/聊天.png",
-        "selectedIconPath": "./static/img/聊天 (1).png"
+        "pagePath": "pages/home/home",
+        "iconPath": "static/img/dubbing.png",
+        "selectedIconPath": "./static/img/dubbing.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "iconPath": "static/img/profile.png",
+        "selectedIconPath": "./static/img/profile_active.png"
       }
     ]
   },

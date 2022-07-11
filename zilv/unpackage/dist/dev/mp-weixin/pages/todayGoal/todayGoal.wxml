@@ -1,0 +1,1 @@
+<view>今日目标<mid-box vue-id="c4f51a54-1" current-page="{{0}}" bind:__l="__l"></mid-box></view>

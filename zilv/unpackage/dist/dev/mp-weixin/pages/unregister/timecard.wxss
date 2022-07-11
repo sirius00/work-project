@@ -1,225 +1,27 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.board.data-v-00fd18e7 {
+		height: 80vh;
+}
 /* 背景板 */
-.bgboard.data-v-00fd18e7 {
+/* .bgboard {
+	background-color: #fff;
 	height: 88vh;
-	width: 90vw;
+	width: 98vw;
 	border: 6px solid rgb(10, 198, 185);
 	border-radius: 35px;
 	margin: 0.5rem auto;
 
 	display: flex;
 	flex-flow: column;
-}
+} */
 /* 背景边框 */
-.board-border.data-v-00fd18e7 {
+/* .board-border {
 	height: 78vh;
 	width: 85vw;
 
 	border-radius: 35px;
 	margin: 0.1rem auto;
-}
+} */
 /* 周日期 */
 .week.data-v-00fd18e7 {
 	height: 2rem;
@@ -232,7 +34,7 @@
 }
 .todo_board.data-v-00fd18e7 {
 	margin-top: 0.4rem;
-	height: 75%;
+	height: 70%;
 }
 .scroll_view.data-v-00fd18e7 {
 	height: 100%;

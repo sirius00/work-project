@@ -1,10 +1,6 @@
 <template>
-	<view>
-		<view class="bgboard">
-			<view class="board-border ">
-				<view>
-					<top-tabbar :tabBars="tabBars" :tabIndex="tabIndex"></top-tabbar>
-				</view>
+	<view class="board">
+
 				<view class="week">
 					<view v-for="item in weekDay" :key="index">
 						{{ item }}
@@ -19,13 +15,7 @@
 
 					<view class="zhezhao" v-if="ifvoice" @click="hidevoice">
 						<view class="add_voice" @click.stop="!hidevoice">
-<!-- 							<view class="">
-								<textarea placeholder="添加事项..." 
-									class="addtext"
-									confirm-type="done"
-									@confirm="get_text_value"
-									></textarea>
-							</view> -->
+
 							<view class="voice">
 								<img src="../../static/img/record_button.png" v-if="pic == 'record'" @longpress="startRecord" @touchend="endRecord">
 								<img src="../../static/img/play_button.png" v-if="pic == 'play'" @click="playVoice" @longpress="delVoice">
@@ -55,8 +45,7 @@
 						<add-voice></add-voice>
 					</view>
 				</view>
-			</view>
-		</view>
+
 	</view>
 </template>
 
@@ -201,26 +190,30 @@ export default {
 </script>
 
 <style scoped>
+	.board {
+		height: 80vh;
+	}
 /* 背景板 */
-.bgboard {
+/* .bgboard {
+	background-color: #fff;
 	height: 88vh;
-	width: 90vw;
+	width: 98vw;
 	border: 6px solid rgb(10, 198, 185);
 	border-radius: 35px;
 	margin: 0.5rem auto;
 
 	display: flex;
 	flex-flow: column;
-}
+} */
 
 /* 背景边框 */
-.board-border {
+/* .board-border {
 	height: 78vh;
 	width: 85vw;
 
 	border-radius: 35px;
 	margin: 0.1rem auto;
-}
+} */
 
 /* 周日期 */
 .week {
@@ -235,7 +228,7 @@ export default {
 
 .todo_board {
 	margin-top: 0.4rem;
-	height: 75%;
+	height: 70%;
 
 }
 

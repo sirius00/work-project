@@ -1,5 +1,22 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	{
+		"path": "pages/home/home",
+		"style": {
+			"navigationBarTitleText": "首页",
+			"enablePullDownRefresh": false
+		}
+	},
+	{
+	    "path" : "pages/unregister/recommend",
+	    "style" :                                                                                    
+	    {
+	        "navigationBarTitleText": "推荐",
+	        "enablePullDownRefresh": false
+	    }
+	    
+	}
+	, 
 		{
 			"path": "pages/welcome/welcome",
 			"style": {
@@ -7,13 +24,7 @@
 				"enablePullDownRefresh": false
 			}
 
-		}, {
-			"path": "pages/home/home",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		}, {
+		},  {
 			"path": "pages/login/phone_direct",
 			"style": {
 				"navigationBarTitleText": "",
@@ -49,16 +60,6 @@
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/unregister/recommend",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "推荐",
-                "enablePullDownRefresh": false
-            }
-            
         }
         ,{
             "path" : "pages/unregister/timecard",
@@ -67,7 +68,6 @@
                 "navigationBarTitleText": "我的时间卡",
                 "enablePullDownRefresh": false
             }
-            
         }
         ,{
             "path" : "pages/unregister/test",
@@ -79,6 +79,33 @@
             
         }
 
+        ,{
+            "path" : "pages/profile/profile",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "用户信息",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/todayGoal/todayGoal",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "今日目标",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/midBox/midBox",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -88,16 +115,23 @@
 	},
 	"tabBar": {
 		"list": [{
-				"pagePath": "pages/welcome/welcome",
-				"iconPath": "static/img/首页.png",
-				"selectedIconPath": "static/img/首页 (1).png"
-			},
-			{
-				"pagePath": "pages/login/phone_direct",
-				"iconPath": "static/img/聊天.png",
-				"selectedIconPath": "./static/img/聊天 (1).png"
+				"pagePath": "pages/todayGoal/todayGoal",
+				"iconPath": "static/img/message.png",
+				"selectedIconPath": "./static/img/message_active.png"
 			}
-
+			,
+			{
+				"pagePath": "pages/home/home",
+				// "text": "GUGU"
+				"iconPath": "static/img/dubbing.png",
+				"selectedIconPath": "./static/img/dubbing.png"
+			}
+			,
+			{
+				"pagePath": "pages/profile/profile",
+				"iconPath": "static/img/profile.png",
+				"selectedIconPath": "./static/img/profile_active.png"
+			}
 		]
 	},
 	"condition" : { //模式配置，仅开发期间生效
