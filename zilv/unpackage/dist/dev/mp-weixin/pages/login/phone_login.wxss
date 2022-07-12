@@ -41,6 +41,6 @@
 }
 /* 获取验证码 */
 .catch_code_sp.data-v-7a323789 {
-	margin-left: 0.7rem;
+	/* margin-left: 0.7rem; */
 }
 

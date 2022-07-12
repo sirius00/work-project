@@ -130,7 +130,7 @@ view {
       height: 150rpx;
       position: absolute;
       top: -65rpx;
-      left: calc(50% - 50rpx);
+      left: calc(50% - 70rpx);
       // border-radius: 50%;
       // box-shadow: 0 0 5px #999;
       // background-color: rgb(240, 63, 131);

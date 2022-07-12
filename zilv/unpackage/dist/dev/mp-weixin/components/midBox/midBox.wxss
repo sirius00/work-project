@@ -52,7 +52,7 @@ view {
   height: 150rpx;
   position: absolute;
   top: -65rpx;
-  left: calc(50% - 50rpx);
+  left: calc(50% - 70rpx);
 }
 .tabbar-container .center-item .item-bottom {
   position: absolute;

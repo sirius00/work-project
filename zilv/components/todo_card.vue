@@ -3,23 +3,13 @@
 		<uni-swipe-action >
 			<uni-swipe-action-item v-for="(item, index) in swipeList" :right-options="item.options" :key="item.id"
 				@click="swipeClick($event, index)" >
-				<view class="content_box">
-<!-- 					<view class="todo_card">
-						<image class="todo_card_image" src="../static/img/checkbox_unchecked.png" mode="" v-if="check" @click="chencBox"></image>
-						<image class="todo_card_image" src="../static/img/checked.png" mode="" v-if="!check" @click="chencBox"></image>
-						<view >
-							<input 
-							type="text" class="edit" 
-							:value="card.content" 
-							@blur="check_content(card)" 
-							@input="onKey_taskcontent"
-							>
-						</view> -->
+				<view class="content_box" >
+
 						
-					<view class="voice_bar" :style="'background-color:' + style" >
+					<view class="voice_bar" :style="'background-color:' + style +'; margin-left:' + margin " >
 						<view class="voice_toux">
-							<image class="todo_card_image" src="../static/img/checkbox_unchecked.png" mode="" v-if="check" @click="chencBox"></image>
-							<image class="todo_card_image" src="../static/img/checked.png" mode="" v-if="!check" @click="chencBox"></image>
+							<image src="../static/img/checkbox_unchecked.png" mode="" v-if="check" @click="chencBox"></image>
+							<image src="../static/img/checked.png" mode="" v-if="!check" @click="chencBox"></image>
 						</view>
 						<view class="voice_content">
 							<img src="/static/img/Voice.png" alt="" v-if="!playVoice">
@@ -55,7 +45,7 @@
 				</view>
 			</uni-swipe-action-item>
 		</uni-swipe-action>
-		<!-- <view class="tianchong"></view> -->
+	
 	</view>
 </template>
 
@@ -89,11 +79,15 @@
 						}
 					}],
 				}, ],
-				// 文本框中新输入的文本
-				// new_taskcontent: ''
+
 			}
 		},
    computed:{
+		 // 随机距离
+		 margin() {
+		 	let x = Math.floor(Math.random()*10);
+		 	return  x + "rem";
+		 },
 		 style() {
 			 let R = Math.floor(Math.random() * 255);
 			 let G = Math.floor(Math.random() * 255);
@@ -143,14 +137,13 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	/*  音阶部分 */
 	.box {
 		/* background-color: aquamarine; */
 		width: 100%;
 		height: 100%;
 		display: flex;
-		/* flex-flow: row nowrap; */
 		align-items: center;
 		justify-content: space-evenly;
 	}
@@ -203,22 +196,21 @@
 	
 	.voice_bar{
 		margin-top: 1.5rem;
-		/* background-color: #d40079; */
 		width: 10rem;
-		height: 3rem;
+		height: 90rpx;
 		border-radius: 20px;
-		padding: 0.4rem;
+		padding: 19rpx;
 		display: flex;
 		justify-content: space-between;
 		min-width: 9rem;
 	}
-	.voice_toux img{
-		height: 65rpx;
-		width: 65rpx;
-		border-radius: 30rpx;
+	.voice_toux image{
+		height: 50rpx;
+		width: 50rpx;
+		
 	}
 	.voice_content {
-		height: 65rpx;
+		height: 55rpx;
 		line-height: 65rpx;
 		display: flex;
 		align-items: center;
@@ -226,41 +218,14 @@
 		flex-basis: calc(100% - 5rem);
 	}
 	.voice_content img {
-		height: 45rpx;
-		width: 45rpx;
+		height: 30rpx;
+		width: 35rpx;
 		margin-right: 10rpx;
 	}
 
 	.play_button img {
-		height: 65rpx;
-		width: 65rpx;
-	}
-
-
-	.todo_card {
-		height: 3.5rem;
-		width: 60vw;
-		background-color: rgb(40, 217, 129);
-		border-radius: 25px;
-		display: flex;
-		flex-flow:  row nowrap;
-		align-items: center;
-	}
-	.todo_card_image {
-		height: 1.8rem;
-		width: 1.8rem;
-		padding-left: 0.5rem;
-	}
-
-	.edit {
-		width: 35vw;
-		height: 3.5rem;
-		padding-left: 0.5rem; 
-	}
-
-	.tianchong {
-		height: 1.5rem;
-		background-color: #fff;
+		height: 55rpx;
+		width: 55rpx;
 	}
 
 

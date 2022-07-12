@@ -1,85 +1,7 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.bar.data-v-2b8a13bc {
+	width: 10rem;
+}
 /* 背景板 */
 .bgboard.data-v-2b8a13bc {
 	height: 80vh;
@@ -119,26 +41,8 @@
 .board.data-v-00fd18e7 {
 		height: 80vh;
 }
-/* 背景板 */
-/* .bgboard {
-	background-color: #fff;
-	height: 88vh;
-	width: 98vw;
-	border: 6px solid rgb(10, 198, 185);
-	border-radius: 35px;
-	margin: 0.5rem auto;
 
-	display: flex;
-	flex-flow: column;
-} */
-/* 背景边框 */
-/* .board-border {
-	height: 78vh;
-	width: 85vw;
 
-	border-radius: 35px;
-	margin: 0.1rem auto;
-} */
 /* 周日期 */
 .week.data-v-00fd18e7 {
 	height: 2rem;
@@ -153,18 +57,23 @@
 	margin-top: 0.4rem;
 	height: 70%;
 }
-.scroll_view.data-v-00fd18e7 {
+
+
+/* .scroll_view {
 	height: 100%;
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
-}
+
+} */
 .add_note.data-v-00fd18e7 {
 	height: 3rem;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-end;
 }
+
+
 /* 添加声音 */
 .zhezhao.data-v-00fd18e7 {
 	/* background-color: chartreuse; */
@@ -284,7 +193,7 @@ view {
   height: 150rpx;
   position: absolute;
   top: -65rpx;
-  left: calc(50% - 50rpx);
+  left: calc(50% - 70rpx);
 }
 .tabbar-container .center-item .item-bottom {
   position: absolute;
@@ -299,12 +208,12 @@ view {
 
 .container.data-v-92bb8f34 {
 	background-color: black;
-	height: 90vh;
+	height: 100vh;
 }
 /* 背景板 */
 .board.data-v-92bb8f34 {
 	background-color: #fff;
-	height: 88vh;
+	height: 89vh;
 	width: 96vw;
 	border: 6px solid rgb(10, 198, 185);
 	border-radius: 35px;

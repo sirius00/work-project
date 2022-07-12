@@ -19,24 +19,25 @@
 				</view>
 			</view>
 			<view class="phone_nmber">
-				<input type="text" placeholder="手机号码" class="phone_input">
+				<input type="text" placeholder="请输入手机号码" class="phone_input" v-model="phoneNumber">
 			</view>
 		</input-area>
 		<input-area>
 			<view class="input_code_sp">
 				<view class="phone_number">
-					<input type="text" placeholder="输入验证码" class="code_ip_ip">
+					<input type="text" placeholder="输入验证码" class="code_ip_ip" v-model="code">
 				</view>
 			</view>
-			<view class="catch_code_sp">
-				<text>获取验证码</text>
+			<view class="catch_code_sp"  @click="getCode()">
+				<text :style="{'color' : getCodeColor}">{{getCodeText}}</text>
 			</view>
 		</input-area>
 		<agruement></agruement>
 		<view >
-			<navigator url="/pages/login/add_profile">
-				<button-two>登录</button-two>
-			</navigator>
+			<button-two @click="login()">登录</button-two>
+<!-- 			<navigator url="/pages/login/add_profile">
+				<button-two @click="login()">登录</button-two>
+			</navigator> -->
 		</view>
 	</view>
 </template>
@@ -55,12 +56,99 @@
 		},
 		data() {
 			return {
-				flag: false
+				flag: false,
+				phoneNumber: '',
+				code: '',
+				getCodeText: '获取验证码',
+				getCodeColor: '',
+				getCodeWaiting: '',
+				
 			}
 		},
 		methods: {
+			async getCode() {
+				uni.hideKeyboard()  //隐藏软键盘
+				if(!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phoneNumber))) {  //验证手机号
+					uni.showToast({
+						title: '请填入正确的手机号码',
+						icon:"none"
+					})
+					return false
+				}
+				
+				// 验证码发送接口调用
+				let obj = {
+					tel: this.phoneNumber
+				}
+				console.log(obj.number);
+				let data = JSON.stringify(obj)
+				let e = this.AES.encrypt( data, 'GuGuAPP$*@AesKey', '')
+				console.log(e);
+				const res = await uni.$http.post('/login/SendCode',{'args': e})
+				console.log(res);
+				// try {
+					
+				// 	console.log(e)
+				// 	const res = await uni.$http.post('/login/SendCode',{number: null})
+				// }catch (err) {
+				// 	console.log(err);
+				// } 
+				
+		
+				
+				this.getCodeText = '发送中....' 
+				this.getCodeWaiting = true;
+				this.getCodeColor = "rbg(10, 198,185)";  //追加样式
+				setTimeout( () => {
+					uni.showToast({
+						title: '验证码已发送',
+						icon: 'none'
+					})
+					// 示例默认 1234
+					this.code = '1234'
+					this.setTimer(); // 调用定时器方法
+				}, 1000 )
+			},
+			// setTimer: 需要定时执行一件事情的时候就要使用setTimer函数
+			setTimer() {
+				let holdtime = 60;  // 定义变量并赋值
+				this.getCodeText = '重新获取(60)'
+				// setInterval() 是一个实现定时调用的函数,可按照指定的周期( ms )来调用函数或计算表达式
+				// setInterval() 方法会不停的调用函数, 直到clearInterval 被调用或窗口被关闭
+				this.Timer = setInterval( () => {
+					if (holdtime <= 0) {
+						this.getCodeWaiting = false;
+						this.getCodeText = "获取验证码"
+						clearInterval(this.Timer); // 清除该函数
+						return ;
+					}
+					this.getCodeText = "重新获取(" + holdtime + ")"
+					holdtime--;
+				},1000)
+			},
 			agree() {
 				this.flag = !this.flag
+			},
+			
+			login() {
+				uni.hideKeyboard() 
+				if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phoneNumber))) {  // 验证手机号码 
+					uni.showToast({
+						title: "请输入正确手机号",
+						icon: 'none'
+					});
+					return false;
+				}
+				// 对比验证码
+				if (this,code != 1234 ){
+					uni.showToast({
+						title: '验证码不正确',
+						icon: 'none'
+					});
+					return false;
+				}
+				// 上传用户信息到服务器
+				
 			}
 		}
 	}
@@ -110,6 +198,6 @@
 	}
 	/* 获取验证码 */
 	.catch_code_sp {
-		margin-left: 0.7rem;
+		/* margin-left: 0.7rem; */
 	}
 </style>

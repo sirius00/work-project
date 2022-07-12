@@ -1,6 +1,6 @@
 <template>
-<view>
-  <view class="voice_bar" :style="'background-color:' + style" >
+<view >
+  <view class="voice_bar" :style="'background-color:' + style +'; margin-left:' + margin " >
     <view class="voice_toux">
       <img src="/static/机器猫(1).png" alt="">
     </view>
@@ -50,6 +50,12 @@ export default {
       }
    },
    computed:{
+		 // 随机距离
+		 margin() {
+		 	let x = Math.floor(Math.random()*10);
+		 	return  x + "rem";
+		 },
+		 // 随机颜色
 		 style() {
 			 let R = Math.floor(Math.random() * 255);
 			 let G = Math.floor(Math.random() * 255);
@@ -59,12 +65,6 @@ export default {
    },
 
    methods:{
-		 // style() {
-		 //   let R = Math.floor(Math.random() * 255);
-		 //   let G = Math.floor(Math.random() * 255);
-		 //   let B = Math.floor(Math.random() * 255);
-		 //   return "rgb(" + R + "," + G + "," + B + ")";
-		 // },
     play() {
       this.playBt = !this.playBt
 			this.playVoice = !this.playVoice
@@ -74,6 +74,7 @@ export default {
 </script>
 
 <style>
+
 	/*  音阶部分 */
 	.box {
 		/* background-color: aquamarine; */
@@ -135,9 +136,9 @@ export default {
 		margin-top: 1.5rem;
 		/* background-color: #d40079; */
 		width: 10rem;
-		height: 3rem;
+		height: 90rpx;
 		border-radius: 20px;
-		padding: 0.6rem;
+		padding: 20rpx;
 		display: flex;
 		justify-content: space-between;
 		min-width: 9rem;

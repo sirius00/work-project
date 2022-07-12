@@ -7,7 +7,7 @@
 			<h2 class="size">自律 = 自由</h2>
 		</view>
 		<view>
-			<navigator url="/pages/login/phone_direct" open-type="switchTab">
+			<navigator url="/pages/login/phone_direct" >
 				<button-one>进入自律的世界</button-one>
 			</navigator>
 

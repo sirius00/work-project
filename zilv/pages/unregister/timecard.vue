@@ -193,27 +193,7 @@ export default {
 	.board {
 		height: 80vh;
 	}
-/* 背景板 */
-/* .bgboard {
-	background-color: #fff;
-	height: 88vh;
-	width: 98vw;
-	border: 6px solid rgb(10, 198, 185);
-	border-radius: 35px;
-	margin: 0.5rem auto;
 
-	display: flex;
-	flex-flow: column;
-} */
-
-/* 背景边框 */
-/* .board-border {
-	height: 78vh;
-	width: 85vw;
-
-	border-radius: 35px;
-	margin: 0.1rem auto;
-} */
 
 /* 周日期 */
 .week {
@@ -232,13 +212,13 @@ export default {
 
 }
 
-.scroll_view {
+/* .scroll_view {
 	height: 100%;
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
 
-}
+} */
 
 .add_note {
 	height: 3rem;

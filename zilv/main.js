@@ -4,7 +4,9 @@ import App from './App'
 import { $http } from '@escook/request-miniprogram'
 uni.$http = $http
 //请求根路径
-$http.baseUrl = 'http://192.168.3.82:55555'
+// $http.baseUrl = 'http://192.168.3.82:55555'
+$http.baseUrl = 'http://45.64.74.8:8080/v1'
+
 // 请求拦截器
 $http.beforeRequest = function (options) {
   uni.showLoading({
@@ -23,6 +25,11 @@ import store from "./store"
 Vue.prototype.$store = store
 // 阻止显示生产模式的信息
 Vue.productionTip = false
+
+
+// 引入AES加密插件
+import AES from '@/js_sdk/ar-aes/ar-aes.js'
+Vue.prototype.AES = AES.AES
 
 // #ifndef VUE3
 import Vue from 'vue'

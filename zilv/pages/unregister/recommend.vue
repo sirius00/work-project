@@ -1,8 +1,6 @@
 <template>
 	<view class="bgboard">
 		
-<!-- 		<view class="bgboard">
-			<view class="board-border "> -->
 	
 				<view class="week">
 					<view v-for="item in weekDay" :key="index">
@@ -12,7 +10,7 @@
 				<calendar />
 				<view class="home_voice_bar">
 					<scroll-view scroll-y="true"  class="scroll_view" >
-						<voice-bar v-for="index of 7" :key="index" />
+						<voice-bar v-for="index of 7" :key="index" :style="'margin-left:' + style" class="bar"/>
 					</scroll-view>
 					
 				</view>
@@ -20,9 +18,6 @@
 					<text>TODO</text>
 				</view>
 				
-				
-<!-- 			</view>
-		</view> -->
 
 	</view>
 </template>
@@ -60,26 +55,34 @@
 				recommendList:[],
 			}
 		},
+		computed: {
+			style() {
+				let x = Math.floor(Math.random()*10);
+				return  x + "rem";
+			}
+		},
 		onLoad() {
 			console.log(color1);
 			// 获取推荐用户数据
-			// this.getUserPush() 
+			this.getUserPush() 
 			
 		},
 		methods: {
 
 
-			// async getUserPush() {
-			// 	const res = await uni.$http.post('/v2/user/push',{uid: 1})
-			// 	console.log(res.data);
-			// }
+			async getUserPush() {
+				const res = await uni.$http.post('/v2/user/push',{uid: 1})
+				console.log(res.data);
+			}
 		}
 
 	}
 </script>
 
 <style scoped>
-
+	.bar {
+		width: 10rem;
+	}
 	/* 背景板 */
 	.bgboard {
 		height: 80vh;

@@ -52,7 +52,7 @@ view {
   height: 150rpx;
   position: absolute;
   top: -65rpx;
-  left: calc(50% - 50rpx);
+  left: calc(50% - 70rpx);
 }
 .tabbar-container .center-item .item-bottom {
   position: absolute;
@@ -66,5 +66,50 @@ view {
 
 
 .container {
+	background-color: #fff03b;
+	height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+}
+.toux {
+	height: 250rpx;
+	text-align: center;
+	margin-top: 2rem;
+}
+.toux .toux_box {
+	height: 250rpx;
+	width: 250rpx;
+	margin: 0 auto;
+	border-radius: 150rpx;
+	background-color: #fff;
+}
+.toux ._img {
+	height: 250rpx;
+	width: 250rpx;
+	border-radius: 150rpx;
+}
+.username {
+	text-align: center;
+	margin-top: 0.6rem;
+}
+.userprofile {
+	margin: 0.5rem auto;
+	display: flex;
+	justify-content: flex-start;
+	background-color: #eaeaea;
+	width: 94vw;
+	height: 2.7rem;
+	border-radius: 10px;
+	align-items: center;
+}
+.logo {
+	margin-left: 0.5rem;
+}
+.logo ._img{
+	height: 40rpx;
+	width: 40rpx;
+}
+.tx {
+	margin-left: 0.3rem;
 }
 

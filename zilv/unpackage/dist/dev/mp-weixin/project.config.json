@@ -40,13 +40,13 @@
     "miniprogram": {
       "list": [
         {
-          "name": "recommend",
-          "pathName": "pages/unregister/recommend",
+          "name": "home",
+          "pathName": "pages/home/home",
           "query": ""
         },
         {
-          "name": "timecard",
-          "pathName": "pages/unregister/timecard",
+          "name": "phone_login",
+          "pathName": "pages/login/phone_login",
           "query": ""
         },
         {

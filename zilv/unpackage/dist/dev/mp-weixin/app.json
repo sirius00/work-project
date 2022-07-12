@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/home/home",
     "pages/unregister/recommend",
-    "pages/welcome/welcome",
     "pages/login/phone_direct",
     "pages/login/phone_login",
     "pages/login/email_login",
@@ -12,7 +12,8 @@
     "pages/unregister/test",
     "pages/profile/profile",
     "pages/todayGoal/todayGoal",
-    "components/midBox/midBox"
+    "components/midBox/midBox",
+    "pages/profile/setting/setting"
   ],
   "subPackages": [],
   "window": {

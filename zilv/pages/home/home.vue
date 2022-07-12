@@ -20,6 +20,7 @@
 </template>
 
 <script>
+	// 引入分段器
 	import {uniSegmentedControl} from '@/uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control.vue'
 	
 	import recommend from "../unregister/recommend.vue"
@@ -64,12 +65,12 @@
 <style scoped>
 	.container {
 		background-color: black;
-		height: 90vh;
+		height: 100vh;
 	}
 	/* 背景板 */
 	.board {
 		background-color: #fff;
-		height: 88vh;
+		height: 89vh;
 		width: 96vw;
 		border: 6px solid rgb(10, 198, 185);
 		border-radius: 35px;

@@ -74,6 +74,7 @@
 
 
 
+
 /*  音阶部分 */
 .box {
 	/* background-color: aquamarine; */
@@ -158,9 +159,9 @@
 	margin-top: 1.5rem;
 	/* background-color: #d40079; */
 	width: 10rem;
-	height: 3rem;
+	height: 90rpx;
 	border-radius: 20px;
-	padding: 0.6rem;
+	padding: 20rpx;
 	display: flex;
 	justify-content: space-between;
 	min-width: 9rem;
