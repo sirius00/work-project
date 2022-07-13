@@ -137,6 +137,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 var recorderManager = uni.getRecorderManager();
 var innerAudioContext = uni.createInnerAudioContext();
@@ -158,6 +159,9 @@ innerAudioContext.autoplay = true;var _default =
     });
   },
   methods: {
+    jump: function jump() {
+      uni.redirectTo({ url: '/pages/home/home' });
+    },
     startRecord: function startRecord() {
       console.log('开始录音');
 

@@ -33,7 +33,7 @@
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.24.7",
+  "libVersion": "2.25.0",
   "appid": "wx993fdcd483bc0094",
   "projectname": "zilv",
   "condition": {
@@ -47,6 +47,11 @@
         {
           "name": "phone_login",
           "pathName": "pages/login/phone_login",
+          "query": ""
+        },
+        {
+          "name": "email_login",
+          "pathName": "pages/login/email_login",
           "query": ""
         },
         {

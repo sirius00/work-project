@@ -178,9 +178,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
 {
   components: {
     welcomeLogo: welcomeLogo,
@@ -200,7 +197,7 @@ __webpack_require__.r(__webpack_exports__);
 
   },
   methods: {
-    getCode: function getCode() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var obj, data, e, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+    getCode: function getCode() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var time, obj, data, e, er, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
                 uni.hideKeyboard(); //隐藏软键盘
                 if (/^1(3|4|5|6|7|8|9)\d{9}$/.test(_this.phoneNumber)) {_context.next = 4;break;} //验证手机号
                 uni.showToast({
@@ -211,35 +208,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
                 // 验证码发送接口调用
+                time = new Date().getTime();
                 obj = {
-                  tel: _this.phoneNumber };
+                  tel: _this.phoneNumber,
+                  timestamp: time };
 
-                console.log(obj.number);
                 data = JSON.stringify(obj);
-                e = _this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '');
-                console.log(e);_context.next = 11;return (
-                  uni.$http.post('/login/SendCode', { 'args': e }));case 11:res = _context.sent;
+                e = _this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000');
+                er = _this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000');_context.next = 11;return (
+                  uni.$http.post('/v1/login/SendCode?args=' + e + '&er=' + er));case 11:res = _context.sent;
                 console.log(res);
-                // try {
-
-                // 	console.log(e)
-                // 	const res = await uni.$http.post('/login/SendCode',{number: null})
-                // }catch (err) {
-                // 	console.log(err);
-                // } 
-
-
 
                 _this.getCodeText = '发送中....';
                 _this.getCodeWaiting = true;
-                _this.getCodeColor = "rbg(10, 198,185)"; //追加样式
+                _this.getCodeColor = "#878B8A"; //追加样式
                 setTimeout(function () {
                   uni.showToast({
                     title: '验证码已发送',
                     icon: 'none' });
 
-                  // 示例默认 1234
-                  _this.code = '1234';
+
                   _this.setTimer(); // 调用定时器方法
                 }, 1000);case 17:case "end":return _context.stop();}}}, _callee);}))();
     },
@@ -252,6 +240,7 @@ __webpack_require__.r(__webpack_exports__);
       this.Timer = setInterval(function () {
         if (holdtime <= 0) {
           _this2.getCodeWaiting = false;
+          _this2.getCodeColor = '#000';
           _this2.getCodeText = "获取验证码";
           clearInterval(_this2.Timer); // 清除该函数
           return;
@@ -264,24 +253,53 @@ __webpack_require__.r(__webpack_exports__);
       this.flag = !this.flag;
     },
 
-    login: function login() {
-      uni.hideKeyboard();
-      if (!/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phoneNumber)) {// 验证手机号码 
-        uni.showToast({
-          title: "请输入正确手机号",
-          icon: 'none' });
+    login: function login() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var time, obj, data, e, er, res, status;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                uni.hideKeyboard();if (
+                /^1(3|4|5|6|7|8|9)\d{9}$/.test(_this3.phoneNumber)) {_context2.next = 4;break;} // 验证手机号码 
+                uni.showToast({
+                  title: "请输入正确手机号",
+                  icon: 'none' });return _context2.abrupt("return",
 
-        return false;
-      }
-      // 对比验证码
-      if (this, code != 1234) {
-        uni.showToast({
-          title: '验证码不正确',
-          icon: 'none' });
+                false);case 4:
 
-        return false;
-      }
-      // 上传用户信息到服务器
+                if (_this3.code == '') {
+                  uni.showToast({
+                    title: '请输入验证码',
+                    icon: "none" });
+
+
+                }
+                // 对比验证码
+                time = new Date().getTime();
+                obj = {
+                  tel: _this3.phoneNumber,
+                  timestamp: time,
+                  code: _this3.code,
+                  languageId: 2 };
+
+                data = JSON.stringify(obj);
+                e = _this3.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000');
+                er = _this3.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000');_context2.next = 12;return (
+                  uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er));case 12:res = _context2.sent;
+                // console.log(res.data);
+                status = JSON.parse(res.data.code);
+                // console.log(typeof(status));
+                if (status != 200) {
+                  uni.showToast({
+                    title: '验证码不正确',
+                    icon: 'none' });
+
+                  // uni.navigateTo({
+                  // 	url: '/pages/login/add_profile',
+                  // 	success: res => {},fail: () => {},complete: () => {}
+                  // })
+                } else
+                {
+                  uni.redirectTo({
+                    url: '/pages/home/home' });
+
+                }case 15:case "end":return _context2.stop();}}}, _callee2);}))();
+
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

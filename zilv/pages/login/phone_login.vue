@@ -28,16 +28,13 @@
 					<input type="text" placeholder="输入验证码" class="code_ip_ip" v-model="code">
 				</view>
 			</view>
-			<view class="catch_code_sp"  @click="getCode()">
-				<text :style="{'color' : getCodeColor}">{{getCodeText}}</text>
+			<view class="catch_code_sp"  @click="getCode()" :style="{'color' : getCodeColor}">
+				<text  >{{getCodeText}}</text>
 			</view>
 		</input-area>
 		<agruement></agruement>
-		<view >
-			<button-two @click="login()">登录</button-two>
-<!-- 			<navigator url="/pages/login/add_profile">
-				<button-two @click="login()">登录</button-two>
-			</navigator> -->
+		<view @click="login()">
+			<button-two >登录</button-two>
 		</view>
 	</view>
 </template>
@@ -77,35 +74,26 @@
 				}
 				
 				// 验证码发送接口调用
+				const time = new Date().getTime()
 				let obj = {
-					tel: this.phoneNumber
+					tel: this.phoneNumber,
+					timestamp: time
 				}
-				console.log(obj.number);
 				let data = JSON.stringify(obj)
-				let e = this.AES.encrypt( data, 'GuGuAPP$*@AesKey', '')
-				console.log(e);
-				const res = await uni.$http.post('/login/SendCode',{'args': e})
+				let e = this.AES.encrypt( data, 'GuGuAPP$*@AesKey', '0000000000000000')
+				let er = this.AES.encrypt('2','GuGuAPP$*@AesKey','0000000000000000')
+				const res = await uni.$http.post('/v1/login/SendCode?args='+e+'&er='+er)
 				console.log(res);
-				// try {
-					
-				// 	console.log(e)
-				// 	const res = await uni.$http.post('/login/SendCode',{number: null})
-				// }catch (err) {
-				// 	console.log(err);
-				// } 
-				
-		
-				
+				 
 				this.getCodeText = '发送中....' 
 				this.getCodeWaiting = true;
-				this.getCodeColor = "rbg(10, 198,185)";  //追加样式
+				this.getCodeColor = "#878B8A";  //追加样式
 				setTimeout( () => {
 					uni.showToast({
 						title: '验证码已发送',
 						icon: 'none'
 					})
-					// 示例默认 1234
-					this.code = '1234'
+
 					this.setTimer(); // 调用定时器方法
 				}, 1000 )
 			},
@@ -118,6 +106,7 @@
 				this.Timer = setInterval( () => {
 					if (holdtime <= 0) {
 						this.getCodeWaiting = false;
+						this.getCodeColor = '#000'
 						this.getCodeText = "获取验证码"
 						clearInterval(this.Timer); // 清除该函数
 						return ;
@@ -130,7 +119,7 @@
 				this.flag = !this.flag
 			},
 			
-			login() {
+			async login() {
 				uni.hideKeyboard() 
 				if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phoneNumber))) {  // 验证手机号码 
 					uni.showToast({
@@ -139,15 +128,44 @@
 					});
 					return false;
 				}
+				if (this.code == '') {
+					uni.showToast({
+						title: '请输入验证码',
+						icon:"none"
+					})
+					
+				}
 				// 对比验证码
-				if (this,code != 1234 ){
+				const time = new Date().getTime()
+				let obj = {
+					tel: this.phoneNumber,
+					timestamp: time,
+					code: this.code,
+					languageId: 2
+				}
+				let data = JSON.stringify(obj)
+				let e = this.AES.encrypt( data, 'GuGuAPP$*@AesKey', '0000000000000000')
+				let er = this.AES.encrypt('2','GuGuAPP$*@AesKey','0000000000000000')
+				const res = await uni.$http.post('/v1/login/Login?args='+e+'&er='+er);
+				// console.log(res.data);
+				let status = JSON.parse(res.data.code)
+				// console.log(typeof(status));
+				if (status != 200) {
 					uni.showToast({
 						title: '验证码不正确',
 						icon: 'none'
-					});
-					return false;
+					})
+					// uni.navigateTo({
+					// 	url: '/pages/login/add_profile',
+					// 	success: res => {},fail: () => {},complete: () => {}
+					// })
 				}
-				// 上传用户信息到服务器
+				else {
+					uni.redirectTo({
+						url:'/pages/home/home'
+					})
+				}
+				
 				
 			}
 		}

@@ -28,37 +28,39 @@
 		 {
 			"path": "pages/login/phone_direct",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "手机号直接登录",
 				"enablePullDownRefresh": false
 			}
 
 		}, {
 			"path": "pages/login/phone_login",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "手机号登录",
 				"enablePullDownRefresh": false
 			}
 
-		}, {
-			"path": "pages/login/email_login",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
+		}, 
+		{
 			"path": "pages/login/add_profile",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "添加个人信息",
 				"enablePullDownRefresh": false
 			}
 
 		}
-	    ,{
+	    ,
+		{
+			"path": "pages/login/email_login",
+			"style": {
+				"navigationBarTitleText": "邮箱登录",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
             "path" : "pages/login/add_toux",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "添加头像",
                 "enablePullDownRefresh": false
             }
         }
@@ -156,6 +158,10 @@
 				"name": "phone_login", //模式名称
 				"path": "pages/login/phone_login", //启动页面，必选
 				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "email_login",
+				"path": "pages/login/email_login"
 			},
 			{
 				"name": "test",

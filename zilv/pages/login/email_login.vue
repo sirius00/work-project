@@ -1,101 +1,189 @@
 <template>
 	<view class="background">
-		
+
 		<view class="other-login">
-			<navigator url="/pages/user/email_reg">其他登录方式</navigator>
+			<navigator url="/pages/login/phone_login.vue">其他登录方式</navigator>
 		</view>
-		<view >
+		<view>
 			<h4>邮箱登录</h4>
 		</view>
 		<view>
-			<welcome-logo ></welcome-logo>
+			<welcome-logo></welcome-logo>
 		</view>
 		<input-area>
 			<view class="input_code_sp">
 				<view class="phone_ip">
-					<input type="text" placeholder="输入邮箱" class="code_ip_ip">
+					<input type="text" placeholder="输入邮箱" class="code_ip_ip" v-model="email">
 				</view>
 			</view>
-			<view class="catch_code_sp">
-				<text>获取验证码</text>
+			<view class="catch_code_sp" @click="getCode()" :style="{'color': getCodeColor}">
+				<text>{{getCodeText}}</text>
 			</view>
 		</input-area>
 		<input-area>
 			<view class="input_code_sp">
 				<view class="phone_ip">
-					<input type="text" placeholder="输入验证码" class="code_ip_ip">
+					<input type="text" placeholder="输入验证码" class="code_ip_ip" v-model="code">
 				</view>
 			</view>
-		</input-area>	
+		</input-area>
 		<agruement></agruement>
-		<view >
+		<view>
 			<navigator url="/pages/login/add_profile">
 				<button-two>登录</button-two>
 			</navigator>
 		</view>
-		
+
 	</view>
 </template>
 
 <script>
-	import welcomeLogo from "../../components/welcome_logo.vue"
-	import inputArea from "@/components/inputArea.vue"
-	import agruement from "@/components/agruement.vue"
-	import buttonTwo from "@/components/buttons/buttonTwo.vue"
-	export default {
-		components: {
-			welcomeLogo,
-			inputArea,
-			agruement,
-			buttonTwo
+import welcomeLogo from "../../components/welcome_logo.vue"
+import inputArea from "@/components/inputArea.vue"
+import agruement from "@/components/agruement.vue"
+import buttonTwo from "@/components/buttons/buttonTwo.vue"
+export default {
+	components: {
+		welcomeLogo,
+		inputArea,
+		agruement,
+		buttonTwo
+	},
+	data() {
+		return {
+			flag: false,
+			email: '',
+			code: '',
+			getCodeText: '获取验证码',
+			getCodeColor: '',
+			getCodeWaiting: ''
+		}
+	},
+	methods: {
+		agree() {
+			this.flag = !this.flag
 		},
-		data() {
-			return {
-				flag: false
+		async getCode() {
+			uni.hideKeyboard()
+			if (!(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(this.email))) {
+				uni.showToast({
+					title: '请填入正确的邮箱地址',
+					icon: 'none',
+				})
+				return false
 			}
+
+			//验证码 发送接口调用  
+			const time = new Date().getTime()
+			let obj = {
+				email: this.email,
+				timestamp: time
+			}
+			let data = JSON.stringify(obj)
+			let e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000')
+			let er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000')
+			const res = await uni.$http.post('/v1/login/SendEmailCode?args=' + e + '&er=' + er)
+			console.log(res);
+
+			this.getCodeText = "发送中..."
+			this.getCodeColor = "#878B8A"
+			this.getCodeWaiting = true
+			setTimeout(() => {
+				uni.showToast({
+					title: '验证码已发送',
+					icon: 'none'
+				})
+				this.setTimer();
+			}, 1000)
 		},
-		methods: {
-			agree() {
-				this.flag = !this.flag
+		setTimer() {
+			let holdtime = 60;
+			this.getCodeText = "重新获取验证码(60)"
+			this.Timer = setInterval(() => {
+				if (holdtime <= 0) {
+					this.getCodeWaiting = false;
+					this.getCodeColor = '#000'
+					this.getCodeText = "获取验证码"
+					clearInterval(this.Timer);
+					return ;
+				}
+				this.getCodeText = "重新获取(" + holdtime + ")"
+				holdtime--;
+			}, 1000)
+		},
+		async login() {
+			uni.hideKeyboard()
+			if (!(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(this.email))) {
+				uni.showToast({
+					title: '请输入正确邮箱地址',
+					icon: 'none'
+				});
+				return false;
 			}
+			if (this.code == '') {
+				uni.showToast({
+					title: '请输入验证码',
+					icon: 'none'
+				})
+			}
+			//对比验证码
+			const time = new Date().getTime()
+			let obj = {
+				email: this.email,
+				timestamp: time,
+				code: this.code,
+				languageId: 2
+			}
+			let data = JSON.stringify(obj)
+			let e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000')
+			let er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000')
+			const res = await uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er);
+			console.log(res)
 		}
 	}
+}
 </script>
 
 <style scoped>
-	.background {
-			height: 100vh;
-			display: flex;
-			flex-flow: column ; 
-			justify-content: space-around;
-			align-items: center;
-	}
-	/* 其他登录方式 */
-	.other-login {
-		/* text-align: center; */
-		font-size: 12px;
-		align-self: flex-end;
-		margin-right: 1.5rem;
-	}
-	.phone_number {
-		flex-basis: 14rem;
-	}
-	.phone_input {
-		height: 3rem;
-		line-height: 3rem;
-	}
-	/* 输入验证码 */
-	.input_code_sp {
-		flex-basis: 15rem;
-		
-	}
-	.code_ip_ip {
-		height: 3rem;
-		line-height: 3rem;
-		padding-left: 2rem;
-	}
-	/* 获取验证码 */
-	.catch_code_sp {
-		margin-left: 0.7rem;
-	}
+.background {
+	height: 100vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+/* 其他登录方式 */
+.other-login {
+	/* text-align: center; */
+	font-size: 12px;
+	align-self: flex-end;
+	margin-right: 1.5rem;
+}
+
+.phone_number {
+	flex-basis: 14rem;
+}
+
+.phone_input {
+	height: 3rem;
+	line-height: 3rem;
+}
+
+/* 输入验证码 */
+.input_code_sp {
+	flex-basis: 15rem;
+
+}
+
+.code_ip_ip {
+	height: 3rem;
+	line-height: 3rem;
+	padding-left: 2rem;
+}
+
+/* 获取验证码 */
+.catch_code_sp {
+	/* margin-left: 0.7rem; */
+}
 </style>

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "邮箱登录",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "welcome-logo": "/components/welcome_logo",
