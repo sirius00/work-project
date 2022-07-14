@@ -6,6 +6,8 @@ const store = new Vuex.Store({
 		recommend_or_timecard: true,
 		ifnote: false,
 		ifvoice: false,
+		userinfo: {},
+		haslogin: false,
 		taskList: [{
 				id: 0,
 				content: '任务1'
@@ -17,6 +19,10 @@ const store = new Vuex.Store({
 		]
 	},
 	mutations: {
+		phone_login(state, provider) {
+			state.haslogin = true
+			
+		},
 		change_recommend_or_timecard() {
 			state.recommend_or_timecard = !state.recommend_or_timecard
 		},

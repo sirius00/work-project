@@ -121,7 +121,7 @@
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarBackgroundColor": "#fff",
 		"backgroundColor": "#0b0b0b"
 		
 	},
@@ -162,6 +162,10 @@
 			{
 				"name": "email_login",
 				"path": "pages/login/email_login"
+			},
+			{
+				"name": "add_profile",
+				"path": "pages/login/add_profile"
 			},
 			{
 				"name": "test",

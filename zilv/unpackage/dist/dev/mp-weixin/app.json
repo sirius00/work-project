@@ -18,7 +18,7 @@
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarBackgroundColor": "#fff",
     "backgroundColor": "#0b0b0b"
   },
   "tabBar": {

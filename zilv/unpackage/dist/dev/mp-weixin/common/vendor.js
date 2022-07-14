@@ -2735,6 +2735,8 @@ var store = new _vuex.default.Store({
     recommend_or_timecard: true,
     ifnote: false,
     ifvoice: false,
+    userinfo: {},
+    haslogin: false,
     taskList: [{
       id: 0,
       content: '任务1' },
@@ -2746,6 +2748,10 @@ var store = new _vuex.default.Store({
 
 
   mutations: {
+    phone_login: function phone_login(state, provider) {
+      state.haslogin = true;
+
+    },
     change_recommend_or_timecard: function change_recommend_or_timecard() {
       state.recommend_or_timecard = !state.recommend_or_timecard;
     },

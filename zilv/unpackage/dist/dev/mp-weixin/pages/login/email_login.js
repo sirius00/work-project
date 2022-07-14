@@ -245,7 +245,7 @@ __webpack_require__.r(__webpack_exports__);
         holdtime--;
       }, 1000);
     },
-    login: function login() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var time, obj, data, e, er, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+    login: function login() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var time, obj, data, e, er, res, status;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
                 uni.hideKeyboard();if (
                 /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(_this3.email)) {_context2.next = 4;break;}
                 uni.showToast({
@@ -272,7 +272,18 @@ __webpack_require__.r(__webpack_exports__);
                 e = _this3.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000');
                 er = _this3.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000');_context2.next = 12;return (
                   uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er));case 12:res = _context2.sent;
-                console.log(res);case 14:case "end":return _context2.stop();}}}, _callee2);}))();
+                // console.log(res)
+                status = JSON.parse(res.data.code);
+                if (status != 200) {
+                  uni.showToast({
+                    title: '验证码不正确',
+                    icon: 'none' });
+
+                } else {
+                  uni.redirectTo({
+                    url: '/pages/login/add_profile' });
+
+                }case 15:case "end":return _context2.stop();}}}, _callee2);}))();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

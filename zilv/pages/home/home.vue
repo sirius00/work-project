@@ -64,7 +64,7 @@
 
 <style scoped>
 	.container {
-		background-color: black;
+		background-color: #fff;
 		height: 100vh;
 	}
 	/* 背景板 */
@@ -74,7 +74,7 @@
 		width: 96vw;
 		border: 6px solid rgb(10, 198, 185);
 		border-radius: 35px;
-		margin: 0.5rem auto;
+		margin: 0 auto;
 	}
 	.board_border {
 		height: 78vh;

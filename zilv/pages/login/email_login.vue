@@ -138,7 +138,18 @@ export default {
 			let e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000')
 			let er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000')
 			const res = await uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er);
-			console.log(res)
+			// console.log(res)
+			let status = JSON.parse(res.data.code)
+			if (status != 200) {
+					uni.showToast({
+						title: '验证码不正确',
+						icon: 'none'
+					})
+			} else {
+					uni.redirectTo({
+						url: '/pages/login/add_profile'
+					})
+			}
 		}
 	}
 }

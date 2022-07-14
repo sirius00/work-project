@@ -132,7 +132,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 35));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var welcomeLogo = function welcomeLogo() {Promise.all(/*! require.ensure | components/welcome_logo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/welcome_logo")]).then((function () {return resolve(__webpack_require__(/*! ../../components/welcome_logo.vue */ 144));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var inputArea = function inputArea() {__webpack_require__.e(/*! require.ensure | components/inputArea */ "components/inputArea").then((function () {return resolve(__webpack_require__(/*! @/components/inputArea.vue */ 225));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var agruement = function agruement() {Promise.all(/*! require.ensure | components/agruement */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/agruement")]).then((function () {return resolve(__webpack_require__(/*! @/components/agruement.vue */ 216));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var buttonTwo = function buttonTwo() {__webpack_require__.e(/*! require.ensure | components/buttons/buttonTwo */ "components/buttons/buttonTwo").then((function () {return resolve(__webpack_require__(/*! @/components/buttons/buttonTwo.vue */ 232));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 35));
 
 
 
@@ -173,6 +173,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+var _vuex = __webpack_require__(/*! vuex */ 14);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var welcomeLogo = function welcomeLogo() {Promise.all(/*! require.ensure | components/welcome_logo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/welcome_logo")]).then((function () {return resolve(__webpack_require__(/*! ../../components/welcome_logo.vue */ 144));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var inputArea = function inputArea() {__webpack_require__.e(/*! require.ensure | components/inputArea */ "components/inputArea").then((function () {return resolve(__webpack_require__(/*! @/components/inputArea.vue */ 225));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var agruement = function agruement() {Promise.all(/*! require.ensure | components/agruement */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/agruement")]).then((function () {return resolve(__webpack_require__(/*! @/components/agruement.vue */ 216));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var buttonTwo = function buttonTwo() {__webpack_require__.e(/*! require.ensure | components/buttons/buttonTwo */ "components/buttons/buttonTwo").then((function () {return resolve(__webpack_require__(/*! @/components/buttons/buttonTwo.vue */ 232));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -196,8 +198,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
   },
+  computed: _objectSpread({},
+  (0, _vuex.mapState)(['userinfo'])),
+
   methods: {
-    getCode: function getCode() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var time, obj, data, e, er, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+    getCode: function getCode() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var time, obj, data, e, er, res, userinfo;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
                 uni.hideKeyboard(); //隐藏软键盘
                 if (/^1(3|4|5|6|7|8|9)\d{9}$/.test(_this.phoneNumber)) {_context.next = 4;break;} //验证手机号
                 uni.showToast({
@@ -217,7 +222,8 @@ __webpack_require__.r(__webpack_exports__);
                 e = _this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000');
                 er = _this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000');_context.next = 11;return (
                   uni.$http.post('/v1/login/SendCode?args=' + e + '&er=' + er));case 11:res = _context.sent;
-                console.log(res);
+                userinfo = res.data;
+                console.log(userinfo);
 
                 _this.getCodeText = '发送中....';
                 _this.getCodeWaiting = true;
@@ -229,7 +235,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
                   _this.setTimer(); // 调用定时器方法
-                }, 1000);case 17:case "end":return _context.stop();}}}, _callee);}))();
+                }, 1000);case 18:case "end":return _context.stop();}}}, _callee);}))();
     },
     // setTimer: 需要定时执行一件事情的时候就要使用setTimer函数
     setTimer: function setTimer() {var _this2 = this;
@@ -281,24 +287,21 @@ __webpack_require__.r(__webpack_exports__);
                 e = _this3.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000');
                 er = _this3.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000');_context2.next = 12;return (
                   uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er));case 12:res = _context2.sent;
-                // console.log(res.data);
+                console.log(res.data);
+
+
                 status = JSON.parse(res.data.code);
-                // console.log(typeof(status));
                 if (status != 200) {
                   uni.showToast({
                     title: '验证码不正确',
                     icon: 'none' });
 
-                  // uni.navigateTo({
-                  // 	url: '/pages/login/add_profile',
-                  // 	success: res => {},fail: () => {},complete: () => {}
-                  // })
-                } else
-                {
-                  uni.redirectTo({
-                    url: '/pages/home/home' });
+                } else {
 
-                }case 15:case "end":return _context2.stop();}}}, _callee2);}))();
+                  uni.redirectTo({
+                    url: '/pages/login/add_profile' });
+
+                }case 16:case "end":return _context2.stop();}}}, _callee2);}))();
 
 
     } } };exports.default = _default;

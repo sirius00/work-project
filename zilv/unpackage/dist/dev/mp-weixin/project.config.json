@@ -55,6 +55,11 @@
           "query": ""
         },
         {
+          "name": "add_profile",
+          "pathName": "pages/login/add_profile",
+          "query": ""
+        },
+        {
           "name": "test",
           "pathName": "pages/unregister/test",
           "query": ""

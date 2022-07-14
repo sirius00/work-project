@@ -149,11 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 35));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} //
 //
 //
 //
@@ -214,9 +210,9 @@ function getDate(type) {
   var day = date.getDate();
 
   if (type === 'start') {
-    year = year - 10;
+    year = year - 100;
   } else if (type === 'end') {
-    year = year + 10;
+    year = year + 20;
   }
   month = month > 9 ? month : '0' + month;
   day = day > 9 ? day : '0' + day;
@@ -234,7 +230,7 @@ function getDate(type) {
       user_name: null,
       female: false,
       male: false,
-      // sex,0表示女,1表示男
+      // sex,2表示女,1表示男
       sex: null,
       check: false,
       date: getDate({
@@ -248,7 +244,6 @@ function getDate(type) {
     check_name: function check_name(event) {
       this.user_name = event.detail.value;
       // 发送网络请求,对比后台数据,检测名字是否可用
-
     },
     //出生日期
     bindDateChange: function bindDateChange(e) {
@@ -258,7 +253,7 @@ function getDate(type) {
       if (this.male != true) {
         this.female = !this.female;
         if (this.female == true) {
-          this.sex = 0;
+          this.sex = 2;
         }
       }
     },
@@ -269,7 +264,29 @@ function getDate(type) {
           this.sex = 1;
         }
       }
+    },
+    processed: function processed() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var time, obj, data, e, er, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                time = new Date().getTime();
+                obj = {
+                  timestamp: time,
+                  userName: _this.user_name,
+                  sex: _this.sex,
+                  born: _this.date };
+
+                data = JSON.stringify(obj);
+                e = _this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000');
+                er = _this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000');_context.next = 7;return (
+                  uni.$http.post('/v1/user/Register?args=' + e + '&er=' + er));case 7:res = _context.sent;
+                console.log(res);
+
+                uni.redirectTo({ url: '/pages/login/add_toux' });
+                // uni.navigateTo({
+                // 	url: '/pages/login/add_profile',
+                // 	success: res => {},fail: () => {},complete: () => {}
+                // })
+              case 10:case "end":return _context.stop();}}}, _callee);}))();
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
