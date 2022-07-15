@@ -3,11 +3,15 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const store = new Vuex.Store({
 	state: {
-		recommend_or_timecard: true,
+
+		userinfo: {},
+		hasregister: false,
+		haslogin: false,
+
 		ifnote: false,
 		ifvoice: false,
-		userinfo: {},
-		haslogin: false,
+
+
 		taskList: [{
 				id: 0,
 				content: '任务1'
@@ -19,23 +23,43 @@ const store = new Vuex.Store({
 		]
 	},
 	mutations: {
-		phone_login(state, provider) {
+		//登录
+		xlogin(state, provider) {
 			state.haslogin = true
+			state.userinfo = provider
+
+			if (state.userinfo.img != '') {
+				state.hasregister = true
+			};
+			uni.setStorage({
+				key: 'userinfo',
+				data: provider
+			})
+			console.log(state.userinfo);
+		},
+		xprofile(state,provider) {
+			state.userinfo = provider
+			// uni.setStorage({
+			// 	key: 'userinfo',
+			// 	data: provider
+			// })
+			console.log(state.userinfo);
 			
 		},
-		change_recommend_or_timecard() {
-			state.recommend_or_timecard = !state.recommend_or_timecard
-		},
+
+
+		// change_recommend_or_timecard() {
+		// 	state.recommend_or_timecard = !state.recommend_or_timecard
+		// },
+		//是否显示显示添加笔记
 		addNote(state) {
 			state.ifnote = !state.ifnote
 		},
+		//是否显示添加声音笔记
 		addVoice(state) {
 			state.ifvoice = !state.ifvoice
 		},
-		changeTask(state, value) {
-			state.taskList[value.id].content = value.content
-			// console.log(state.taskList[value.id]);
-		},
+
 		addTask(state,task) {
 			let push_id = task.id + 1
 			state.taskList.push({'id': push_id, 'content': task.content})

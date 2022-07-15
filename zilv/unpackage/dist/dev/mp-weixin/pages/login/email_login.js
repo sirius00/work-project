@@ -132,7 +132,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 35));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var welcomeLogo = function welcomeLogo() {Promise.all(/*! require.ensure | components/welcome_logo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/welcome_logo")]).then((function () {return resolve(__webpack_require__(/*! ../../components/welcome_logo.vue */ 144));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var inputArea = function inputArea() {__webpack_require__.e(/*! require.ensure | components/inputArea */ "components/inputArea").then((function () {return resolve(__webpack_require__(/*! @/components/inputArea.vue */ 225));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var agruement = function agruement() {Promise.all(/*! require.ensure | components/agruement */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/agruement")]).then((function () {return resolve(__webpack_require__(/*! @/components/agruement.vue */ 216));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var buttonTwo = function buttonTwo() {__webpack_require__.e(/*! require.ensure | components/buttons/buttonTwo */ "components/buttons/buttonTwo").then((function () {return resolve(__webpack_require__(/*! @/components/buttons/buttonTwo.vue */ 232));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 35));
 
 
 
@@ -168,6 +168,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+var _vuex = __webpack_require__(/*! vuex */ 14);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var welcomeLogo = function welcomeLogo() {Promise.all(/*! require.ensure | components/welcome_logo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/welcome_logo")]).then((function () {return resolve(__webpack_require__(/*! ../../components/welcome_logo.vue */ 144));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var inputArea = function inputArea() {__webpack_require__.e(/*! require.ensure | components/inputArea */ "components/inputArea").then((function () {return resolve(__webpack_require__(/*! @/components/inputArea.vue */ 225));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var agruement = function agruement() {Promise.all(/*! require.ensure | components/agruement */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/agruement")]).then((function () {return resolve(__webpack_require__(/*! @/components/agruement.vue */ 216));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var buttonTwo = function buttonTwo() {__webpack_require__.e(/*! require.ensure | components/buttons/buttonTwo */ "components/buttons/buttonTwo").then((function () {return resolve(__webpack_require__(/*! @/components/buttons/buttonTwo.vue */ 232));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -193,7 +198,11 @@ __webpack_require__.r(__webpack_exports__);
       getCodeWaiting: '' };
 
   },
-  methods: {
+  computed: _objectSpread({},
+  (0, _vuex.mapState)(['haslogin', 'hasregister'])),
+
+  methods: _objectSpread(_objectSpread({},
+  (0, _vuex.mapMutations)(['xlogin'])), {}, {
     agree: function agree() {
       this.flag = !this.flag;
     },
@@ -245,46 +254,64 @@ __webpack_require__.r(__webpack_exports__);
         holdtime--;
       }, 1000);
     },
-    login: function login() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var time, obj, data, e, er, res, status;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
-                uni.hideKeyboard();if (
-                /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(_this3.email)) {_context2.next = 4;break;}
-                uni.showToast({
-                  title: '请输入正确邮箱地址',
-                  icon: 'none' });return _context2.abrupt("return",
+    login: function login() {var _this3 = this;
+      uni.hideKeyboard();
+      if (!/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(this.email)) {
+        uni.showToast({
+          title: '请输入正确邮箱地址',
+          icon: 'none' });
 
-                false);case 4:
+        return false;
+      }
+      if (this.code == '') {
+        uni.showToast({
+          title: '请输入验证码',
+          icon: 'none' });
 
-                if (_this3.code == '') {
-                  uni.showToast({
-                    title: '请输入验证码',
-                    icon: 'none' });
+      }
+      //对比验证码
+      var time = new Date().getTime();
+      var obj = {
+        email: this.email,
+        timestamp: time,
+        code: this.code,
+        languageId: 2 };
 
-                }
-                //对比验证码
-                time = new Date().getTime();
-                obj = {
-                  email: _this3.email,
-                  timestamp: time,
-                  code: _this3.code,
-                  languageId: 2 };
+      var data = JSON.stringify(obj);
+      var e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000');
+      var er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000');
+      // const res = await uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er);
+      // console.log(res)
+      uni.$http.post(
+      '/v1/login/Login?args=' + e + '&er=' + er).
+      then(function (res) {
+        var status = res.data.code;
+        if (status != 200) {
+          uni.showToast({
+            title: '验证码不正确',
+            icon: 'none' });
 
-                data = JSON.stringify(obj);
-                e = _this3.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000');
-                er = _this3.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000');_context2.next = 12;return (
-                  uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er));case 12:res = _context2.sent;
-                // console.log(res)
-                status = JSON.parse(res.data.code);
-                if (status != 200) {
-                  uni.showToast({
-                    title: '验证码不正确',
-                    icon: 'none' });
+        }
+        var info = res.data.data;
+        _this3.xlogin(info);
 
-                } else {
-                  uni.redirectTo({
-                    url: '/pages/login/add_profile' });
+        if (_this3.hasregister == false) {
+          uni.redirectTo({
+            url: '/pages/login/add_profile' });
 
-                }case 15:case "end":return _context2.stop();}}}, _callee2);}))();
-    } } };exports.default = _default;
+        } else {
+          uni.redirectTo({
+            url: '/pages/home/home' });
+
+        }
+
+      }).catch(function (err) {
+        console.log(err);
+
+      });
+
+
+    } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

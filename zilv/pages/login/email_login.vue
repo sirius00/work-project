@@ -38,6 +38,11 @@
 </template>
 
 <script>
+import {
+	mapState,
+	mapMutations
+} from "vuex"
+
 import welcomeLogo from "../../components/welcome_logo.vue"
 import inputArea from "@/components/inputArea.vue"
 import agruement from "@/components/agruement.vue"
@@ -59,7 +64,11 @@ export default {
 			getCodeWaiting: ''
 		}
 	},
+	computed: {
+		...mapState(['haslogin', 'hasregister'])
+	},
 	methods: {
+		...mapMutations(['xlogin']),
 		agree() {
 			this.flag = !this.flag
 		},
@@ -111,7 +120,7 @@ export default {
 				holdtime--;
 			}, 1000)
 		},
-		async login() {
+		login() {
 			uni.hideKeyboard()
 			if (!(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(this.email))) {
 				uni.showToast({
@@ -137,19 +146,37 @@ export default {
 			let data = JSON.stringify(obj)
 			let e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000')
 			let er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000')
-			const res = await uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er);
+			// const res = await uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er);
 			// console.log(res)
-			let status = JSON.parse(res.data.code)
-			if (status != 200) {
+			uni.$http.post(
+				'/v1/login/Login?args=' + e + '&er=' + er
+			).then((res) => {
+				let status = res.data.code
+				if (status != 200) {
 					uni.showToast({
 						title: '验证码不正确',
 						icon: 'none'
 					})
-			} else {
+				}
+				let info = res.data.data
+				this.xlogin(info)
+				
+				if (this.hasregister == false) {
 					uni.redirectTo({
 						url: '/pages/login/add_profile'
 					})
-			}
+				} else {
+					uni.redirectTo({
+						url: '/pages/home/home'
+					})
+				}
+
+			}).catch(err => {
+				console.log(err);
+
+			})
+
+
 		}
 	}
 }

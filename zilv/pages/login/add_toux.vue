@@ -8,10 +8,11 @@
 			<img src="../../static/img/Add.png" alt="" @click="upImage" v-if="!flag" class="up_img">
 			<img :src="toux" alt="无法显示" v-if="flag" @click="changeImage" class="toux">
 		</view>
-		<view>
-			<navigator url="/pages/home/home" open-type="switchTab">
+		<view @click="uppLoadImage()">
+			<button class="last">最后一步了</button>
+			<!-- <navigator url="/pages/home/home" open-type="switchTab">
 				<button class="last">最后一步了</button>
-			</navigator>
+			</navigator> -->
 		</view>
 		<view class="register_guide">
 			<img src="../../static/img/register_image_guide_en.png" alt="">
@@ -20,12 +21,16 @@
 </template>
 
 <script>
+	import {mapState} from "vuex"
 	export default {
 		data() {
 			return {
 				toux: null,
 				flag: false
 			}
+		},
+		computed: {
+			...(['userinfo'])
 		},
 		methods: {
 			upImage() {
@@ -45,6 +50,21 @@
 					}
 				})
 			},
+			upLoadImage() {
+				console.log(this.userinfo);
+				
+				uni.uploadFile({
+					url: '/user/UploadImg',
+					fileType: 'image',
+					filePath: this.toux,
+					name: 'file',
+					success: ({ data, statusCode }) => {},
+					fail: (error) => {
+						console.log(error);
+						
+					}
+				})
+			}
 		}
 	}
 </script>
@@ -79,9 +99,9 @@
 		height: 150rpx;
 	}
 	.toux {
-				width: 100%;
-				height: 100%;
-				border-radius: 15px;
+		width: 100%;
+		height: 100%;
+		border-radius: 15px;
 	}
 	.last {
 		width: 20rem;

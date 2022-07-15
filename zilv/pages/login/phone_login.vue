@@ -32,7 +32,7 @@
 				<text>{{ getCodeText }}</text>
 			</view>
 		</input-area>
-		<agruement></agruement>
+		<agruement @click="agree()"></agruement>
 		<view @click="login()">
 			<button-two>登录</button-two>
 		</view>
@@ -40,7 +40,10 @@
 </template>
 
 <script>
-import {mapState}  from "vuex"
+import {
+	mapState,
+	mapMutations
+} from "vuex"
 
 import welcomeLogo from "../../components/welcome_logo.vue"
 import inputArea from "@/components/inputArea.vue"
@@ -61,13 +64,13 @@ export default {
 			getCodeText: '获取验证码',
 			getCodeColor: '',
 			getCodeWaiting: '',
-
 		}
 	},
 	computed: {
-		...mapState(['userinfo'])
+		...mapState(['haslogin', 'hasregister'])
 	},
 	methods: {
+		...mapMutations(['xlogin']),
 		async getCode() {
 			uni.hideKeyboard()  //隐藏软键盘
 			if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phoneNumber))) {  //验证手机号
@@ -88,8 +91,6 @@ export default {
 			let e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000')
 			let er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000')
 			const res = await uni.$http.post('/v1/login/SendCode?args=' + e + '&er=' + er)
-			let userinfo = res.data
-			console.log(userinfo);
 
 			this.getCodeText = '发送中....'
 			this.getCodeWaiting = true;
@@ -122,10 +123,12 @@ export default {
 			}, 1000)
 		},
 		agree() {
+			debugger
 			this.flag = !this.flag
 		},
 
-		async login() {
+		login() {
+
 			uni.hideKeyboard()
 			if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phoneNumber))) {  // 验证手机号码 
 				uni.showToast({
@@ -152,22 +155,36 @@ export default {
 			let data = JSON.stringify(obj)
 			let e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000')
 			let er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000')
-			const res = await uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er);
-			console.log(res.data);
+			// const res =  uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er);
 
+			uni.$http.post(
+				'/v1/login/Login?args=' + e + '&er=' + er
+			).then((res) => {
+				let status = res.data.statusCode
+				if (status != 200) {
+					uni.showToast({
+						title: '验证码不正确',
+						icon: 'none'
+					})
+				}
+				let info = res.data.data.user
+				
+				this.xlogin(info)
+				// 
+				if (this.hasregister == false) {
+					uni.redirectTo({
+						url: '/pages/login/add_profile'
+					})
+				} else {
+					uni.redirectTo({
+						url: '/pages/home/home'
+					})
+				}
 
-			let status = JSON.parse(res.data.code)
-			if (status != 200) {
-				uni.showToast({
-					title: '验证码不正确',
-					icon: 'none'
-				})
-			} else {
+			}).catch(err => {
+				console.log(err);
 
-				uni.redirectTo({
-					url: '/pages/login/add_profile'
-				})
-			}
+			})
 
 
 		}

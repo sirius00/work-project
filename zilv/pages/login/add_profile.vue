@@ -44,7 +44,7 @@
 		</view>
 
 		<view class="">
-			<button class="continue" @click="processed()">继续</button>
+			<button class="continue" @click="addProfile()">继续</button>
 		</view>
 	</view>
 </template>
@@ -69,6 +69,10 @@ function getDate(type) {
 	return `${year}-${month}-${day}`;
 }
 
+import {
+	mapState,
+	mapMutations
+} from "vuex"
 import inputArea from "../../components/inputArea.vue"
 export default {
 	components: {
@@ -76,20 +80,26 @@ export default {
 	},
 	data() {
 		return {
-			user_name: null,
+			user_name: '',
 			female: false,
 			male: false,
 			// sex,2表示女,1表示男
-			sex: null,
+			sex: '',
+
 			check: false,
 			date: getDate({
 				format: true
 			}),
 			startDate: getDate('start'),
 			endDate: getDate('end'),
+			memberId: ''
 		}
 	},
+	computed: {
+		...mapState(['userinfo'])
+	},
 	methods: {
+		...mapMutations(['xprofile']),
 		check_name(event) {
 			this.user_name = event.detail.value
 			// 发送网络请求,对比后台数据,检测名字是否可用
@@ -109,30 +119,61 @@ export default {
 		choose_male() {
 			if (this.female != true) {
 				this.male = !this.male
-				if (this.female == true) {
+				if (this.male == true) {
 					this.sex = 1
 				}
 			}
 		},
-		async processed() {
+		addProfile() {
+			// if (this.user_name == '') {
+			// 	uni.showToast({
+			// 		title: '请输入用户名',
+			// 		icon: 'none',
+			// 	});
+			// 	return false
+			// }
+			// if (this.sex == '') {
+			// 	uni.showToast({
+			// 		title: '请选择性别',
+			// 		icon: "none"
+			// 	});
+			// 	return false
+			// }
 			const time = new Date().getTime()
+
 			let obj = {
+				memberId: this.userinfo.memberId,
 				timestamp: time,
 				userName: this.user_name,
 				sex: this.sex,
-				born: this.date
+				born: this.date,
+
 			}
 			let data = JSON.stringify(obj)
 			let e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000')
 			let er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000')
-			const res = await uni.$http.post('/v1/user/Register?args=' + e + '&er=' + er);
-			console.log(res);
+			uni.$http.post(
+				'/v1/user/Register?args=' + e + '&er=' + er
+			).then((res) => {
 
-			uni.redirectTo({ url: '/pages/login/add_toux' })
-						// uni.navigateTo({
-			// 	url: '/pages/login/add_profile',
-			// 	success: res => {},fail: () => {},complete: () => {}
-			// })
+				if (res.data.code == '400') {
+					uni.showToast({
+						title: '年龄未满18',
+						icon: "none"
+					})
+					return false
+				} else {
+					let info = res.data.data.user
+					this.xprofile(info)
+					uni.navigateTo({
+						url: '/pages/login/add_toux',
+						success: res => { }, fail: () => { }, complete: () => { }
+					})
+				}
+			}).catch(err => {
+				console.log(err);
+			})
+
 
 		},
 	}

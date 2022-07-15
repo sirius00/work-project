@@ -2727,16 +2727,20 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAABRCAYAAACq
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 4));
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 4));
 var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 14));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 _vue.default.use(_vuex.default);
 var store = new _vuex.default.Store({
   state: {
-    recommend_or_timecard: true,
+
+    userinfo: {},
+    hasregister: false,
+    haslogin: false,
+
     ifnote: false,
     ifvoice: false,
-    userinfo: {},
-    haslogin: false,
+
+
     taskList: [{
       id: 0,
       content: '任务1' },
@@ -2748,23 +2752,43 @@ var store = new _vuex.default.Store({
 
 
   mutations: {
-    phone_login: function phone_login(state, provider) {
+    //登录
+    xlogin: function xlogin(state, provider) {
       state.haslogin = true;
+      state.userinfo = provider;
+
+      if (state.userinfo.img != '') {
+        state.hasregister = true;
+      };
+      uni.setStorage({
+        key: 'userinfo',
+        data: provider });
+
+      console.log(state.userinfo);
+    },
+    xprofile: function xprofile(state, provider) {
+      state.userinfo = provider;
+      // uni.setStorage({
+      // 	key: 'userinfo',
+      // 	data: provider
+      // })
+      console.log(state.userinfo);
 
     },
-    change_recommend_or_timecard: function change_recommend_or_timecard() {
-      state.recommend_or_timecard = !state.recommend_or_timecard;
-    },
+
+
+    // change_recommend_or_timecard() {
+    // 	state.recommend_or_timecard = !state.recommend_or_timecard
+    // },
+    //是否显示显示添加笔记
     addNote: function addNote(state) {
       state.ifnote = !state.ifnote;
     },
+    //是否显示添加声音笔记
     addVoice: function addVoice(state) {
       state.ifvoice = !state.ifvoice;
     },
-    changeTask: function changeTask(state, value) {
-      state.taskList[value.id].content = value.content;
-      // console.log(state.taskList[value.id]);
-    },
+
     addTask: function addTask(state, task) {
       var push_id = task.id + 1;
       state.taskList.push({ 'id': push_id, 'content': task.content });
@@ -2779,6 +2803,7 @@ var store = new _vuex.default.Store({
 
 
 store;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

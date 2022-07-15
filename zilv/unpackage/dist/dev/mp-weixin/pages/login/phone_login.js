@@ -180,6 +180,9 @@ var _vuex = __webpack_require__(/*! vuex */ 14);function _interopRequireDefault(
 
 
 
+
+
+
 {
   components: {
     welcomeLogo: welcomeLogo,
@@ -196,13 +199,13 @@ var _vuex = __webpack_require__(/*! vuex */ 14);function _interopRequireDefault(
       getCodeColor: '',
       getCodeWaiting: '' };
 
-
   },
   computed: _objectSpread({},
-  (0, _vuex.mapState)(['userinfo'])),
+  (0, _vuex.mapState)(['haslogin', 'hasregister'])),
 
-  methods: {
-    getCode: function getCode() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var time, obj, data, e, er, res, userinfo;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+  methods: _objectSpread(_objectSpread({},
+  (0, _vuex.mapMutations)(['xlogin'])), {}, {
+    getCode: function getCode() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var time, obj, data, e, er, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
                 uni.hideKeyboard(); //隐藏软键盘
                 if (/^1(3|4|5|6|7|8|9)\d{9}$/.test(_this.phoneNumber)) {_context.next = 4;break;} //验证手机号
                 uni.showToast({
@@ -222,8 +225,6 @@ var _vuex = __webpack_require__(/*! vuex */ 14);function _interopRequireDefault(
                 e = _this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000');
                 er = _this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000');_context.next = 11;return (
                   uni.$http.post('/v1/login/SendCode?args=' + e + '&er=' + er));case 11:res = _context.sent;
-                userinfo = res.data;
-                console.log(userinfo);
 
                 _this.getCodeText = '发送中....';
                 _this.getCodeWaiting = true;
@@ -235,7 +236,7 @@ var _vuex = __webpack_require__(/*! vuex */ 14);function _interopRequireDefault(
 
 
                   _this.setTimer(); // 调用定时器方法
-                }, 1000);case 18:case "end":return _context.stop();}}}, _callee);}))();
+                }, 1000);case 16:case "end":return _context.stop();}}}, _callee);}))();
     },
     // setTimer: 需要定时执行一件事情的时候就要使用setTimer函数
     setTimer: function setTimer() {var _this2 = this;
@@ -256,55 +257,71 @@ var _vuex = __webpack_require__(/*! vuex */ 14);function _interopRequireDefault(
       }, 1000);
     },
     agree: function agree() {
+      debugger;
       this.flag = !this.flag;
     },
 
-    login: function login() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var time, obj, data, e, er, res, status;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
-                uni.hideKeyboard();if (
-                /^1(3|4|5|6|7|8|9)\d{9}$/.test(_this3.phoneNumber)) {_context2.next = 4;break;} // 验证手机号码 
-                uni.showToast({
-                  title: "请输入正确手机号",
-                  icon: 'none' });return _context2.abrupt("return",
+    login: function login() {var _this3 = this;
 
-                false);case 4:
+      uni.hideKeyboard();
+      if (!/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phoneNumber)) {// 验证手机号码 
+        uni.showToast({
+          title: "请输入正确手机号",
+          icon: 'none' });
 
-                if (_this3.code == '') {
-                  uni.showToast({
-                    title: '请输入验证码',
-                    icon: "none" });
-
-
-                }
-                // 对比验证码
-                time = new Date().getTime();
-                obj = {
-                  tel: _this3.phoneNumber,
-                  timestamp: time,
-                  code: _this3.code,
-                  languageId: 2 };
-
-                data = JSON.stringify(obj);
-                e = _this3.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000');
-                er = _this3.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000');_context2.next = 12;return (
-                  uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er));case 12:res = _context2.sent;
-                console.log(res.data);
+        return false;
+      }
+      if (this.code == '') {
+        uni.showToast({
+          title: '请输入验证码',
+          icon: "none" });
 
 
-                status = JSON.parse(res.data.code);
-                if (status != 200) {
-                  uni.showToast({
-                    title: '验证码不正确',
-                    icon: 'none' });
+      }
+      // 对比验证码
+      var time = new Date().getTime();
+      var obj = {
+        tel: this.phoneNumber,
+        timestamp: time,
+        code: this.code,
+        languageId: 2 };
 
-                } else {
+      var data = JSON.stringify(obj);
+      var e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000');
+      var er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000');
+      // const res =  uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er);
 
-                  uni.redirectTo({
-                    url: '/pages/login/add_profile' });
+      uni.$http.post(
+      '/v1/login/Login?args=' + e + '&er=' + er).
+      then(function (res) {
+        var status = res.data.statusCode;
+        if (status != 200) {
+          uni.showToast({
+            title: '验证码不正确',
+            icon: 'none' });
 
-                }case 16:case "end":return _context2.stop();}}}, _callee2);}))();
+        }
+        var info = res.data.data.user;
+
+        _this3.xlogin(info);
+        // 
+        if (_this3.hasregister == false) {
+          uni.redirectTo({
+            url: '/pages/login/add_profile' });
+
+        } else {
+          uni.redirectTo({
+            url: '/pages/home/home' });
+
+        }
+
+      }).catch(function (err) {
+        console.log(err);
+
+      });
 
 
-    } } };exports.default = _default;
+    } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

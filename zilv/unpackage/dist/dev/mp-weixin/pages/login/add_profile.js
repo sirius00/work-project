@@ -149,143 +149,184 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 35));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _vuex = __webpack_require__(/*! vuex */ 14);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //出生日期
-function getDate(type) {
-  var date = new Date();
+function getDate(type) {var date = new Date();var year = date.getFullYear();var month = date.getMonth() + 1;var day = date.getDate();if (type === 'start') {year = year - 100;} else if (type === 'end') {year = year + 20;}month = month > 9 ? month : '0' + month;day = day > 9 ? day : '0' + day;return "".concat(year, "-").concat(month, "-").concat(day);}var inputArea = function inputArea() {__webpack_require__.e(/*! require.ensure | components/inputArea */ "components/inputArea").then((function () {return resolve(__webpack_require__(/*! ../../components/inputArea.vue */ 225));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { inputArea: inputArea }, data: function data() {return { user_name: '', female: false, male: false, // sex,2表示女,1表示男
+      sex: '', check: false, date: getDate({ format: true }), startDate: getDate('start'), endDate: getDate('end'), memberId: '' };}, computed: _objectSpread({}, (0, _vuex.mapState)(['userinfo'])), methods: _objectSpread(_objectSpread({}, (0, _vuex.mapMutations)(['xprofile'])), {}, { check_name: function check_name(event) {this.user_name = event.detail.value; // 发送网络请求,对比后台数据,检测名字是否可用
+    }, //出生日期
+    bindDateChange: function bindDateChange(e) {this.date = e.detail.value;}, choose_female: function choose_female() {if (this.male != true) {this.female = !this.female;if (this.female == true) {this.sex = 2;}}}, choose_male: function choose_male() {if (this.female != true) {this.male = !this.male;if (this.male == true) {this.sex = 1;}}}, addProfile: function addProfile() {var _this = this;
+      // if (this.user_name == '') {
+      // 	uni.showToast({
+      // 		title: '请输入用户名',
+      // 		icon: 'none',
+      // 	});
+      // 	return false
+      // }
+      // if (this.sex == '') {
+      // 	uni.showToast({
+      // 		title: '请选择性别',
+      // 		icon: "none"
+      // 	});
+      // 	return false
+      // }
+      var time = new Date().getTime();
 
-  var year = date.getFullYear();
-  var month = date.getMonth() + 1;
-  var day = date.getDate();
-
-  if (type === 'start') {
-    year = year - 100;
-  } else if (type === 'end') {
-    year = year + 20;
-  }
-  month = month > 9 ? month : '0' + month;
-  day = day > 9 ? day : '0' + day;
-
-  return "".concat(year, "-").concat(month, "-").concat(day);
-}var inputArea = function inputArea() {__webpack_require__.e(/*! require.ensure | components/inputArea */ "components/inputArea").then((function () {return resolve(__webpack_require__(/*! ../../components/inputArea.vue */ 225));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+      var obj = {
+        memberId: this.userinfo.memberId,
+        timestamp: time,
+        userName: this.user_name,
+        sex: this.sex,
+        born: this.date };
 
 
-{
-  components: {
-    inputArea: inputArea },
+      var data = JSON.stringify(obj);
+      var e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000');
+      var er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000');
+      uni.$http.post(
+      '/v1/user/Register?args=' + e + '&er=' + er).
+      then(function (res) {
 
-  data: function data() {
-    return {
-      user_name: null,
-      female: false,
-      male: false,
-      // sex,2表示女,1表示男
-      sex: null,
-      check: false,
-      date: getDate({
-        format: true }),
+        if (res.data.code == '400') {
+          uni.showToast({
+            title: '年龄未满18',
+            icon: "none" });
 
-      startDate: getDate('start'),
-      endDate: getDate('end') };
+          return false;
+        } else {
+          var info = res.data.data.user;
+          _this.xprofile(info);
+          uni.navigateTo({
+            url: '/pages/login/add_toux',
+            success: function success(res) {}, fail: function fail() {}, complete: function complete() {} });
 
-  },
-  methods: {
-    check_name: function check_name(event) {
-      this.user_name = event.detail.value;
-      // 发送网络请求,对比后台数据,检测名字是否可用
-    },
-    //出生日期
-    bindDateChange: function bindDateChange(e) {
-      this.date = e.detail.value;
-    },
-    choose_female: function choose_female() {
-      if (this.male != true) {
-        this.female = !this.female;
-        if (this.female == true) {
-          this.sex = 2;
         }
-      }
-    },
-    choose_male: function choose_male() {
-      if (this.female != true) {
-        this.male = !this.male;
-        if (this.female == true) {
-          this.sex = 1;
-        }
-      }
-    },
-    processed: function processed() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var time, obj, data, e, er, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
-                time = new Date().getTime();
-                obj = {
-                  timestamp: time,
-                  userName: _this.user_name,
-                  sex: _this.sex,
-                  born: _this.date };
+      }).catch(function (err) {
+        console.log(err);
+      });
 
-                data = JSON.stringify(obj);
-                e = _this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000');
-                er = _this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000');_context.next = 7;return (
-                  uni.$http.post('/v1/user/Register?args=' + e + '&er=' + er));case 7:res = _context.sent;
-                console.log(res);
 
-                uni.redirectTo({ url: '/pages/login/add_toux' });
-                // uni.navigateTo({
-                // 	url: '/pages/login/add_profile',
-                // 	success: res => {},fail: () => {},complete: () => {}
-                // })
-              case 10:case "end":return _context.stop();}}}, _callee);}))();
-    } } };exports.default = _default;
+    } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
