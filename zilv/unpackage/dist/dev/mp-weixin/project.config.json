@@ -60,6 +60,11 @@
           "query": ""
         },
         {
+          "name": "add_toux",
+          "pathName": "pages/login/add_toux",
+          "query": ""
+        },
+        {
           "name": "test",
           "pathName": "pages/unregister/test",
           "query": ""

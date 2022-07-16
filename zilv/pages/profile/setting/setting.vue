@@ -3,13 +3,14 @@
 		<view class="cancel">
 			注销账号
 		</view>
-		<view class="logout">
+		<view class="logout" @click="out()">
 			退出登录
 		</view>
 	</view>
 </template>
 
 <script>
+	import {mapMutations} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -17,7 +18,10 @@
 			}
 		},
 		methods: {
-			
+			...mapMutations(['logout']),
+			out() {
+				this.logout()
+			}
 		}
 	}
 </script>

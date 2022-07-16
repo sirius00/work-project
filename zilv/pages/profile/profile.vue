@@ -7,7 +7,7 @@
 			
 		</view>
 		<view class="username">
-			<text>小泡芙</text>
+			<text>{{name}}</text>
 		</view>
 		<view class="userprofile">
 			<view class="logo">
@@ -49,8 +49,19 @@
 		},
 		data() {
 			return {
-				toux: "../../static/机器猫(1).png"
+				toux: "",
+				name: ''
 			}
+		},
+		onLoad() {
+			uni.getStorage({
+				key: 'userinfo',
+				success:(res) => {
+					console.log(res);
+					this.toux = res.data.img
+					this.name = res.data.userName
+				}
+			})
 		},
 		methods: {
 			changeImage() {

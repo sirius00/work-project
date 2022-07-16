@@ -73,6 +73,9 @@ import {
 	mapState,
 	mapMutations
 } from "vuex"
+	import baseUrl from "@/network/baseUrlsConfigs.js"
+	const base1 = baseUrl.base1
+
 import inputArea from "../../components/inputArea.vue"
 export default {
 	components: {
@@ -125,20 +128,20 @@ export default {
 			}
 		},
 		addProfile() {
-			// if (this.user_name == '') {
-			// 	uni.showToast({
-			// 		title: '请输入用户名',
-			// 		icon: 'none',
-			// 	});
-			// 	return false
-			// }
-			// if (this.sex == '') {
-			// 	uni.showToast({
-			// 		title: '请选择性别',
-			// 		icon: "none"
-			// 	});
-			// 	return false
-			// }
+			if (this.user_name == '') {
+				uni.showToast({
+					title: '请输入用户名',
+					icon: 'none',
+				});
+				return false
+			}
+			if (this.sex == '') {
+				uni.showToast({
+					title: '请选择性别',
+					icon: "none"
+				});
+				return false
+			}
 			const time = new Date().getTime()
 
 			let obj = {
@@ -153,7 +156,7 @@ export default {
 			let e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000')
 			let er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000')
 			uni.$http.post(
-				'/v1/user/Register?args=' + e + '&er=' + er
+				base1 + '/v1/user/Register?args=' + e + '&er=' + er
 			).then((res) => {
 
 				if (res.data.code == '400') {

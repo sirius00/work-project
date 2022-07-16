@@ -42,6 +42,8 @@ import {
 	mapState,
 	mapMutations
 } from "vuex"
+	import baseUrl from "@/network/baseUrlsConfigs.js"
+	const base1 = baseUrl.base1
 
 import welcomeLogo from "../../components/welcome_logo.vue"
 import inputArea from "@/components/inputArea.vue"
@@ -91,7 +93,7 @@ export default {
 			let data = JSON.stringify(obj)
 			let e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000')
 			let er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000')
-			const res = await uni.$http.post('/v1/login/SendEmailCode?args=' + e + '&er=' + er)
+			const res = await uni.$http.post(base1 + '/v1/login/SendEmailCode?args=' + e + '&er=' + er)
 			console.log(res);
 
 			this.getCodeText = "发送中..."
@@ -149,7 +151,7 @@ export default {
 			// const res = await uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er);
 			// console.log(res)
 			uni.$http.post(
-				'/v1/login/Login?args=' + e + '&er=' + er
+				base1 + '/v1/login/Login?args=' + e + '&er=' + er
 			).then((res) => {
 				let status = res.data.code
 				if (status != 200) {

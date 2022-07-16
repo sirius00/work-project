@@ -51,7 +51,8 @@ wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;uni.$http = _requestM
 // $http.baseUrl = 'http://192.168.3.82:55555'
 // $http.baseUrl = 'https://api.gugu2019.com/v1'
 // 测试接口
-_requestMiniprogram.$http.baseUrl = 'http://test.gugu2019.com'; // 请求拦截器
+// $http.baseUrl = 'http://test.gugu2019.com'
+// 请求拦截器
 _requestMiniprogram.$http.beforeRequest = function (options) {uni.showLoading({ title: '加载中', mask: true });}; //响应拦截器
 _requestMiniprogram.$http.afterRequest = function () {uni.hideLoading();}; //引入 vuex
 _vue.default.prototype.$store = _store.default; // 阻止显示生产模式的信息

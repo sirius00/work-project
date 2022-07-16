@@ -168,6 +168,10 @@
 				"path": "pages/login/add_profile"
 			},
 			{
+				"name": "add_toux",
+				"path": "pages/login/add_toux"
+			},
+			{
 				"name": "test",
 				"path": "pages/unregister/test"
 			}

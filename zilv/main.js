@@ -8,7 +8,7 @@ uni.$http = $http
 // $http.baseUrl = 'https://api.gugu2019.com/v1'
 
 // 测试接口
-$http.baseUrl = 'http://test.gugu2019.com'
+// $http.baseUrl = 'http://test.gugu2019.com'
 
 // 请求拦截器
 $http.beforeRequest = function (options) {
@@ -51,7 +51,9 @@ import { createSSRApp } from 'vue'
 export function createApp() {
   const app = createSSRApp(App)
   return {
-    app
+    app,
+		store
   }
 }
+
 // #endif

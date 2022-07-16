@@ -1,1 +1,1 @@
-<view class="board"><view class="cancel">注销账号</view><view class="logout">退出登录</view></view>
+<view class="board"><view class="cancel">注销账号</view><view data-event-opts="{{[['tap',[['out']]]]}}" class="logout" bindtap="__e">退出登录</view></view>

@@ -62,18 +62,15 @@
 			}
 		},
 		onLoad() {
-			console.log(color1);
 			// 获取推荐用户数据
-			this.getUserPush() 
+			// this.getUserPush() 
 			
 		},
 		methods: {
-
-
-			async getUserPush() {
-				const res = await uni.$http.post('/v2/user/push',{uid: 1})
-				console.log(res.data);
-			}
+			// async getUserPush() {
+			// 	const res = await uni.$http.post('/v2/user/push',{uid: 1})
+			// 	console.log(res.data);
+			// }
 		}
 
 	}

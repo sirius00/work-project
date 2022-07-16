@@ -40,156 +40,160 @@
 </template>
 
 <script>
-import {
-	mapState,
-	mapMutations
-} from "vuex"
+	import {
+		mapState,
+		mapMutations
+	} from "vuex"
+	import baseUrl from "@/network/baseUrlsConfigs.js"
+	const base1 = baseUrl.base1
 
-import welcomeLogo from "../../components/welcome_logo.vue"
-import inputArea from "@/components/inputArea.vue"
-import agruement from "@/components/agruement.vue"
-import buttonTwo from "@/components/buttons/buttonTwo.vue"
-export default {
-	components: {
-		welcomeLogo,
-		inputArea,
-		agruement,
-		buttonTwo
-	},
-	data() {
-		return {
-			flag: false,
-			phoneNumber: '',
-			code: '',
-			getCodeText: '获取验证码',
-			getCodeColor: '',
-			getCodeWaiting: '',
-		}
-	},
-	computed: {
-		...mapState(['haslogin', 'hasregister'])
-	},
-	methods: {
-		...mapMutations(['xlogin']),
-		async getCode() {
-			uni.hideKeyboard()  //隐藏软键盘
-			if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phoneNumber))) {  //验证手机号
-				uni.showToast({
-					title: '请填入正确的手机号码',
-					icon: "none"
-				})
-				return false
-			}
+	import welcomeLogo from "../../components/welcome_logo.vue"
+	import inputArea from "@/components/inputArea.vue"
+	import agruement from "@/components/agruement.vue"
+	import buttonTwo from "@/components/buttons/buttonTwo.vue"
+	
 
-			// 验证码发送接口调用
-			const time = new Date().getTime()
-			let obj = {
-				tel: this.phoneNumber,
-				timestamp: time
-			}
-			let data = JSON.stringify(obj)
-			let e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000')
-			let er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000')
-			const res = await uni.$http.post('/v1/login/SendCode?args=' + e + '&er=' + er)
-
-			this.getCodeText = '发送中....'
-			this.getCodeWaiting = true;
-			this.getCodeColor = "#878B8A";  //追加样式
-			setTimeout(() => {
-				uni.showToast({
-					title: '验证码已发送',
-					icon: 'none'
-				})
-
-				this.setTimer(); // 调用定时器方法
-			}, 1000)
+	export default {
+		components: {
+			welcomeLogo,
+			inputArea,
+			agruement,
+			buttonTwo
 		},
-		// setTimer: 需要定时执行一件事情的时候就要使用setTimer函数
-		setTimer() {
-			let holdtime = 60;  // 定义变量并赋值
-			this.getCodeText = '重新获取(60)'
-			// setInterval() 是一个实现定时调用的函数,可按照指定的周期( ms )来调用函数或计算表达式
-			// setInterval() 方法会不停的调用函数, 直到clearInterval 被调用或窗口被关闭
-			this.Timer = setInterval(() => {
-				if (holdtime <= 0) {
-					this.getCodeWaiting = false;
-					this.getCodeColor = '#000'
-					this.getCodeText = "获取验证码"
-					clearInterval(this.Timer); // 清除该函数
-					return;
-				}
-				this.getCodeText = "重新获取(" + holdtime + ")"
-				holdtime--;
-			}, 1000)
+		data() {
+			return {
+				flag: false,
+				phoneNumber: '',
+				code: '',
+				getCodeText: '获取验证码',
+				getCodeColor: '',
+				getCodeWaiting: '',
+			}
 		},
-		agree() {
-			debugger
-			this.flag = !this.flag
+		computed: {
+			...mapState(['haslogin', 'hasregister'])
 		},
-
-		login() {
-
-			uni.hideKeyboard()
-			if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phoneNumber))) {  // 验证手机号码 
-				uni.showToast({
-					title: "请输入正确手机号",
-					icon: 'none'
-				});
-				return false;
-			}
-			if (this.code == '') {
-				uni.showToast({
-					title: '请输入验证码',
-					icon: "none"
-				})
-
-			}
-			// 对比验证码
-			const time = new Date().getTime()
-			let obj = {
-				tel: this.phoneNumber,
-				timestamp: time,
-				code: this.code,
-				languageId: 2
-			}
-			let data = JSON.stringify(obj)
-			let e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000')
-			let er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000')
-			// const res =  uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er);
-
-			uni.$http.post(
-				'/v1/login/Login?args=' + e + '&er=' + er
-			).then((res) => {
-				let status = res.data.statusCode
-				if (status != 200) {
+		methods: {
+			...mapMutations(['xlogin']),
+			async getCode() {
+				uni.hideKeyboard()  //隐藏软键盘
+				if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phoneNumber))) {  //验证手机号
 					uni.showToast({
-						title: '验证码不正确',
+						title: '请填入正确的手机号码',
+						icon: "none"
+					})
+					return false
+				}
+
+				// 验证码发送接口调用
+				const time = new Date().getTime()
+				let obj = {
+					tel: this.phoneNumber,
+					timestamp: time
+				}
+				let data = JSON.stringify(obj)
+				let e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000')
+				let er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000')
+				const res = await uni.$http.post(base1 + '/v1/login/SendCode?args=' + e + '&er=' + er)
+
+				this.getCodeText = '发送中....'
+				this.getCodeWaiting = true;
+				this.getCodeColor = "#878B8A";  //追加样式
+				setTimeout(() => {
+					uni.showToast({
+						title: '验证码已发送',
 						icon: 'none'
 					})
+
+					this.setTimer(); // 调用定时器方法
+				}, 1000)
+			},
+			// setTimer: 需要定时执行一件事情的时候就要使用setTimer函数
+			setTimer() {
+				let holdtime = 60;  // 定义变量并赋值
+				this.getCodeText = '重新获取(60)'
+				// setInterval() 是一个实现定时调用的函数,可按照指定的周期( ms )来调用函数或计算表达式
+				// setInterval() 方法会不停的调用函数, 直到clearInterval 被调用或窗口被关闭
+				this.Timer = setInterval(() => {
+					if (holdtime <= 0) {
+						this.getCodeWaiting = false;
+						this.getCodeColor = '#000'
+						this.getCodeText = "获取验证码"
+						clearInterval(this.Timer); // 清除该函数
+						return;
+					}
+					this.getCodeText = "重新获取(" + holdtime + ")"
+					holdtime--;
+				}, 1000)
+			},
+			agree() {
+				debugger
+				this.flag = !this.flag
+			},
+
+			login() {
+
+				uni.hideKeyboard()
+				if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phoneNumber))) {  // 验证手机号码 
+					uni.showToast({
+						title: "请输入正确手机号",
+						icon: 'none'
+					});
+					return false;
 				}
-				let info = res.data.data.user
-				
-				this.xlogin(info)
-				// 
-				if (this.hasregister == false) {
-					uni.redirectTo({
-						url: '/pages/login/add_profile'
+				if (this.code == '') {
+					uni.showToast({
+						title: '请输入验证码',
+						icon: "none"
 					})
-				} else {
-					uni.redirectTo({
-						url: '/pages/home/home'
-					})
+
 				}
+				// 对比验证码
+				const time = new Date().getTime()
+				let obj = {
+					tel: this.phoneNumber,
+					timestamp: time,
+					code: this.code,
+					languageId: 2
+				}
+				let data = JSON.stringify(obj)
+				let e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000')
+				let er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000')
+				// const res =  uni.$http.post('/v1/login/Login?args=' + e + '&er=' + er);
 
-			}).catch(err => {
-				console.log(err);
+				uni.$http.post(
+					base1 + '/v1/login/Login?args=' + e + '&er=' + er
+				).then((res) => {
+					let status = res.data.statusCode
+					if (status != 200) {
+						uni.showToast({
+							title: '验证码不正确',
+							icon: 'none'
+						})
+					}
+					let info = res.data.data.user
+					
+					this.xlogin(info)
+					// 
+					if (this.hasregister == false) {
+						uni.redirectTo({
+							url: '/pages/login/add_profile'
+						})
+					} else {
+						uni.redirectTo({
+							url: '/pages/home/home'
+						})
+					}
 
-			})
+				}).catch(err => {
+					console.log(err);
+
+				})
 
 
+			}
 		}
 	}
-}
 </script>
 
 <style scoped>

@@ -6,13 +6,10 @@
 		</view>
 		<view class="choose_toux">
 			<img src="../../static/img/Add.png" alt="" @click="upImage" v-if="!flag" class="up_img">
-			<img :src="toux" alt="无法显示" v-if="flag" @click="changeImage" class="toux">
+			<img :src="toux[0]" alt="无法显示" v-if="flag" @click="changeImage" class="toux">
 		</view>
-		<view @click="uppLoadImage()">
+		<view @click="upLoadImage()">
 			<button class="last">最后一步了</button>
-			<!-- <navigator url="/pages/home/home" open-type="switchTab">
-				<button class="last">最后一步了</button>
-			</navigator> -->
 		</view>
 		<view class="register_guide">
 			<img src="../../static/img/register_image_guide_en.png" alt="">
@@ -21,18 +18,26 @@
 </template>
 
 <script>
-	import {mapState} from "vuex"
+	import store from '@/store/index.js'
+	import {
+		mapState,
+		mapMutations
+	} from "vuex"
+
 	export default {
 		data() {
 			return {
-				toux: null,
+				toux: [],
 				flag: false
 			}
 		},
-		computed: {
-			...(['userinfo'])
-		},
+	computed: {
+		...mapState(['userinfo'])
+	},
+
 		methods: {
+			...mapMutations(['xtoux']),
+			//添加图片
 			upImage() {
 				uni.chooseImage({
 					count: 1,
@@ -42,72 +47,106 @@
 					}
 				})
 			},
+			// 改变图片
 			changeImage() {
 				uni.chooseImage({
 					count: 1,
 					success: res => {
-						this.toux = res.tempFilePaths
+						this.toux = res.tempFilePaths;
 					}
 				})
 			},
+
+			//上传图片
 			upLoadImage() {
-				console.log(this.userinfo);
-				
+				if (this.toux.length < 1) {
+					uni.showToast({
+						title: '请上传图片',
+						icon:'error'
+					});
+					return false
+				}
+				const time = new Date().getTime()
+				let obj = {
+					// memberId: this.userinfo.memberId,
+					timestamp: time,
+					isFirst: 1
+				}
+				let data = JSON.stringify(obj)
+				let e = this.AES.encrypt(data, 'GuGuAPP$*@AesKey', '0000000000000000')
+				let er = this.AES.encrypt('2', 'GuGuAPP$*@AesKey', '0000000000000000')
 				uni.uploadFile({
-					url: '/user/UploadImg',
+					url: 'http://test.gugu2019.com/v1/user/UploadImg?args=' + e + '&er=' + er,
 					fileType: 'image',
-					filePath: this.toux,
-					name: 'file',
-					success: ({ data, statusCode }) => {},
+					filePath: this.toux[0],
+					name: 'img',
+					success: res => {
+						let result = JSON.parse(res.data)
+						let info = result.data.imginfo
+						// console.log(info[0].img);
+						this.xtoux(info)
+						uni.reLaunch({
+							url:'/pages/home/home'
+						})
+						console.log(this.userinfo);
+					},
 					fail: (error) => {
 						console.log(error);
-						
+
 					}
 				})
+				
+				
 			}
 		}
 	}
 </script>
 
 <style scoped lang="scss">
-	.background {
-		height: 100vh;
-		display: flex;
-		flex-flow: column;
-		justify-content: space-around;
-		align-items: center;
-	}
-	.bgcolor {
-		background: -webkit-linear-gradient(bottom, #1b6365, #38e1e5, #37e2e5);
-	}
-	.choose_toux {
-		// width: 14rem;
-		width: 420rpx;
-		// height: 6rem;
-		height: 200rpx;
-		flex: 0.4 auto;
-		background-color: #39afb1;
-		border-radius: 15px;
-		display: flex;
-		flex-flow: column nowrap;
-		justify-content: center;
-		align-items: center;
-	}
-	.up_img {
-		border-radius: 100rpx;
-		width: 150rpx;
-		height: 150rpx;
-	}
-	.toux {
-		width: 100%;
-		height: 100%;
-		border-radius: 15px;
-	}
-	.last {
-		width: 20rem;
-	}
-	.register_guide img {
-		height: 150rpx;
+.background {
+	height: 100vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	align-items: center;
+}
 
-	}
+.bgcolor {
+	background: -webkit-linear-gradient(bottom, #1b6365, #38e1e5, #37e2e5);
+}
+
+.choose_toux {
+	// width: 14rem;
+	width: 420rpx;
+	// height: 6rem;
+	height: 200rpx;
+	flex: 0.4 auto;
+	background-color: #39afb1;
+	border-radius: 15px;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.up_img {
+	border-radius: 100rpx;
+	width: 150rpx;
+	height: 150rpx;
+}
+
+.toux {
+	width: 100%;
+	height: 100%;
+	border-radius: 15px;
+}
+
+.last {
+	width: 20rem;
+}
+
+.register_guide img {
+	height: 150rpx;
+
+}
 </style>

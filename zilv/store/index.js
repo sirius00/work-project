@@ -11,7 +11,7 @@ const store = new Vuex.Store({
 		ifnote: false,
 		ifvoice: false,
 
-
+		daysList:[],
 		taskList: [{
 				id: 0,
 				content: '任务1'
@@ -35,7 +35,24 @@ const store = new Vuex.Store({
 				key: 'userinfo',
 				data: provider
 			})
-			console.log(state.userinfo);
+			// console.log(state.userinfo);
+		},
+		// 退出登录
+		logout(state) {
+			state.userinfo = {}
+			uni.removeStorage({
+				key: 'userinfo',
+				success:res => {
+					uni,uni.showToast({
+						title: '退出登录',
+						icon:'success'
+					});
+					console.log(state.userinfo);
+					uni.reLaunch({
+						url:'/pages/login/phone_login'
+					})
+				}
+			})
 		},
 		xprofile(state,provider) {
 			state.userinfo = provider
@@ -43,11 +60,17 @@ const store = new Vuex.Store({
 			// 	key: 'userinfo',
 			// 	data: provider
 			// })
-			console.log(state.userinfo);
-			
 		},
-
-
+		xtoux(state, provider){
+			let img = provider[0].img
+			state.userinfo.img = img
+			state.userinfo.imgpath = img
+			uni.setStorage({
+				key: 'userinfo',
+				data: state.userinfo
+			})
+		},
+		
 		// change_recommend_or_timecard() {
 		// 	state.recommend_or_timecard = !state.recommend_or_timecard
 		// },
