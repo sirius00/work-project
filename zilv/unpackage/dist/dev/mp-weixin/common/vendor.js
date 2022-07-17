@@ -2777,7 +2777,7 @@ var store = new _vuex.default.Store({
       // uni.setStorage({
       // 	key: 'userinfo',
       // 	data: provider
-      // })
+      // }) 
     },
     xtoux: function xtoux(state, provider) {
       var img = provider[0].img;

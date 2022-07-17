@@ -76,15 +76,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
-var components
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-}
-var recyclableRender = false
+var render = function () {}
 var staticRenderFns = []
-render._withStripped = true
+var recyclableRender
+var components
 
 
 
@@ -130,24 +125,29 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+var _vuex = __webpack_require__(/*! vuex */ 14);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var lineArea = function lineArea() {__webpack_require__.e(/*! require.ensure | components/todo_line/linesArea */ "components/todo_line/linesArea").then((function () {return resolve(__webpack_require__(/*! @/components/todo_line/linesArea.vue */ 247));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
 
-var _baseUrlsConfigs = _interopRequireDefault(__webpack_require__(/*! @/network/baseUrlsConfigs.js */ 33));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var lineArea = function lineArea() {__webpack_require__.e(/*! require.ensure | components/todo_line/linesArea */ "components/todo_line/linesArea").then((function () {return resolve(__webpack_require__(/*! @/components/todo_line/linesArea.vue */ 247));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
-var base2 = _baseUrlsConfigs.default.base2;var _default =
 
+
+// import baseUrl from "@/network/baseUrlsConfigs.js"
+// const base2 = baseUrl.base2
+var _default =
 {
   components: {
     lineArea: lineArea },
 
   data: function data() {
     return {
-      dayList: [
-      ['1', '2', '3', '4', '5', '6', '7'],
-      ['8', '9', '10', '11', '12', '13', '14']],
-
+      // dayslist: this.daysList,
+      // dayList: [
+      // 	['1', '2', '3', '4', '5', '6', '7'],
+      // 	['8', '9', '10', '11', '12', '13', '14']
+      // ],
       current: 2 };
 
   },
-  computed: {},
+  computed: _objectSpread({},
+  (0, _vuex.mapState)(['daysList'])),
 
   onLoad: function onLoad() {
     // getpush () 
@@ -155,12 +155,7 @@ var base2 = _baseUrlsConfigs.default.base2;var _default =
   methods: {
     day_select: function day_select(index) {
       this.current = index;
-    }
-    // getpush() {
-    // 	const res = uni.$http.post(base2 + '/v2/user/push', { uid: 1 });
-    // 	console.log(res.data);
-    // }
-  } };exports.default = _default;
+    } } };exports.default = _default;
 
 /***/ }),
 

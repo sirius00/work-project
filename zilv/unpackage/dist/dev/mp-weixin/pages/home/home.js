@@ -232,18 +232,16 @@ var _midBox = _interopRequireDefault(__webpack_require__(/*! ../../components/mi
         this.current = e.currentIndex;
       }
     },
-    getPush: function getPush() {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
+    getPush: function getPush() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res, days, num, i;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
                   uni.$http.post(base2 + '/v2/user/push', { uid: 1 }));case 2:res = _context.sent;
                 console.log(res);
 
-                // let days = res.data.data.day
-                // let num = 7
-                // for (let i = 0, len = days.length; i < len; i + num) {
-                // 	this.daysList.push(days.splice(0, i + num))
-                // }
-                // console.log(this.daysList);
-              case 4:case "end":return _context.stop();}}}, _callee);}))();
-
+                days = res.data.data.day;
+                num = 7;
+                for (i = 0; i < days.length / 7; i++) {
+                  _this.daysList.push(days.splice(0, num));
+                }
+                console.log(_this.daysList);case 8:case "end":return _context.stop();}}}, _callee);}))();
 
 
     } } };exports.default = _default;

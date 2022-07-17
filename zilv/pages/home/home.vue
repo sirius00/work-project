@@ -73,16 +73,14 @@ export default {
 		async getPush() {
 			const res = await uni.$http.post(base2 + '/v2/user/push', { uid: 1 })
 			console.log(res);
-				
-			// let days = res.data.data.day
-			// let num = 7
-			// for (let i = 0, len = days.length; i < len; i + num) {
-			// 	this.daysList.push(days.splice(0, i + num))
-			// }
-			// console.log(this.daysList);
 			
-
-
+			let days = res.data.data.day
+			let num = 7
+			for (let i = 0; i < days.length/7; i ++) {
+				this.daysList.push(days.splice(0, num))
+			}
+			console.log(this.daysList);
+			
 
 		}
 

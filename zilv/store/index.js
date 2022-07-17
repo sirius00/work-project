@@ -59,7 +59,7 @@ const store = new Vuex.Store({
 			// uni.setStorage({
 			// 	key: 'userinfo',
 			// 	data: provider
-			// })
+			// }) 
 		},
 		xtoux(state, provider){
 			let img = provider[0].img

@@ -22,7 +22,6 @@ $http.afterRequest = function() {
   uni.hideLoading()
 }
 
-
 //引入 vuex
 import store from "./store"
 Vue.prototype.$store = store

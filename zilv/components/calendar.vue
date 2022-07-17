@@ -1,10 +1,10 @@
 <template>
 	<view class="date_day">
 		<swiper class="swiper_st">
-			<swiper-item v-for="list in dayList" class="swiper_item" :key="index">
+			<swiper-item class="swiper_item" v-for="(list, index) in daysList" :key="index" >
 				<view v-for="(item, index) in list" class="day_st" :class="current == index ? 'select_day' : ''"
 					@click="day_select(index)" :key="index">
-					{{ item }}
+					{{ item.day }}
 					<line-area />
 
 				</view>
@@ -14,9 +14,12 @@
 </template>
 
 <script>
+import {
+	mapState
+} from "vuex"
 import lineArea from "@/components/todo_line/linesArea.vue"
-import baseUrl from "@/network/baseUrlsConfigs.js"
-const base2 = baseUrl.base2
+// import baseUrl from "@/network/baseUrlsConfigs.js"
+// const base2 = baseUrl.base2
 
 export default {
 	components: {
@@ -24,14 +27,16 @@ export default {
 	},
 	data() {
 		return {
-			dayList: [
-				['1', '2', '3', '4', '5', '6', '7'],
-				['8', '9', '10', '11', '12', '13', '14']
-			],
+			// dayslist: this.daysList,
+			// dayList: [
+			// 	['1', '2', '3', '4', '5', '6', '7'],
+			// 	['8', '9', '10', '11', '12', '13', '14']
+			// ],
 			current: 2,
 		}
 	},
 	computed: {
+		...mapState(['daysList'])
 	},
 	onLoad() {
 		// getpush () 
@@ -40,10 +45,7 @@ export default {
 		day_select(index) {
 			this.current = index
 		},
-		// getpush() {
-		// 	const res = uni.$http.post(base2 + '/v2/user/push', { uid: 1 });
-		// 	console.log(res.data);
-		// }
+
 	},
 }
 </script>

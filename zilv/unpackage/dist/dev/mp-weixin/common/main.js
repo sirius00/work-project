@@ -34,7 +34,6 @@ var _requestMiniprogram = __webpack_require__(/*! @escook/request-miniprogram */
 
 
 
-
 var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ 13));
 
 
