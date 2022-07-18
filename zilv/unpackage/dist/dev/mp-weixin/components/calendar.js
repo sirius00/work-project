@@ -125,36 +125,69 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 14);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var lineArea = function lineArea() {__webpack_require__.e(/*! require.ensure | components/todo_line/linesArea */ "components/todo_line/linesArea").then((function () {return resolve(__webpack_require__(/*! @/components/todo_line/linesArea.vue */ 247));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
 
 
 
-// import baseUrl from "@/network/baseUrlsConfigs.js"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _vuex = __webpack_require__(/*! vuex */ 14);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// 当前日期格式化
+function format_date() {var time = new Date();var year = time.getFullYear();var month = time.getMonth() + 1;var day = time.getDate();return "".concat(year, "-").concat(month, "-").concat(day);} //查找当前日期所在列表index
+// function searchindex(obj) {
+// 	var index = 0
+// 	var res = null
+// 	var find = 0
+// 	const today = format_date()
+// 	for (let ar in obj) {
+// 		res = ar.findIndex(list => list.date == today)
+// 		if (res != -1) {
+// 			find = index
+// 		}
+// 		index++
+// 	}
+// 	return find
+// }
+var lineArea = function lineArea() {__webpack_require__.e(/*! require.ensure | components/todo_line/linesArea */ "components/todo_line/linesArea").then((function () {return resolve(__webpack_require__(/*! @/components/todo_line/linesArea.vue */ 247));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);}; // import baseUrl from "@/network/baseUrlsConfigs.js"
 // const base2 = baseUrl.base2
-var _default =
-{
-  components: {
-    lineArea: lineArea },
+var _default = { components: { lineArea: lineArea }, data: function data() {return { currentlist: null, currentday: null };}, computed: _objectSpread({}, (0, _vuex.mapState)(['daysList'])), onReady: function onReady() {this.get_weekday();}, methods: { change_current: function change_current(e) {this.currentday = null;}, day_select: function day_select(index) {this.currentday = index;}, get_weekday: function get_weekday() {var time = format_date();var weekday = new Date(time).getDay();
+      this.currentday = weekday;
 
-  data: function data() {
-    return {
-      // dayslist: this.daysList,
-      // dayList: [
-      // 	['1', '2', '3', '4', '5', '6', '7'],
-      // 	['8', '9', '10', '11', '12', '13', '14']
-      // ],
-      current: 2 };
-
-  },
-  computed: _objectSpread({},
-  (0, _vuex.mapState)(['daysList'])),
-
-  onLoad: function onLoad() {
-    // getpush () 
-  },
-  methods: {
-    day_select: function day_select(index) {
-      this.current = index;
     } } };exports.default = _default;
 
 /***/ }),

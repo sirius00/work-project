@@ -1,7 +1,5 @@
 <template>
 	<view class="bgboard">
-		
-	
 				<view class="week">
 					<view v-for="item in weekDay" :key="index">
 						{{ item }}
@@ -24,7 +22,8 @@
 
 <script>
 	// 获取颜色
-
+	import baseUrl from "@/network/baseUrlsConfigs.js"
+	const base2 = baseUrl.base2
 	
 	import topTabbar from "@/components/topTabbar/topTabbar.vue"
 	import voiceBar from "@/components/voiceBar.vue"
@@ -38,7 +37,7 @@
 		},
 		data() {
 			return {
-				weekDay: [ "一", "二", "三", "四", "五", "六",'日'],
+				weekDay: [ '日',"一", "二", "三", "四", "五", "六",],
 				tabIndex: "tuijian",
 				tabBars: [
 					{
@@ -62,15 +61,18 @@
 			}
 		},
 		onLoad() {
-			// 获取推荐用户数据
-			// this.getUserPush() 
-			
+
+		},
+		onReady() {
+			this.get_recommend()
 		},
 		methods: {
-			// async getUserPush() {
-			// 	const res = await uni.$http.post('/v2/user/push',{uid: 1})
-			// 	console.log(res.data);
-			// }
+
+			async get_recommend(time) {
+				const res = await uni.$http.post(base2 + '/task/wall/load', { date: '2022-07-10' })
+				let list = JSON.parse(res)
+				console.log(list)
+			}
 		}
 
 	}

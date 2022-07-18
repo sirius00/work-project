@@ -50,6 +50,11 @@
 </template>
 
 <script>
+import {
+	mapState,
+	mapMutations
+} from "vuex"
+
 import topTabbar from "@/components/topTabbar/topTabbar.vue"
 import voiceBar from "@/components/voiceBar.vue"
 import calendar from "@/components/calendar.vue"
@@ -105,23 +110,22 @@ export default {
 		});
 	},
 	computed: {
-		addnote() {
-			return this.$store.state.ifnote
-		},
-		addvoice() {
-			return this.$store.state.ifvoice
-		},
-		taskList() {
-			return this.$store.state.taskList
-		},
+		...mapState(['addnote', 'addvoice', 'taskList', 'ifvoice']),
+		// addnote() {
+		// 	return this.$store.state.ifnote
+		// },
+		// addvoice() {
+		// 	return this.$store.state.ifvoice
+		// },
+		// taskList() {
+		// 	return this.$store.state.taskList
+		// },
 
-		ifvoice() {
-			return this.$store.state.ifvoice
-		}
+		// ifvoice() {
+		// 	return this.$store.state.ifvoice
+		// }
 	},
-	watch: {
 
-	},
 	methods: {
 		addNote() {
 			this.$store.commit("addNote")
@@ -129,8 +133,6 @@ export default {
 		addVoice() {
 			this.$store.commit("addVoice")
 		},
-
-
 		// 添加声音
 		limit() {
 			this.limited = !this.limited
@@ -180,7 +182,11 @@ export default {
 			this.pic = 'record';
 			innerAudioContext.stop()
 		},
-		
+		// 添加文字任务 
+		addText_task() {
+
+		},
+
 		//添加语音任务
 		addVoice_task() {
 			

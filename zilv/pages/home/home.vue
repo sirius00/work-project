@@ -62,6 +62,7 @@ export default {
 	},
 	onLoad(options) {
 		this.getPush()
+		// this.get_recommend()
 	},
 	methods: {
 		// ...mapMutations([]),
@@ -72,18 +73,18 @@ export default {
 		},
 		async getPush() {
 			const res = await uni.$http.post(base2 + '/v2/user/push', { uid: 1 })
-			console.log(res);
-			
+			// console.log(res);
 			let days = res.data.data.day
 			let num = 7
-			for (let i = 0; i < days.length/7; i ++) {
+			for (let i = 0; i < 5; i ++) {
 				this.daysList.push(days.splice(0, num))
 			}
-			console.log(this.daysList);
-			
-
-		}
-
+			// console.log(this.daysList);
+		},
+		// async get_recommend(time) {
+		// 	const res = await uni.$http.post(base2 + '/task/wall/load', {date: '2022-07-16'})
+		// 	console.log(res)
+		// }
 	}
 }
 </script>
