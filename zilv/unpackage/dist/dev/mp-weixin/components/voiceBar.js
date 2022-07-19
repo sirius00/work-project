@@ -114,7 +114,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var voicePlay = function voicePlay() {__webpack_require__.e(/*! require.ensure | components/voicePlay */ "components/voicePlay").then((function () {return resolve(__webpack_require__(/*! @/components/voicePlay.vue */ 240));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -155,36 +155,92 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-{
-  components: {
-    voicePlay: voicePlay },
-
-  data: function data() {
-    return {
-      playVoice: false,
-      playBt: false };
-
-  },
-  computed: {
+var _vuex = __webpack_require__(/*! vuex */ 14); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var innerAudioContext = uni.createInnerAudioContext();var _default = { components: {}, props: { single: Object }, data: function data() {return { playVoice: false, playBt: false, path: '', flag: this.playing, playing: false };}, computed: { // ...mapState(['playing']),
     // 随机距离
-    margin: function margin() {
-      var x = Math.floor(Math.random() * 10);
-      return x + "rem";
-    },
-    // 随机颜色
-    style: function style() {
-      var R = Math.floor(Math.random() * 255);
-      var G = Math.floor(Math.random() * 255);
-      var B = Math.floor(Math.random() * 255);
-      return "rgb(" + R + "," + G + "," + B + ")";
-    } },
+    margin: function margin() {var x = Math.floor(Math.random() * 10);return x + "rem";}, // 随机颜色
+    style: function style() {var R = Math.floor(Math.random() * 255);var G = Math.floor(Math.random() * 255);var B = Math.floor(Math.random() * 255);return "rgb(" + R + "," + G + "," + B + ")";} }, onReady: function onReady() {// console.log(this.single);
+  }, methods: { play: function play() {var _this = this; // innerAudioContext.sessionCategory = "soloAmbient"
+      // this.playing = !this.playing
+      if (this.playing == false) {innerAudioContext.src = this.single.voice_content;innerAudioContext.play();this.playing = true;
+        this.playBt = !this.playBt;
+        this.playVoice = !this.playVoice;
+        // 自然播放停止
+        innerAudioContext.onEnded(function () {
+          _this.playing = false;
+          _this.playBt = !_this.playBt;
+          _this.playVoice = !_this.playVoice;
+          console.log('停止播放');
+        });
+        innerAudioContext.onStop(function () {
+          _this.playing = false;
+          _this.playBt = !_this.playBt;
+          _this.playVoice = !_this.playVoice;
+          console.log('停止播放');
+        });
+
+      } else {
+        this.playing = false;
+        innerAudioContext.stop();
+        innerAudioContext.onStop(function () {
+          _this.playBt = false;
+          _this.playVoice = false;
+        });
+      }
 
 
-  methods: {
-    play: function play() {
-      this.playBt = !this.playBt;
-      this.playVoice = !this.playVoice;
-    } } };exports.default = _default;
+    }
+    // stop() {
+    // 	if (this.playing == true) {
+    // 		this.playing = false
+    // 		innerAudioContext.stop()
+    // 		innerAudioContext.onStop(() => {
+    // 			this.playBt = false
+    // 			this.playVoice = false
+    // 		})
+
+    // 	}
+    // }
+  } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

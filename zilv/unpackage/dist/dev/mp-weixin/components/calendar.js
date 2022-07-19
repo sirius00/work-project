@@ -76,10 +76,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
-var render = function () {}
-var staticRenderFns = []
-var recyclableRender
 var components
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+}
+var recyclableRender = false
+var staticRenderFns = []
+render._withStripped = true
 
 
 
@@ -110,7 +115,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-
 
 
 
@@ -183,7 +187,7 @@ function format_date() {var time = new Date();var year = time.getFullYear();var 
 // 	}
 // 	return find
 // }
-var lineArea = function lineArea() {__webpack_require__.e(/*! require.ensure | components/todo_line/linesArea */ "components/todo_line/linesArea").then((function () {return resolve(__webpack_require__(/*! @/components/todo_line/linesArea.vue */ 247));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);}; // import baseUrl from "@/network/baseUrlsConfigs.js"
+var lineArea = function lineArea() {__webpack_require__.e(/*! require.ensure | components/todo_line/linesArea */ "components/todo_line/linesArea").then((function () {return resolve(__webpack_require__(/*! @/components/todo_line/linesArea.vue */ 240));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);}; // import baseUrl from "@/network/baseUrlsConfigs.js"
 // const base2 = baseUrl.base2
 var _default = { components: { lineArea: lineArea }, data: function data() {return { currentlist: null, currentday: null };}, computed: _objectSpread({}, (0, _vuex.mapState)(['daysList'])), onReady: function onReady() {this.get_weekday();}, methods: { change_current: function change_current(e) {this.currentday = null;}, day_select: function day_select(index) {this.currentday = index;}, get_weekday: function get_weekday() {var time = format_date();var weekday = new Date(time).getDay();
       this.currentday = weekday;

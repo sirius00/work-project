@@ -10,6 +10,7 @@ const store = new Vuex.Store({
 
 		ifnote: false,
 		ifvoice: false,
+		playing: false,
 
 		daysList:[],
 		taskList: [{

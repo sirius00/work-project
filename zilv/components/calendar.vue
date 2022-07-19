@@ -1,7 +1,7 @@
 <template>
 	<view class="date_day">
 		<swiper class="swiper_st" :current="3" @change="change_current()">
-			<swiper-item class="swiper_item" v-for="(list, index) in daysList" :key="index">
+			<swiper-item class="swiper_item" v-for="list in daysList" >
 				<view v-for="(item, index) in list" class="day_st" :class="currentday == index ? 'select_day' : ''"
 					@click="day_select(index)" :key="index">
 					{{ item.day }}
@@ -38,7 +38,6 @@ function format_date() {
 // 	}
 // 	return find
 // }
-
 
 
 import {

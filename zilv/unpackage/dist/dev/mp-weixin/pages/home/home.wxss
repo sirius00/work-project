@@ -2,10 +2,12 @@
 .bar.data-v-2b8a13bc {
 	width: 10rem;
 }
+
 /* 背景板 */
 .bgboard.data-v-2b8a13bc {
 	height: 80vh;
 }
+
 /* 周日期 */
 .week.data-v-2b8a13bc {
 	height: 2rem;
@@ -23,7 +25,7 @@
 .scroll_view.data-v-2b8a13bc {
 	height: 100%;
 	display: flex;
-	flex-flow: column ;
+	flex-flow: column;
 	align-items: center;
 }
 .text.data-v-2b8a13bc {
@@ -32,10 +34,6 @@
 	color: rgb(182, 188, 188);
 	text-align: center;
 }
-
-
-
-
 
 
 .board.data-v-00fd18e7 {

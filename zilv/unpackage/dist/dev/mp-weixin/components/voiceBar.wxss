@@ -75,6 +75,61 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*  音阶部分 */
 .box {
 	/* background-color: aquamarine; */
@@ -91,71 +146,71 @@
 	background-color: #fff;
 	border-radius: 10px;
 }
-@-webkit-keyframes yy{
+@-webkit-keyframes yy {
 0% {
-		-webkit-transform: scale(1,1);
-		        transform: scale(1,1);
+		-webkit-transform: scale(1, 1);
+		        transform: scale(1, 1);
 		background-color: rgb(255, 255, 255);
 }
 100% {
-		-webkit-transform: scale(1,0.2);
-		        transform: scale(1,0.2);
+		-webkit-transform: scale(1, 0.2);
+		        transform: scale(1, 0.2);
 		background-color: rgb(255, 255, 255);
 }
 }
-@keyframes yy{
+@keyframes yy {
 0% {
-		-webkit-transform: scale(1,1);
-		        transform: scale(1,1);
+		-webkit-transform: scale(1, 1);
+		        transform: scale(1, 1);
 		background-color: rgb(255, 255, 255);
 }
 100% {
-		-webkit-transform: scale(1,0.2);
-		        transform: scale(1,0.2);
+		-webkit-transform: scale(1, 0.2);
+		        transform: scale(1, 0.2);
 		background-color: rgb(255, 255, 255);
 }
 }
-.one{
+.one {
 	-webkit-animation: yy 0.5s 2s linear infinite alternate;
 	        animation: yy 0.5s 2s linear infinite alternate;
 }
-.two{
+.two {
 	-webkit-animation: yy 0.5s 1.8s linear infinite alternate;
 	        animation: yy 0.5s 1.8s linear infinite alternate;
 }
-.three{
+.three {
 	-webkit-animation: yy 0.5s 1.6s linear infinite alternate;
 	        animation: yy 0.5s 1.6s linear infinite alternate;
 }
-.four{
+.four {
 	-webkit-animation: yy 0.5s 1.4s linear infinite alternate;
 	        animation: yy 0.5s 1.4s linear infinite alternate;
 }
-.five{
+.five {
 	-webkit-animation: yy 0.5s 1.2s linear infinite alternate;
 	        animation: yy 0.5s 1.2s linear infinite alternate;
 }
-.six{
+.six {
 	-webkit-animation: yy 0.5s 1s linear infinite alternate;
 	        animation: yy 0.5s 1s linear infinite alternate;
 }
-.seven{
-	-webkit-animation: yy 0.5 0.8s  linear infinite alternate;
-	        animation: yy 0.5 0.8s  linear infinite alternate;
+.seven {
+	-webkit-animation: yy 0.5 0.8s linear infinite alternate;
+	        animation: yy 0.5 0.8s linear infinite alternate;
 }
-.eight{
+.eight {
 	-webkit-animation: yy 0.5s 0.6s linear infinite alternate;
 	        animation: yy 0.5s 0.6s linear infinite alternate;
 }
-.nine{
+.nine {
 	-webkit-animation: yy 0.5s 0.4s linear infinite alternate;
 	        animation: yy 0.5s 0.4s linear infinite alternate;
 }
-.ten{
+.ten {
 	-webkit-animation: yy 0.5s 0.2s linear infinite alternate;
 	        animation: yy 0.5s 0.2s linear infinite alternate;
 }
-.voice_bar{
+.voice_bar {
 	margin-top: 1.5rem;
 	/* background-color: #d40079; */
 	width: 10rem;
@@ -166,7 +221,7 @@
 	justify-content: space-between;
 	min-width: 9rem;
 }
-.voice_toux ._img{
+.voice_toux ._img {
 	height: 55rpx;
 	width: 55rpx;
 	border-radius: 30rpx;
@@ -180,9 +235,9 @@
 	flex-basis: calc(100% - 5rem);
 }
 .voice_content ._img {
-	  height: 30rpx;
-	  width: 35rpx;
-	  margin-right: 10rpx;
+	height: 30rpx;
+	width: 35rpx;
+	margin-right: 10rpx;
 }
 .play_button ._img {
 	height: 55rpx;

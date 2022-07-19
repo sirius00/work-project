@@ -1,6 +1,4 @@
 {
-  "component": true,
-  "usingComponents": {
-    "voice-play": "/components/voicePlay"
-  }
+  "usingComponents": {},
+  "component": true
 }

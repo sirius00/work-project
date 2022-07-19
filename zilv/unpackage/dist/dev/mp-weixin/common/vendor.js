@@ -2728,6 +2728,7 @@ var store = new _vuex.default.Store({
 
     ifnote: false,
     ifvoice: false,
+    playing: false,
 
     daysList: [],
     taskList: [{
@@ -4212,7 +4213,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg
 
 /***/ }),
 
-/***/ 264:
+/***/ 257:
 /*!*********************************************************************************************************************!*\
   !*** /Users/max/Documents/work-project/zilv/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpwxs.js ***!
   \*********************************************************************************************************************/
@@ -4306,7 +4307,7 @@ mpMixins;exports.default = _default;
 
 /***/ }),
 
-/***/ 265:
+/***/ 258:
 /*!************************************************************************************************************************!*\
   !*** /Users/max/Documents/work-project/zilv/uni_modules/uni-swipe-action/components/uni-swipe-action-item/bindingx.js ***!
   \************************************************************************************************************************/
@@ -4619,7 +4620,7 @@ bindIngXMixins;exports.default = _default;
 
 /***/ }),
 
-/***/ 266:
+/***/ 259:
 /*!***********************************************************************************************************************!*\
   !*** /Users/max/Documents/work-project/zilv/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpother.js ***!
   \***********************************************************************************************************************/

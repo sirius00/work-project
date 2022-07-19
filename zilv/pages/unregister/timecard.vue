@@ -111,19 +111,7 @@ export default {
 	},
 	computed: {
 		...mapState(['addnote', 'addvoice', 'taskList', 'ifvoice']),
-		// addnote() {
-		// 	return this.$store.state.ifnote
-		// },
-		// addvoice() {
-		// 	return this.$store.state.ifvoice
-		// },
-		// taskList() {
-		// 	return this.$store.state.taskList
-		// },
 
-		// ifvoice() {
-		// 	return this.$store.state.ifvoice
-		// }
 	},
 
 	methods: {
