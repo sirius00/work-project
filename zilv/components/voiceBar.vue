@@ -90,17 +90,11 @@ export default {
 				// 自然播放停止
 				innerAudioContext.onEnded(() => {
 					this.playing = false
-					this.playBt = !this.playBt
-					this.playVoice = !this.playVoice
+					this.playBt = false
+					this.playVoice = false
 					console.log('停止播放')
 				})
-				innerAudioContext.onStop(() => {
-					this.playing = false
-					this.playBt = !this.playBt
-					this.playVoice = !this.playVoice
-					console.log('停止播放')
-				})
-				
+
 			}else {
 				this.playing = false
 				innerAudioContext.stop()
@@ -109,20 +103,8 @@ export default {
 					this.playVoice = false
 				})
 			}
-
-
 		},
-		// stop() {
-		// 	if (this.playing == true) {
-		// 		this.playing = false
-		// 		innerAudioContext.stop()
-		// 		innerAudioContext.onStop(() => {
-		// 			this.playBt = false
-		// 			this.playVoice = false
-		// 		})
 
-		// 	}
-		// }
 
 
 	},

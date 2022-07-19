@@ -206,14 +206,8 @@ var innerAudioContext = uni.createInnerAudioContext();var _default = { component
         // 自然播放停止
         innerAudioContext.onEnded(function () {
           _this.playing = false;
-          _this.playBt = !_this.playBt;
-          _this.playVoice = !_this.playVoice;
-          console.log('停止播放');
-        });
-        innerAudioContext.onStop(function () {
-          _this.playing = false;
-          _this.playBt = !_this.playBt;
-          _this.playVoice = !_this.playVoice;
+          _this.playBt = false;
+          _this.playVoice = false;
           console.log('停止播放');
         });
 
@@ -225,21 +219,7 @@ var innerAudioContext = uni.createInnerAudioContext();var _default = { component
           _this.playVoice = false;
         });
       }
-
-
-    }
-    // stop() {
-    // 	if (this.playing == true) {
-    // 		this.playing = false
-    // 		innerAudioContext.stop()
-    // 		innerAudioContext.onStop(() => {
-    // 			this.playBt = false
-    // 			this.playVoice = false
-    // 		})
-
-    // 	}
-    // }
-  } };exports.default = _default;
+    } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
