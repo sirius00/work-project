@@ -40,7 +40,8 @@
 <script>
 const innerAudioContext = uni.createInnerAudioContext()
 import {
-	mapState
+	mapState,
+	mapMutations
 } from "vuex"
 export default {
 	components: {
@@ -53,12 +54,12 @@ export default {
 			playVoice: false,
 			playBt: false,
 			path: '',
-			flag: this.playing,
-			playing: false
+			playing: false,
+			flag: null
 		}
 	},
 	computed: {
-		// ...mapState(['playing']),
+		...mapState(['ifStopPlay']),
 		// 随机距离
 		margin() {
 			let x = Math.floor(Math.random() * 10);
@@ -73,29 +74,46 @@ export default {
 		},
 	},
 	onReady() {
-		// console.log(this.single);
+		this.flag = this.ifStopPlay
+		// console.log(this.flag);
 	},
+
 	methods: {
+		...mapMutations(['changeifStopPlay']),
+
 		play() {
-
-
-			// innerAudioContext.sessionCategory = "soloAmbient"
-			// this.playing = !this.playing
 			if(this.playing == false) {
+				this.changeifStopPlay()
+				// 开始播放
 				innerAudioContext.src = this.single.voice_content
 				innerAudioContext.play()
 				this.playing = true
 				this.playBt = !this.playBt
 				this.playVoice = !this.playVoice
+				innerAudioContext.onPlay( () => {
+
+				})
 				// 自然播放停止
 				innerAudioContext.onEnded(() => {
 					this.playing = false
 					this.playBt = false
 					this.playVoice = false
-					console.log('停止播放')
+					console.log('自然停止')
 				})
-
-			}else {
+				innerAudioContext.onStop(() => {
+					this.playing = false
+					this.playBt = false
+					this.playVoice = false
+					console.log('停止')
+				})
+				innerAudioContext.onPause( () => {
+					this.playing = false
+					this.playBt = false
+					this.playVoice = false
+					console.log('暂停播放')
+				})
+			} else {
+				// 停止播放
 				this.playing = false
 				innerAudioContext.stop()
 				innerAudioContext.onStop(() => {

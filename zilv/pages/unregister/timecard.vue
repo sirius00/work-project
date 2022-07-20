@@ -50,6 +50,8 @@
 </template>
 
 <script>
+import baseUrl from "@/network/baseUrlsConfigs.js"
+const base2 = baseUrl.base2
 import {
 	mapState,
 	mapMutations
@@ -62,7 +64,7 @@ import todoCard from "@/components/todo_card.vue"
 import addNote from "@/components/buttons/addNote.vue"
 import addVoice from "@/components/buttons/addVoice.vue"
 import addnote from "@/components/add/addnote.vue"
-// import addvoice from "@/components/add/addvoice.vue"
+
 
 const recorderManager = uni.getRecorderManager();
 const innerAudioContext = uni.createInnerAudioContext();
@@ -82,7 +84,7 @@ export default {
 	},
 	data() {
 		return {
-			weekDay: ["一", "二", "三", "四", "五", "六", '日'],
+			weekDay: ['日',"一", "二", "三", "四", "五", "六"],
 			tabIndex: "timecard",
 			tabBars: [{
 				name: "推荐",
@@ -111,16 +113,27 @@ export default {
 	},
 	computed: {
 		...mapState(['addnote', 'addvoice', 'taskList', 'ifvoice']),
-
 	},
-
+	onReady() {
+		this.get_taskList()
+	},
 	methods: {
-		addNote() {
-			this.$store.commit("addNote")
+		...mapMutations(['addNote', 'addVoice']),
+		get_taskList() {
+			uni.$http.post(base2 + '/task/get/self', { uid: 1 }).then((res) => {
+				console.log(res);
+				let taskList = res.data.data.task
+				
+			}).catch((res) => {
+				console.log(res);
+			})
 		},
-		addVoice() {
-			this.$store.commit("addVoice")
-		},
+		// addNote() {
+		// 	this.$store.commit("addNote")
+		// },
+		// addVoice() {
+		// 	this.$store.commit("addVoice")
+		// },
 		// 添加声音
 		limit() {
 			this.limited = !this.limited

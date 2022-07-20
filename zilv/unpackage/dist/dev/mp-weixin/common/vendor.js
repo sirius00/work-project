@@ -2728,20 +2728,16 @@ var store = new _vuex.default.Store({
 
     ifnote: false,
     ifvoice: false,
-    playing: false,
+    ifStopPlay: false,
 
     daysList: [],
-    taskList: [{
-      id: 0,
-      content: '任务1' },
-
-    {
-      id: 1,
-      content: '任务2' }] },
-
-
+    taskList: [] },
 
   mutations: {
+    //监听语音播放状态
+    changeifStopPlay: function changeifStopPlay(state) {
+      state.ifStopPlay = !state.ifStopPlay;
+    },
     //登录
     xlogin: function xlogin(state, provider) {
       state.haslogin = true;
@@ -2754,7 +2750,7 @@ var store = new _vuex.default.Store({
         key: 'userinfo',
         data: provider });
 
-      // console.log(state.userinfo);
+      console.log(state.userinfo);
     },
     // 退出登录
     logout: function logout(state) {

@@ -81,10 +81,7 @@ export default {
 			}
 			// console.log(this.daysList);
 		},
-		// async get_recommend(time) {
-		// 	const res = await uni.$http.post(base2 + '/task/wall/load', {date: '2022-07-16'})
-		// 	console.log(res)
-		// }
+
 	}
 }
 </script>

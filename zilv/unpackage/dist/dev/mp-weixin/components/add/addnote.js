@@ -135,37 +135,44 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _index = _interopRequireDefault(__webpack_require__(/*! @/store/index.js */ 13));
+var _baseUrlsConfigs = _interopRequireDefault(__webpack_require__(/*! @/network/baseUrlsConfigs.js */ 33));
+
+var _vuex = __webpack_require__(/*! vuex */ 14);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var base2 = _baseUrlsConfigs.default.base2;var _default =
+
+
+
 
 {
   props: {},
@@ -177,13 +184,14 @@ var _default =
       text_value: '' };
 
   },
-  computed: {
-    ifnote: function ifnote() {
-      return this.$store.state.ifnote;
-    },
+  computed: _objectSpread(_objectSpread({},
+  (0, _vuex.mapState)(['uerinfo', 'ifnote'])), {}, {
+    // ifnote() {
+    // 	return this.$store.state.ifnote
+    // },
     get_last_task_id: function get_last_task_id() {
       return this.$store.state.taskList.slice(-1).id;
-    } },
+    } }),
 
   methods: {
     // 添加权限
@@ -200,11 +208,20 @@ var _default =
     },
     // 添加任务
     add_task: function add_task() {
-      var id = this.get_last_task_id;
-      var content = this.text_value;
-      this.$store.commit("addTask", { id: id, content: content });
-      this.$store.commit("addNote");
+      var u = _index.default.state.userinfo;
+      console.log(u);
+
+      console.log(typeof u.memberId);
+
+      uni.$http.post(base2 + '/task/add/text', { uid: u.memberId, content: this.text_value }).then(function (res) {
+        console.log(res);
+      }).catch(function (err) {
+        console.log(err);
+
+      });
+
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

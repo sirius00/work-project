@@ -29,6 +29,13 @@
 </template>
 
 <script>
+import store from "@/store/index.js"
+import baseUrl from "@/network/baseUrlsConfigs.js"
+const base2 = baseUrl.base2
+import {
+	mapState,
+	mapMutations
+} from "vuex"
 
 	export default {
 		props:{
@@ -41,9 +48,10 @@
 			}
 		},
 		computed: {
-			ifnote() {
-				return this.$store.state.ifnote
-			},
+			...mapState(['uerinfo', 'ifnote']),
+			// ifnote() {
+			// 	return this.$store.state.ifnote
+			// },
 			get_last_task_id() {
 				return this.$store.state.taskList.slice(-1).id
 			}
@@ -63,10 +71,18 @@
 			},
 			// 添加任务
 			add_task () {
-				let id = this.get_last_task_id
-				let content = this.text_value
-				this.$store.commit("addTask",{id: id, content: content})
-				this.$store.commit("addNote")
+				let u = store.state.userinfo;
+				console.log(u);
+				
+				console.log(typeof (u.memberId));
+				
+				uni.$http.post(base2 + '/task/add/text', { uid: u.memberId, content: this.text_value}).then( (res) => {
+					console.log(res);
+				}).catch( (err) => {
+					console.log(err);
+					
+				})
+
 			}
 		}
 	}

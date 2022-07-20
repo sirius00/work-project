@@ -10,20 +10,16 @@ const store = new Vuex.Store({
 
 		ifnote: false,
 		ifvoice: false,
-		playing: false,
+		ifStopPlay: false,
 
 		daysList:[],
-		taskList: [{
-				id: 0,
-				content: '任务1'
-			},
-			{
-				id: 1,
-				content: '任务2'
-			},
-		]
+		taskList: []
 	},
 	mutations: {
+		//监听语音播放状态
+		changeifStopPlay(state){
+			state.ifStopPlay = !state.ifStopPlay
+		},
 		//登录
 		xlogin(state, provider) {
 			state.haslogin = true
@@ -36,7 +32,7 @@ const store = new Vuex.Store({
 				key: 'userinfo',
 				data: provider
 			})
-			// console.log(state.userinfo);
+			console.log(state.userinfo);
 		},
 		// 退出登录
 		logout(state) {

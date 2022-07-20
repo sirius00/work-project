@@ -155,7 +155,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 14); //
+var _vuex = __webpack_require__(/*! vuex */ 14);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} //
 //
 //
 //
@@ -194,24 +194,42 @@ var _vuex = __webpack_require__(/*! vuex */ 14); //
 //
 //
 //
-var innerAudioContext = uni.createInnerAudioContext();var _default = { components: {}, props: { single: Object }, data: function data() {return { playVoice: false, playBt: false, path: '', flag: this.playing, playing: false };}, computed: { // ...mapState(['playing']),
-    // 随机距离
+var innerAudioContext = uni.createInnerAudioContext();var _default = { components: {}, props: { single: Object }, data: function data() {return { playVoice: false, playBt: false, path: '', playing: false, flag: null };}, computed: _objectSpread(_objectSpread({}, (0, _vuex.mapState)(['ifStopPlay'])), {}, { // 随机距离
     margin: function margin() {var x = Math.floor(Math.random() * 10);return x + "rem";}, // 随机颜色
-    style: function style() {var R = Math.floor(Math.random() * 255);var G = Math.floor(Math.random() * 255);var B = Math.floor(Math.random() * 255);return "rgb(" + R + "," + G + "," + B + ")";} }, onReady: function onReady() {// console.log(this.single);
-  }, methods: { play: function play() {var _this = this; // innerAudioContext.sessionCategory = "soloAmbient"
-      // this.playing = !this.playing
-      if (this.playing == false) {innerAudioContext.src = this.single.voice_content;innerAudioContext.play();this.playing = true;
+    style: function style() {var R = Math.floor(Math.random() * 255);var G = Math.floor(Math.random() * 255);var B = Math.floor(Math.random() * 255);return "rgb(" + R + "," + G + "," + B + ")";} }), onReady: function onReady() {this.flag = this.ifStopPlay; // console.log(this.flag);
+  }, methods: _objectSpread(_objectSpread({}, (0, _vuex.mapMutations)(['changeifStopPlay'])), {}, { play: function play() {var _this = this;
+      if (this.playing == false) {
+        this.changeifStopPlay();
+        // 开始播放
+        innerAudioContext.src = this.single.voice_content;
+        innerAudioContext.play();
+        this.playing = true;
         this.playBt = !this.playBt;
         this.playVoice = !this.playVoice;
+        innerAudioContext.onPlay(function () {
+
+        });
         // 自然播放停止
         innerAudioContext.onEnded(function () {
           _this.playing = false;
           _this.playBt = false;
           _this.playVoice = false;
-          console.log('停止播放');
+          console.log('自然停止');
         });
-
+        innerAudioContext.onStop(function () {
+          _this.playing = false;
+          _this.playBt = false;
+          _this.playVoice = false;
+          console.log('停止');
+        });
+        innerAudioContext.onPause(function () {
+          _this.playing = false;
+          _this.playBt = false;
+          _this.playVoice = false;
+          console.log('暂停播放');
+        });
       } else {
+        // 停止播放
         this.playing = false;
         innerAudioContext.stop();
         innerAudioContext.onStop(function () {
@@ -219,7 +237,7 @@ var innerAudioContext = uni.createInnerAudioContext();var _default = { component
           _this.playVoice = false;
         });
       }
-    } } };exports.default = _default;
+    } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

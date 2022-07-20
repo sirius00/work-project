@@ -242,12 +242,7 @@ var _midBox = _interopRequireDefault(__webpack_require__(/*! ../../components/mi
                   _this.daysList.push(days.splice(0, num));
                 }
                 // console.log(this.daysList);
-              case 6:case "end":return _context.stop();}}}, _callee);}))();}
-    // async get_recommend(time) {
-    // 	const res = await uni.$http.post(base2 + '/task/wall/load', {date: '2022-07-16'})
-    // 	console.log(res)
-    // }
-  } };exports.default = _default;
+              case 6:case "end":return _context.stop();}}}, _callee);}))();} } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
@@ -681,7 +676,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 14);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var topTabbar = function topTabbar() {__webpack_require__.e(/*! require.ensure | components/topTabbar/topTabbar */ "components/topTabbar/topTabbar").then((function () {return resolve(__webpack_require__(/*! @/components/topTabbar/topTabbar.vue */ 167));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var voiceBar = function voiceBar() {Promise.all(/*! require.ensure | components/voiceBar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/voiceBar")]).then((function () {return resolve(__webpack_require__(/*! @/components/voiceBar.vue */ 174));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var calendar = function calendar() {Promise.all(/*! require.ensure | components/calendar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/calendar")]).then((function () {return resolve(__webpack_require__(/*! @/components/calendar.vue */ 181));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var todoCard = function todoCard() {__webpack_require__.e(/*! require.ensure | components/todo_card */ "components/todo_card").then((function () {return resolve(__webpack_require__(/*! @/components/todo_card.vue */ 188));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var addNote = function addNote() {Promise.all(/*! require.ensure | components/buttons/addNote */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/buttons/addNote")]).then((function () {return resolve(__webpack_require__(/*! @/components/buttons/addNote.vue */ 195));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var addVoice = function addVoice() {Promise.all(/*! require.ensure | components/buttons/addVoice */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/buttons/addVoice")]).then((function () {return resolve(__webpack_require__(/*! @/components/buttons/addVoice.vue */ 203));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var addnote = function addnote() {__webpack_require__.e(/*! require.ensure | components/add/addnote */ "components/add/addnote").then((function () {return resolve(__webpack_require__(/*! @/components/add/addnote.vue */ 210));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
+var _baseUrlsConfigs = _interopRequireDefault(__webpack_require__(/*! @/network/baseUrlsConfigs.js */ 33));
+
+var _vuex = __webpack_require__(/*! vuex */ 14);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var base2 = _baseUrlsConfigs.default.base2;var topTabbar = function topTabbar() {__webpack_require__.e(/*! require.ensure | components/topTabbar/topTabbar */ "components/topTabbar/topTabbar").then((function () {return resolve(__webpack_require__(/*! @/components/topTabbar/topTabbar.vue */ 167));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var voiceBar = function voiceBar() {Promise.all(/*! require.ensure | components/voiceBar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/voiceBar")]).then((function () {return resolve(__webpack_require__(/*! @/components/voiceBar.vue */ 174));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var calendar = function calendar() {Promise.all(/*! require.ensure | components/calendar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/calendar")]).then((function () {return resolve(__webpack_require__(/*! @/components/calendar.vue */ 181));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var todoCard = function todoCard() {__webpack_require__.e(/*! require.ensure | components/todo_card */ "components/todo_card").then((function () {return resolve(__webpack_require__(/*! @/components/todo_card.vue */ 188));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var addNote = function addNote() {Promise.all(/*! require.ensure | components/buttons/addNote */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/buttons/addNote")]).then((function () {return resolve(__webpack_require__(/*! @/components/buttons/addNote.vue */ 195));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var addVoice = function addVoice() {Promise.all(/*! require.ensure | components/buttons/addVoice */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/buttons/addVoice")]).then((function () {return resolve(__webpack_require__(/*! @/components/buttons/addVoice.vue */ 203));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var addnote = function addnote() {Promise.all(/*! require.ensure | components/add/addnote */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/add/addnote")]).then((function () {return resolve(__webpack_require__(/*! @/components/add/addnote.vue */ 210));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
 
 
 
@@ -693,7 +690,7 @@ var _vuex = __webpack_require__(/*! vuex */ 14);function ownKeys(object, enumera
 
 
 
-// import addvoice from "@/components/add/addvoice.vue"
+
 
 var recorderManager = uni.getRecorderManager();
 var innerAudioContext = uni.createInnerAudioContext();
@@ -713,7 +710,7 @@ innerAudioContext.autoplay = true;var _default =
   },
   data: function data() {
     return {
-      weekDay: ["一", "二", "三", "四", "五", "六", '日'],
+      weekDay: ['日', "一", "二", "三", "四", "五", "六"],
       tabIndex: "timecard",
       tabBars: [{
         name: "推荐",
@@ -743,15 +740,26 @@ innerAudioContext.autoplay = true;var _default =
   computed: _objectSpread({},
   (0, _vuex.mapState)(['addnote', 'addvoice', 'taskList', 'ifvoice'])),
 
+  onReady: function onReady() {
+    this.get_taskList();
+  },
+  methods: _objectSpread(_objectSpread({},
+  (0, _vuex.mapMutations)(['addNote', 'addVoice'])), {}, {
+    get_taskList: function get_taskList() {
+      uni.$http.post(base2 + '/task/get/self', { uid: 1 }).then(function (res) {
+        console.log(res);
+        var taskList = res.data.data.task;
 
-
-  methods: {
-    addNote: function addNote() {
-      this.$store.commit("addNote");
+      }).catch(function (res) {
+        console.log(res);
+      });
     },
-    addVoice: function addVoice() {
-      this.$store.commit("addVoice");
-    },
+    // addNote() {
+    // 	this.$store.commit("addNote")
+    // },
+    // addVoice() {
+    // 	this.$store.commit("addVoice")
+    // },
     // 添加声音
     limit: function limit() {
       this.limited = !this.limited;
@@ -809,7 +817,7 @@ innerAudioContext.autoplay = true;var _default =
     //添加语音任务
     addVoice_task: function addVoice_task() {
 
-    } } };exports.default = _default;
+    } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
