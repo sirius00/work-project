@@ -48,7 +48,7 @@ import {
 			}
 		},
 		computed: {
-			...mapState(['uerinfo', 'ifnote']),
+			...mapState(['userinfo', 'ifnote']),
 			// ifnote() {
 			// 	return this.$store.state.ifnote
 			// },
@@ -71,12 +71,10 @@ import {
 			},
 			// 添加任务
 			add_task () {
-				let u = store.state.userinfo;
-				console.log(u);
+				console.log(this.text_value);
 				
-				console.log(typeof (u.memberId));
 				
-				uni.$http.post(base2 + '/task/add/text', { uid: u.memberId, content: this.text_value}).then( (res) => {
+				uni.$http.post(base2 + '/task/add/text', { uid: this.userinfo.memberId, content: '测试'}).then( (res) => {
 					console.log(res);
 				}).catch( (err) => {
 					console.log(err);

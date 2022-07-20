@@ -185,7 +185,7 @@ var _vuex = __webpack_require__(/*! vuex */ 14);function _interopRequireDefault(
 
   },
   computed: _objectSpread(_objectSpread({},
-  (0, _vuex.mapState)(['uerinfo', 'ifnote'])), {}, {
+  (0, _vuex.mapState)(['userinfo', 'ifnote'])), {}, {
     // ifnote() {
     // 	return this.$store.state.ifnote
     // },
@@ -208,12 +208,10 @@ var _vuex = __webpack_require__(/*! vuex */ 14);function _interopRequireDefault(
     },
     // 添加任务
     add_task: function add_task() {
-      var u = _index.default.state.userinfo;
-      console.log(u);
+      console.log(this.text_value);
 
-      console.log(typeof u.memberId);
 
-      uni.$http.post(base2 + '/task/add/text', { uid: u.memberId, content: this.text_value }).then(function (res) {
+      uni.$http.post(base2 + '/task/add/text', { uid: this.userinfo.memberId, content: '测试' }).then(function (res) {
         console.log(res);
       }).catch(function (err) {
         console.log(err);
