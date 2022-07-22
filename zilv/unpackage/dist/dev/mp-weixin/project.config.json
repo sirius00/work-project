@@ -16,7 +16,6 @@
     "uglifyFileName": false,
     "uploadWithSourceMap": true,
     "enhance": true,
-    "useMultiFrameRuntime": true,
     "showShadowRootInWxmlPanel": true,
     "packNpmManually": false,
     "packNpmRelationList": [],
@@ -33,7 +32,7 @@
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.25.0",
+  "libVersion": "2.25.1",
   "appid": "wx993fdcd483bc0094",
   "projectname": "zilv",
   "condition": {

@@ -138,6 +138,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 /*  音阶部分 */
 .box.data-v-30e05f84 {
 	/* background-color: aquamarine; */
@@ -153,71 +163,71 @@
 	background-color: #fff;
 	border-radius: 10px;
 }
-@-webkit-keyframes yy-data-v-30e05f84{
+@-webkit-keyframes yy-data-v-30e05f84 {
 0% {
-		-webkit-transform: scale(1,1);
-		        transform: scale(1,1);
+		-webkit-transform: scale(1, 1);
+		        transform: scale(1, 1);
 		background-color: rgb(255, 255, 255);
 }
 100% {
-		-webkit-transform: scale(1,0.2);
-		        transform: scale(1,0.2);
+		-webkit-transform: scale(1, 0.2);
+		        transform: scale(1, 0.2);
 		background-color: rgb(255, 255, 255);
 }
 }
-@keyframes yy-data-v-30e05f84{
+@keyframes yy-data-v-30e05f84 {
 0% {
-		-webkit-transform: scale(1,1);
-		        transform: scale(1,1);
+		-webkit-transform: scale(1, 1);
+		        transform: scale(1, 1);
 		background-color: rgb(255, 255, 255);
 }
 100% {
-		-webkit-transform: scale(1,0.2);
-		        transform: scale(1,0.2);
+		-webkit-transform: scale(1, 0.2);
+		        transform: scale(1, 0.2);
 		background-color: rgb(255, 255, 255);
 }
 }
-.one.data-v-30e05f84{
+.one.data-v-30e05f84 {
 	-webkit-animation: yy-data-v-30e05f84 0.5s 2s linear infinite alternate;
 	        animation: yy-data-v-30e05f84 0.5s 2s linear infinite alternate;
 }
-.two.data-v-30e05f84{
+.two.data-v-30e05f84 {
 	-webkit-animation: yy-data-v-30e05f84 0.5s 1.8s linear infinite alternate;
 	        animation: yy-data-v-30e05f84 0.5s 1.8s linear infinite alternate;
 }
-.three.data-v-30e05f84{
+.three.data-v-30e05f84 {
 	-webkit-animation: yy-data-v-30e05f84 0.5s 1.6s linear infinite alternate;
 	        animation: yy-data-v-30e05f84 0.5s 1.6s linear infinite alternate;
 }
-.four.data-v-30e05f84{
+.four.data-v-30e05f84 {
 	-webkit-animation: yy-data-v-30e05f84 0.5s 1.4s linear infinite alternate;
 	        animation: yy-data-v-30e05f84 0.5s 1.4s linear infinite alternate;
 }
-.five.data-v-30e05f84{
+.five.data-v-30e05f84 {
 	-webkit-animation: yy-data-v-30e05f84 0.5s 1.2s linear infinite alternate;
 	        animation: yy-data-v-30e05f84 0.5s 1.2s linear infinite alternate;
 }
-.six.data-v-30e05f84{
+.six.data-v-30e05f84 {
 	-webkit-animation: yy-data-v-30e05f84 0.5s 1s linear infinite alternate;
 	        animation: yy-data-v-30e05f84 0.5s 1s linear infinite alternate;
 }
-.seven.data-v-30e05f84{
+.seven.data-v-30e05f84 {
 	-webkit-animation: yy-data-v-30e05f84 0.5 0.8s linear infinite alternate;
 	        animation: yy-data-v-30e05f84 0.5 0.8s linear infinite alternate;
 }
-.eight.data-v-30e05f84{
+.eight.data-v-30e05f84 {
 	-webkit-animation: yy-data-v-30e05f84 0.5s 0.6s linear infinite alternate;
 	        animation: yy-data-v-30e05f84 0.5s 0.6s linear infinite alternate;
 }
-.nine.data-v-30e05f84{
+.nine.data-v-30e05f84 {
 	-webkit-animation: yy-data-v-30e05f84 0.5s 0.4s linear infinite alternate;
 	        animation: yy-data-v-30e05f84 0.5s 0.4s linear infinite alternate;
 }
-.ten.data-v-30e05f84{
+.ten.data-v-30e05f84 {
 	-webkit-animation: yy-data-v-30e05f84 0.5s 0.2s linear infinite alternate;
 	        animation: yy-data-v-30e05f84 0.5s 0.2s linear infinite alternate;
 }
-.voice_bar.data-v-30e05f84{
+.voice_bar.data-v-30e05f84 {
 	margin-top: 1.5rem;
 	width: 10rem;
 	height: 90rpx;
@@ -227,7 +237,7 @@
 	justify-content: space-between;
 	min-width: 9rem;
 }
-.voice_toux image.data-v-30e05f84{
+.voice_toux image.data-v-30e05f84 {
 	height: 50rpx;
 	width: 50rpx;
 }
@@ -248,6 +258,4 @@
 	height: 55rpx;
 	width: 55rpx;
 }
-
-
 

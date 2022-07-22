@@ -2462,9 +2462,9 @@ uni$1;exports.default = _default;
 /***/ }),
 
 /***/ 104:
-/*!*****************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/Add.png ***!
-  \*****************************************************************/
+/*!******************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/Add.png ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -2473,9 +2473,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHYAAAB2CAYAAAAd
 /***/ }),
 
 /***/ 105:
-/*!*************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/register_image_guide_en.png ***!
-  \*************************************************************************************/
+/*!**************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/register_image_guide_en.png ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -2613,9 +2613,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 12:
-/*!*****************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/node_modules/@escook/request-miniprogram/miniprogram_dist/index.js ***!
-  \*****************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/node_modules/@escook/request-miniprogram/miniprogram_dist/index.js ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2698,9 +2698,9 @@ var $http = new Request();exports.$http = $http;
 /***/ }),
 
 /***/ 121:
-/*!****************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/profile_active.png ***!
-  \****************************************************************************/
+/*!*****************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/profile_active.png ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -2709,9 +2709,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADD
 /***/ }),
 
 /***/ 13:
-/*!*************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/store/index.js ***!
-  \*************************************************************/
+/*!**************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/store/index.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2730,9 +2730,9 @@ var store = new _vuex.default.Store({
     ifvoice: false,
     ifStopPlay: false,
 
-    daysList: [],
-    taskList: [] },
-
+    daysList: []
+    // taskList: []
+  },
   mutations: {
     //监听语音播放状态
     changeifStopPlay: function changeifStopPlay(state) {
@@ -2750,7 +2750,7 @@ var store = new _vuex.default.Store({
         key: 'userinfo',
         data: provider });
 
-      console.log(state.userinfo);
+      // console.log(state.userinfo);
     },
     // 退出登录
     logout: function logout(state) {
@@ -2797,6 +2797,9 @@ var store = new _vuex.default.Store({
     addVoice: function addVoice(state) {
       state.ifvoice = !state.ifvoice;
     },
+    // getTaskList(state, list) {
+    // 	state.taskList = list
+    // },
 
     addTask: function addTask(state, task) {
       var push_id = task.id + 1;
@@ -2817,9 +2820,9 @@ store;exports.default = _default;
 /***/ }),
 
 /***/ 130:
-/*!***************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/Add_voice_btn.png ***!
-  \***************************************************************************/
+/*!****************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/Add_voice_btn.png ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -2828,9 +2831,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAABRCAYAAACq
 /***/ }),
 
 /***/ 131:
-/*!*********************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/welcome.png ***!
-  \*********************************************************************/
+/*!**********************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/welcome.png ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -4096,9 +4099,9 @@ module.exports = index_cjs;
 /***/ }),
 
 /***/ 148:
-/*!**************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/welcome-logo.png ***!
-  \**************************************************************************/
+/*!***************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/welcome-logo.png ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -4107,9 +4110,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAS0AAAFnCAMAAADE
 /***/ }),
 
 /***/ 15:
-/*!**********************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/js_sdk/ar-aes/ar-aes.js ***!
-  \**********************************************************************/
+/*!***********************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/js_sdk/ar-aes/ar-aes.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -4146,9 +4149,9 @@ CryptoJS.lib.Cipher || function (u) {var p = CryptoJS,d = p.lib,l = d.Base,s = d
 /***/ }),
 
 /***/ 198:
-/*!**************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/Add_note_btn.png ***!
-  \**************************************************************************/
+/*!***************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/Add_note_btn.png ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -4188,9 +4191,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 220:
-/*!*******************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/check.png ***!
-  \*******************************************************************/
+/*!********************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/check.png ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -4199,9 +4202,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 /***/ }),
 
 /***/ 221:
-/*!**************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/check-active.png ***!
-  \**************************************************************************/
+/*!***************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/check-active.png ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -4210,9 +4213,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg
 /***/ }),
 
 /***/ 257:
-/*!*********************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpwxs.js ***!
-  \*********************************************************************************************************************/
+/*!**********************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpwxs.js ***!
+  \**********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4304,9 +4307,9 @@ mpMixins;exports.default = _default;
 /***/ }),
 
 /***/ 258:
-/*!************************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/uni_modules/uni-swipe-action/components/uni-swipe-action-item/bindingx.js ***!
-  \************************************************************************************************************************/
+/*!*************************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/uni_modules/uni-swipe-action/components/uni-swipe-action-item/bindingx.js ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4617,9 +4620,9 @@ bindIngXMixins;exports.default = _default;
 /***/ }),
 
 /***/ 259:
-/*!***********************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpother.js ***!
-  \***********************************************************************************************************************/
+/*!************************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpother.js ***!
+  \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6142,9 +6145,9 @@ if (hadRuntime) {
 /***/ }),
 
 /***/ 33:
-/*!*************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/network/baseUrlsConfigs.js ***!
-  \*************************************************************************/
+/*!**************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/network/baseUrlsConfigs.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6152,10 +6155,10 @@ if (hadRuntime) {
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var baseUrls = {
   base1: 'http://test.gugu2019.com',
 
-  base2: 'http://192.168.3.82:55555'
+  // base2: 'http://192.168.3.82:55555',
 
-  // base2: 'http://49.234.90.160',
-};var _default =
+  base2: 'http://49.234.90.160:55555' };var _default =
+
 
 baseUrls;exports.default = _default;
 
@@ -12212,9 +12215,9 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 44:
-/*!***************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/record_button.png ***!
-  \***************************************************************************/
+/*!****************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/record_button.png ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -12223,9 +12226,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADD
 /***/ }),
 
 /***/ 45:
-/*!*************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/play_button.png ***!
-  \*************************************************************************/
+/*!**************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/play_button.png ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -12234,9 +12237,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADD
 /***/ }),
 
 /***/ 46:
-/*!*******************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/pause.png ***!
-  \*******************************************************************/
+/*!********************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/pause.png ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -12245,9 +12248,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADD
 /***/ }),
 
 /***/ 47:
-/*!*******************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/limit.png ***!
-  \*******************************************************************/
+/*!********************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/limit.png ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -12256,9 +12259,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 /***/ }),
 
 /***/ 48:
-/*!*********************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/limited.png ***!
-  \*********************************************************************/
+/*!**********************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/limited.png ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -12267,9 +12270,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 /***/ }),
 
 /***/ 5:
-/*!*********************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/pages.json ***!
-  \*********************************************************/
+/*!**********************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/pages.json ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -12278,9 +12281,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 /***/ }),
 
 /***/ 83:
-/*!****************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/x-circle-clear.png ***!
-  \****************************************************************************/
+/*!*****************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/x-circle-clear.png ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -12289,9 +12292,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 /***/ }),
 
 /***/ 84:
-/*!*******************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/nvxie.png ***!
-  \*******************************************************************/
+/*!********************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/nvxie.png ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -12300,9 +12303,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAA6CAYAAADm
 /***/ }),
 
 /***/ 85:
-/*!**************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/nvxie-active.png ***!
-  \**************************************************************************/
+/*!***************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/nvxie-active.png ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -12311,9 +12314,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAA6CAYAAADm
 /***/ }),
 
 /***/ 86:
-/*!********************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/nanxie.png ***!
-  \********************************************************************/
+/*!*********************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/nanxie.png ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -12322,9 +12325,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGcAAAA4CAYAAADg
 /***/ }),
 
 /***/ 87:
-/*!***************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/static/img/nanxie-active.png ***!
-  \***************************************************************************/
+/*!****************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/static/img/nanxie-active.png ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

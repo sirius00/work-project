@@ -49,14 +49,10 @@ import {
 		},
 		computed: {
 			...mapState(['userinfo', 'ifnote']),
-			// ifnote() {
-			// 	return this.$store.state.ifnote
-			// },
-			get_last_task_id() {
-				return this.$store.state.taskList.slice(-1).id
-			}
+
 		},
 		methods: {
+			...mapMutations(['addNote']),
 			// 添加权限
 			limit() {
 				this.limited = !this.limited
@@ -73,9 +69,10 @@ import {
 			add_task () {
 				console.log(this.text_value);
 				
-				
-				uni.$http.post(base2 + '/task/add/text', { uid: this.userinfo.memberId, content: '测试'}).then( (res) => {
+				uni.$http.post(base2 + '/task/add/text', { uid: 971391, content: '测试'}).then( (res) => {
 					console.log(res);
+					this.$emit('addtask')
+					this.addNote()
 				}).catch( (err) => {
 					console.log(err);
 					

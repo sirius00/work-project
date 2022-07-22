@@ -1,8 +1,8 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/home/home"],Array(24).concat([
 /* 24 */
-/*!*************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/main.js?{"page":"pages%2Fhome%2Fhome"} ***!
-  \*************************************************************************************/
+/*!**************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/main.js?{"page":"pages%2Fhome%2Fhome"} ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17,9 +17,9 @@ wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;createPage(_home.defa
 
 /***/ }),
 /* 25 */
-/*!******************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/pages/home/home.vue ***!
-  \******************************************************************/
+/*!*******************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/pages/home/home.vue ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -57,9 +57,9 @@ component.options.__file = "pages/home/home.vue"
 
 /***/ }),
 /* 26 */
-/*!*************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/pages/home/home.vue?vue&type=template&id=92bb8f34&scoped=true& ***!
-  \*************************************************************************************************************/
+/*!**************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/pages/home/home.vue?vue&type=template&id=92bb8f34&scoped=true& ***!
+  \**************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -78,9 +78,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 27 */
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/pages/home/home.vue?vue&type=template&id=92bb8f34&scoped=true& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/pages/home/home.vue?vue&type=template&id=92bb8f34&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -138,9 +138,9 @@ render._withStripped = true
 
 /***/ }),
 /* 28 */
-/*!*******************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/pages/home/home.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************/
+/*!********************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/pages/home/home.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -153,9 +153,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 29 */
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/pages/home/home.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/pages/home/home.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -251,9 +251,9 @@ var _midBox = _interopRequireDefault(__webpack_require__(/*! ../../components/mi
 /* 32 */,
 /* 33 */,
 /* 34 */
-/*!*****************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/pages/unregister/recommend.vue ***!
-  \*****************************************************************************/
+/*!******************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/pages/unregister/recommend.vue ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -291,9 +291,9 @@ component.options.__file = "pages/unregister/recommend.vue"
 
 /***/ }),
 /* 35 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/pages/unregister/recommend.vue?vue&type=template&id=2b8a13bc&scoped=true& ***!
-  \************************************************************************************************************************/
+/*!*************************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/pages/unregister/recommend.vue?vue&type=template&id=2b8a13bc&scoped=true& ***!
+  \*************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -312,9 +312,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 36 */
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/pages/unregister/recommend.vue?vue&type=template&id=2b8a13bc&scoped=true& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/pages/unregister/recommend.vue?vue&type=template&id=2b8a13bc&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -338,9 +338,9 @@ render._withStripped = true
 
 /***/ }),
 /* 37 */
-/*!******************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/pages/unregister/recommend.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/pages/unregister/recommend.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -353,9 +353,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 38 */
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/pages/unregister/recommend.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/pages/unregister/recommend.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -445,9 +445,9 @@ var base2 = _baseUrlsConfigs.default.base2;var topTabbar = function topTabbar() 
 
 /***/ }),
 /* 39 */
-/*!**************************************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/pages/unregister/recommend.vue?vue&type=style&index=0&id=2b8a13bc&scoped=true&lang=css& ***!
-  \**************************************************************************************************************************************/
+/*!***************************************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/pages/unregister/recommend.vue?vue&type=style&index=0&id=2b8a13bc&scoped=true&lang=css& ***!
+  \***************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -460,9 +460,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 40 */
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/pages/unregister/recommend.vue?vue&type=style&index=0&id=2b8a13bc&scoped=true&lang=css& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/pages/unregister/recommend.vue?vue&type=style&index=0&id=2b8a13bc&scoped=true&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -472,9 +472,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 41 */
-/*!****************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/pages/unregister/timecard.vue ***!
-  \****************************************************************************/
+/*!*****************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/pages/unregister/timecard.vue ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -512,9 +512,9 @@ component.options.__file = "pages/unregister/timecard.vue"
 
 /***/ }),
 /* 42 */
-/*!***********************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/pages/unregister/timecard.vue?vue&type=template&id=00fd18e7&scoped=true& ***!
-  \***********************************************************************************************************************/
+/*!************************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/pages/unregister/timecard.vue?vue&type=template&id=00fd18e7&scoped=true& ***!
+  \************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -533,9 +533,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 43 */
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/pages/unregister/timecard.vue?vue&type=template&id=00fd18e7&scoped=true& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/pages/unregister/timecard.vue?vue&type=template&id=00fd18e7&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -602,9 +602,9 @@ render._withStripped = true
 /* 47 */,
 /* 48 */,
 /* 49 */
-/*!*****************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/pages/unregister/timecard.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/pages/unregister/timecard.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -617,14 +617,15 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 50 */
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/pages/unregister/timecard.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/pages/unregister/timecard.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
 
 
 
@@ -724,6 +725,7 @@ innerAudioContext.autoplay = true;var _default =
 
 
       text_value: '',
+      taskList: [],
 
       pic: 'record', //录音相关图标转换
       limited: false, //任务查看权限
@@ -738,29 +740,26 @@ innerAudioContext.autoplay = true;var _default =
     });
   },
   computed: _objectSpread({},
-  (0, _vuex.mapState)(['addnote', 'addvoice', 'taskList', 'ifvoice'])),
+  (0, _vuex.mapState)(['addnote', 'addvoice', 'ifvoice'])),
 
   onReady: function onReady() {
     this.get_taskList();
   },
   methods: _objectSpread(_objectSpread({},
   (0, _vuex.mapMutations)(['addNote', 'addVoice'])), {}, {
-    get_taskList: function get_taskList() {
-      uni.$http.post(base2 + '/task/get/self', { uid: 1 }).then(function (res) {
-        console.log(res);
-        var taskList = res.data.data.task;
-
+    upDateTaskList: function upDateTaskList() {
+      this.get_taskList();
+    },
+    get_taskList: function get_taskList() {var _this = this;
+      uni.$http.post(base2 + '/task/get/self', { uid: 971391 }).then(function (res) {
+        // console.log(res);
+        _this.taskList = res.data.data.task;
+        // console.log(this.taskList);
       }).catch(function (res) {
         console.log(res);
       });
     },
-    // addNote() {
-    // 	this.$store.commit("addNote")
-    // },
-    // addVoice() {
-    // 	this.$store.commit("addVoice")
-    // },
-    // 添加声音
+
     limit: function limit() {
       this.limited = !this.limited;
     },
@@ -787,7 +786,7 @@ innerAudioContext.autoplay = true;var _default =
       this.pic = 'play';
       recorderManager.stop();
     },
-    playVoice: function playVoice() {var _this = this;
+    playVoice: function playVoice() {var _this2 = this;
       console.log('播放录音');
 
       if (this.voicePath) {
@@ -798,7 +797,7 @@ innerAudioContext.autoplay = true;var _default =
       //播放结束
       innerAudioContext.onEnded(function () {
         console.log('播放结束');
-        _this.pic = 'play';
+        _this2.pic = 'play';
       });
     },
     //删除录音
@@ -822,9 +821,9 @@ innerAudioContext.autoplay = true;var _default =
 
 /***/ }),
 /* 51 */
-/*!*************************************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/pages/unregister/timecard.vue?vue&type=style&index=0&id=00fd18e7&scoped=true&lang=css& ***!
-  \*************************************************************************************************************************************/
+/*!**************************************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/pages/unregister/timecard.vue?vue&type=style&index=0&id=00fd18e7&scoped=true&lang=css& ***!
+  \**************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -837,9 +836,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 52 */
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/pages/unregister/timecard.vue?vue&type=style&index=0&id=00fd18e7&scoped=true&lang=css& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/pages/unregister/timecard.vue?vue&type=style&index=0&id=00fd18e7&scoped=true&lang=css& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -849,9 +848,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 53 */
-/*!***************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/components/midBox/midBox.vue ***!
-  \***************************************************************************/
+/*!****************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/components/midBox/midBox.vue ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -889,9 +888,9 @@ component.options.__file = "components/midBox/midBox.vue"
 
 /***/ }),
 /* 54 */
-/*!**********************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/components/midBox/midBox.vue?vue&type=template&id=f9b6ca38& ***!
-  \**********************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/components/midBox/midBox.vue?vue&type=template&id=f9b6ca38& ***!
+  \***********************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -910,9 +909,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 55 */
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/components/midBox/midBox.vue?vue&type=template&id=f9b6ca38& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/components/midBox/midBox.vue?vue&type=template&id=f9b6ca38& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -936,9 +935,9 @@ render._withStripped = true
 
 /***/ }),
 /* 56 */
-/*!****************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/components/midBox/midBox.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/components/midBox/midBox.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -951,9 +950,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 57 */
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/components/midBox/midBox.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/components/midBox/midBox.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1033,9 +1032,9 @@ var _default = {
 
 /***/ }),
 /* 58 */
-/*!************************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/components/midBox/midBox.vue?vue&type=style&index=0&lang=less&scope=true& ***!
-  \************************************************************************************************************************/
+/*!*************************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/components/midBox/midBox.vue?vue&type=style&index=0&lang=less&scope=true& ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1048,9 +1047,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 59 */
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-2!./node_modules/postcss-loader/src??ref--10-oneOf-1-3!./node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/components/midBox/midBox.vue?vue&type=style&index=0&lang=less&scope=true& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-2!./node_modules/postcss-loader/src??ref--10-oneOf-1-3!./node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/components/midBox/midBox.vue?vue&type=style&index=0&lang=less&scope=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1060,9 +1059,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 60 */
-/*!***************************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/pages/home/home.vue?vue&type=style&index=0&id=92bb8f34&scoped=true&lang=css& ***!
-  \***************************************************************************************************************************/
+/*!****************************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/pages/home/home.vue?vue&type=style&index=0&id=92bb8f34&scoped=true&lang=css& ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1075,9 +1074,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 61 */
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/pages/home/home.vue?vue&type=style&index=0&id=92bb8f34&scoped=true&lang=css& ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/pages/home/home.vue?vue&type=style&index=0&id=92bb8f34&scoped=true&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

@@ -1,50 +1,51 @@
 <template>
 	<view class="board">
 
-				<view class="week">
-					<view v-for="item in weekDay" :key="index">
-						{{ item }}
+		<view class="week">
+			<view v-for="item in weekDay" :key="index">
+				{{ item }}
+			</view>
+		</view>
+		<calendar />
+		<view class="todo_board">
+			<scroll-view scroll-y class="scroll_view" enable-flex>
+				<todo-card v-for="(item, index) in taskList" :card="item" :key="index" />
+			</scroll-view>
+			<addnote @addtask="upDateTaskList()"></addnote>
+
+			<view class="zhezhao" v-if="ifvoice" @click="hidevoice">
+				<view class="add_voice" @click.stop="!hidevoice">
+
+					<view class="voice">
+						<img src="../../static/img/record_button.png" v-if="pic == 'record'" @longpress="startRecord"
+							@touchend="endRecord">
+						<img src="../../static/img/play_button.png" v-if="pic == 'play'" @click="playVoice" @longpress="delVoice">
+						<img src="../../static/img/pause.png" v-if="pic == 'pause'">
 					</view>
-				</view>
-				<calendar />
-				<view class="todo_board">
-					<scroll-view scroll-y class="scroll_view" enable-flex>
-						<todo-card v-for="(item, index) in taskList" :card="item" :key="index" />
-					</scroll-view>
-					<addnote></addnote>
-
-					<view class="zhezhao" v-if="ifvoice" @click="hidevoice">
-						<view class="add_voice" @click.stop="!hidevoice">
-
-							<view class="voice">
-								<img src="../../static/img/record_button.png" v-if="pic == 'record'" @longpress="startRecord" @touchend="endRecord">
-								<img src="../../static/img/play_button.png" v-if="pic == 'play'" @click="playVoice" @longpress="delVoice">
-								<img src="../../static/img/pause.png" v-if="pic == 'pause'" >
-							</view>
-							<view class="limit">
-								<view class="">
-									<img src="../../static/img/limit.png" alt="" v-if="!limited" @click="limit">
-									<img src="../../static/img/limited.png" alt="" v-else @click="limit">
-								</view>
-								<view>
-									仅自己可见
-								</view>
-							</view>
-							<view class="add_button" @click="addVoice_task">
-								添加
-							</view>
+					<view class="limit">
+						<view class="">
+							<img src="../../static/img/limit.png" alt="" v-if="!limited" @click="limit">
+							<img src="../../static/img/limited.png" alt="" v-else @click="limit">
+						</view>
+						<view>
+							仅自己可见
 						</view>
 					</view>
+					<view class="add_button" @click="addVoice_task">
+						添加
+					</view>
+				</view>
+			</view>
 
-				</view>
-				<view class="add_note">
-					<view @click="addNote">
-						<add-note></add-note>
-					</view>
-					<view @click="addVoice">
-						<add-voice></add-voice>
-					</view>
-				</view>
+		</view>
+		<view class="add_note">
+			<view @click="addNote">
+				<add-note></add-note>
+			</view>
+			<view @click="addVoice">
+				<add-voice></add-voice>
+			</view>
+		</view>
 
 	</view>
 </template>
@@ -84,7 +85,7 @@ export default {
 	},
 	data() {
 		return {
-			weekDay: ['日',"一", "二", "三", "四", "五", "六"],
+			weekDay: ['日', "一", "二", "三", "四", "五", "六"],
 			tabIndex: "timecard",
 			tabBars: [{
 				name: "推荐",
@@ -98,6 +99,7 @@ export default {
 			}
 			],
 			text_value: '',
+			taskList: [],
 
 			pic: 'record',      //录音相关图标转换
 			limited: false,     //任务查看权限
@@ -112,29 +114,26 @@ export default {
 		});
 	},
 	computed: {
-		...mapState(['addnote', 'addvoice', 'taskList', 'ifvoice']),
+		...mapState(['addnote', 'addvoice', 'ifvoice']),
 	},
 	onReady() {
 		this.get_taskList()
 	},
 	methods: {
 		...mapMutations(['addNote', 'addVoice']),
+		upDateTaskList() {
+			this.get_taskList()
+		},
 		get_taskList() {
-			uni.$http.post(base2 + '/task/get/self', { uid: 1 }).then((res) => {
-				console.log(res);
-				let taskList = res.data.data.task
-				
+			uni.$http.post(base2 + '/task/get/self', { uid: 971391 }).then((res) => {
+				// console.log(res);
+				this.taskList = res.data.data.task
+				// console.log(this.taskList);
 			}).catch((res) => {
 				console.log(res);
 			})
 		},
-		// addNote() {
-		// 	this.$store.commit("addNote")
-		// },
-		// addVoice() {
-		// 	this.$store.commit("addVoice")
-		// },
-		// 添加声音
+
 		limit() {
 			this.limited = !this.limited
 		},
@@ -170,15 +169,15 @@ export default {
 			}
 			this.pic = 'pause'
 			//播放结束
-			innerAudioContext.onEnded( () => {
+			innerAudioContext.onEnded(() => {
 				console.log('播放结束');
 				this.pic = 'play'
-			} )
+			})
 		},
 		//删除录音
 		delVoice() {
 			console.log('删除录音');
-			
+
 			this.voicePath = '';
 			this.pic = 'record';
 			innerAudioContext.stop()
@@ -190,16 +189,16 @@ export default {
 
 		//添加语音任务
 		addVoice_task() {
-			
+
 		}
 	},
 }
 </script>
 
 <style scoped>
-	.board {
-		height: 80vh;
-	}
+.board {
+	height: 80vh;
+}
 
 
 /* 周日期 */
@@ -219,13 +218,13 @@ export default {
 
 }
 
-/* .scroll_view {
+.scroll_view {
 	height: 100%;
-	display: flex;
-	flex-flow: column nowrap;
-	align-items: center;
+	/* display: flex; */
+	/* flex-flow: column nowrap;
+	align-items: center; */
 
-} */
+}
 
 .add_note {
 	height: 3rem;
@@ -272,6 +271,7 @@ export default {
 .voice {
 	margin-top: 100rpx;
 }
+
 .voice img {
 	height: 100rpx;
 	width: 110rpx;

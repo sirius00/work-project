@@ -164,12 +164,15 @@
 				uni.$http.post(
 					base1 + '/v1/login/Login?args=' + e + '&er=' + er
 				).then((res) => {
-					let status = res.data.statusCode
+					console.log(res);
+					let status = res.data.code
+					console.log(status);
 					if (status != 200) {
 						uni.showToast({
 							title: '验证码不正确',
 							icon: 'none'
 						})
+						return false
 					}
 					let info = res.data.data.user
 					

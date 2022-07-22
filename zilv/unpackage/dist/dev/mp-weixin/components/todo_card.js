@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["components/todo_card"],{
 
 /***/ 188:
-/*!***********************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/components/todo_card.vue ***!
-  \***********************************************************************/
+/*!************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/components/todo_card.vue ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42,9 +42,9 @@ component.options.__file = "components/todo_card.vue"
 /***/ }),
 
 /***/ 189:
-/*!******************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/components/todo_card.vue?vue&type=template&id=30e05f84&scoped=true& ***!
-  \******************************************************************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/components/todo_card.vue?vue&type=template&id=30e05f84&scoped=true& ***!
+  \*******************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -64,9 +64,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 190:
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/components/todo_card.vue?vue&type=template&id=30e05f84&scoped=true& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/components/todo_card.vue?vue&type=template&id=30e05f84&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -117,9 +117,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ 191:
-/*!************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/components/todo_card.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************/
+/*!*************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/components/todo_card.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -133,14 +133,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 192:
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/components/todo_card.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/components/todo_card.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var voicePlay = function voicePlay() {__webpack_require__.e(/*! require.ensure | components/voicePlay */ "components/voicePlay").then((function () {return resolve(__webpack_require__(/*! @/components/voicePlay.vue */ 264));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -191,58 +191,59 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-{
-  components: {
-    voicePlay: voicePlay },
-
-  props: {
-    // 用户 task_item
-    card: {
-      type: Object } },
-
-
-  data: function data() {
-    return {
-      playVoice: false,
-      playBt: false,
-      check: true,
-      swipeList: [{
-        id: 0,
-        options: [{
-          text: '删除',
-          isImage: true,
-          src: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAV9JREFUaEPtWe1twkAMtW8B6CbdoHQDNqEjtBOxAmzULpCrQoNUkE7v7tkWTeX8dZ79PnJEwSorv3Tl/CUFPDpBUwK11r3UehCRZxHZEmJOovqhqicCe4HQAhbyR3bwDU71lRXBC5im2bUXFwEiZy1lx/SyCKjMwAbmU0t5Yvq5CdBShnrVaboxYBR/FTs09LdDVgJWfAqwOmjFwwTuBzAHzBPTOiPNM5ACPO2f37iNX7n/m8C9gV6HrhUM27/7PcAO6H2S2P4poNdhdN/DE0AErPWWAW6PkJUgwqcA5FB0PROIdhj1zwSQQ9H1TCDaYdQ/E0AORdczgWiHUf9MADkUXQ9PAH2woDoyIAWwDiHnr3W2v9sXWS/RP/O3ipUwwH9pKV07t5EEPFdKSH/3yqlfwM9G0meph+gPLP26Bcwzl83k27JW3SAeRP0squ8jG8shAQShcEgKCLcYDFh9At8m8aJA2BtS2AAAAABJRU5ErkJggg==',
-          style: {
-            backgroundColor: 'rgb(255,58,49)',
-            imgWidth: '60rpx',
-            imgHeight: '60rpx' } }] }] };
-
-
-
-
-
-  },
-  computed: {
-    // 随机距离
-    margin: function margin() {
-      var x = Math.floor(Math.random() * 10);
-      return x + "rem";
-    },
-    style: function style() {
-      var R = Math.floor(Math.random() * 255);
-      var G = Math.floor(Math.random() * 255);
-      var B = Math.floor(Math.random() * 255);
-      return "rgb(" + R + "," + G + "," + B + ")";
-    } },
-
-  methods: {
-    play: function play() {
-      this.playBt = !this.playBt;
-      this.playVoice = !this.playVoice;
-    },
-    chencBox: function chencBox() {
+var _baseUrlsConfigs = _interopRequireDefault(__webpack_require__(/*! @/network/baseUrlsConfigs.js */ 33));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var base2 = _baseUrlsConfigs.default.base2;var voicePlay = function voicePlay() {__webpack_require__.e(/*! require.ensure | components/voicePlay */ "components/voicePlay").then((function () {return resolve(__webpack_require__(/*! @/components/voicePlay.vue */ 264));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { voicePlay: voicePlay }, props: { // 用户 task_item
+    card: { type: Object } }, data: function data() {return { playVoice: false, playBt: false, check: true, swipeList: [{ id: 0, options: [{ text: '删除', isImage: true, src: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAV9JREFUaEPtWe1twkAMtW8B6CbdoHQDNqEjtBOxAmzULpCrQoNUkE7v7tkWTeX8dZ79PnJEwSorv3Tl/CUFPDpBUwK11r3UehCRZxHZEmJOovqhqicCe4HQAhbyR3bwDU71lRXBC5im2bUXFwEiZy1lx/SyCKjMwAbmU0t5Yvq5CdBShnrVaboxYBR/FTs09LdDVgJWfAqwOmjFwwTuBzAHzBPTOiPNM5ACPO2f37iNX7n/m8C9gV6HrhUM27/7PcAO6H2S2P4poNdhdN/DE0AErPWWAW6PkJUgwqcA5FB0PROIdhj1zwSQQ9H1TCDaYdQ/E0AORdczgWiHUf9MADkUXQ9PAH2woDoyIAWwDiHnr3W2v9sXWS/RP/O3ipUwwH9pKV07t5EEPFdKSH/3yqlfwM9G0meph+gPLP26Bcwzl83k27JW3SAeRP0squ8jG8shAQShcEgKCLcYDFh9At8m8aJA2BtS2AAAAABJRU5ErkJggg==', style: { backgroundColor: 'rgb(255,58,49)', imgWidth: '60rpx', imgHeight: '60rpx' } }] }] };}, computed: { // 随机距离
+    margin: function margin() {var x = Math.floor(Math.random() * 10);return x + "rem";}, style: function style() {var R = Math.floor(Math.random() * 255);var G = Math.floor(Math.random() * 255);var B = Math.floor(Math.random() * 255);return "rgb(" + R + "," + G + "," + B + ")";} }, methods: { play: function play() {this.playBt = !this.playBt;this.playVoice = !this.playVoice;}, chencBox: function chencBox() {
       this.check = !this.check;
     },
     swipeClick: function swipeClick(e, index) {var _this = this;var
@@ -256,6 +257,15 @@ __webpack_require__.r(__webpack_exports__);
           success: function success(res) {
             if (res.confirm) {
               _this.swipeList.splice(index, 1);
+              uni.$http.post(base2 + '/task/del', { id: _this.card.tId }).then(function (res) {
+                // console.log(res);
+                if (res.data.code == 0) {
+                  uni.showToast({
+                    title: '删除成功',
+                    icon: 'success' });
+
+                }
+              }).catch(function (err) {console.log(err);});
             } else if (res.cancel) {
             }
           } });
@@ -280,9 +290,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 193:
-/*!********************************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/components/todo_card.vue?vue&type=style&index=0&id=30e05f84&scoped=true&lang=css& ***!
-  \********************************************************************************************************************************/
+/*!*********************************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/components/todo_card.vue?vue&type=style&index=0&id=30e05f84&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -296,9 +306,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 194:
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/components/todo_card.vue?vue&type=style&index=0&id=30e05f84&scoped=true&lang=css& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/components/todo_card.vue?vue&type=style&index=0&id=30e05f84&scoped=true&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

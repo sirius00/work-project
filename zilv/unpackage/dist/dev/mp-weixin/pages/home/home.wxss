@@ -37,7 +37,7 @@
 
 
 .board.data-v-00fd18e7 {
-		height: 80vh;
+	height: 80vh;
 }
 
 
@@ -55,15 +55,12 @@
 	margin-top: 0.4rem;
 	height: 70%;
 }
-
-
-/* .scroll_view {
+.scroll_view.data-v-00fd18e7 {
 	height: 100%;
-	display: flex;
-	flex-flow: column nowrap;
-	align-items: center;
-
-} */
+	/* display: flex; */
+	/* flex-flow: column nowrap;
+	align-items: center; */
+}
 .add_note.data-v-00fd18e7 {
 	height: 3rem;
 	display: flex;

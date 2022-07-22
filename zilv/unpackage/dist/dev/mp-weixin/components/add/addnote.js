@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["components/add/addnote"],{
 
 /***/ 210:
-/*!*************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/components/add/addnote.vue ***!
-  \*************************************************************************/
+/*!**************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/components/add/addnote.vue ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42,9 +42,9 @@ component.options.__file = "components/add/addnote.vue"
 /***/ }),
 
 /***/ 211:
-/*!********************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/components/add/addnote.vue?vue&type=template&id=2372f78c&scoped=true& ***!
-  \********************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/components/add/addnote.vue?vue&type=template&id=2372f78c&scoped=true& ***!
+  \*********************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -64,9 +64,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 212:
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/components/add/addnote.vue?vue&type=template&id=2372f78c&scoped=true& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/components/add/addnote.vue?vue&type=template&id=2372f78c&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -112,9 +112,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ 213:
-/*!**************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/components/add/addnote.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/components/add/addnote.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -128,9 +128,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 214:
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/components/add/addnote.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/components/add/addnote.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -184,16 +184,12 @@ var _vuex = __webpack_require__(/*! vuex */ 14);function _interopRequireDefault(
       text_value: '' };
 
   },
-  computed: _objectSpread(_objectSpread({},
-  (0, _vuex.mapState)(['userinfo', 'ifnote'])), {}, {
-    // ifnote() {
-    // 	return this.$store.state.ifnote
-    // },
-    get_last_task_id: function get_last_task_id() {
-      return this.$store.state.taskList.slice(-1).id;
-    } }),
+  computed: _objectSpread({},
+  (0, _vuex.mapState)(['userinfo', 'ifnote'])),
 
-  methods: {
+
+  methods: _objectSpread(_objectSpread({},
+  (0, _vuex.mapMutations)(['addNote'])), {}, {
     // 添加权限
     limit: function limit() {
       this.limited = !this.limited;
@@ -207,26 +203,27 @@ var _vuex = __webpack_require__(/*! vuex */ 14);function _interopRequireDefault(
       this.text_value = e.detail.value;
     },
     // 添加任务
-    add_task: function add_task() {
+    add_task: function add_task() {var _this = this;
       console.log(this.text_value);
 
-
-      uni.$http.post(base2 + '/task/add/text', { uid: this.userinfo.memberId, content: '测试' }).then(function (res) {
+      uni.$http.post(base2 + '/task/add/text', { uid: 971391, content: '测试' }).then(function (res) {
         console.log(res);
+        _this.$emit('addtask');
+        _this.addNote();
       }).catch(function (err) {
         console.log(err);
 
       });
 
-    } } };exports.default = _default;
+    } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
 /***/ 215:
-/*!**********************************************************************************************************************************!*\
-  !*** /Users/max/Documents/work-project/zilv/components/add/addnote.vue?vue&type=style&index=0&id=2372f78c&scoped=true&lang=css& ***!
-  \**********************************************************************************************************************************/
+/*!***********************************************************************************************************************************!*\
+  !*** /Users/cobb/Documents/work-project/zilv/components/add/addnote.vue?vue&type=style&index=0&id=2372f78c&scoped=true&lang=css& ***!
+  \***********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -240,9 +237,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 216:
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/max/Documents/work-project/zilv/components/add/addnote.vue?vue&type=style&index=0&id=2372f78c&scoped=true&lang=css& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/cobb/Documents/work-project/zilv/components/add/addnote.vue?vue&type=style&index=0&id=2372f78c&scoped=true&lang=css& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

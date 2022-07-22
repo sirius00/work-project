@@ -13,7 +13,7 @@ const store = new Vuex.Store({
 		ifStopPlay: false,
 
 		daysList:[],
-		taskList: []
+		// taskList: []
 	},
 	mutations: {
 		//监听语音播放状态
@@ -32,7 +32,7 @@ const store = new Vuex.Store({
 				key: 'userinfo',
 				data: provider
 			})
-			console.log(state.userinfo);
+			// console.log(state.userinfo);
 		},
 		// 退出登录
 		logout(state) {
@@ -79,6 +79,9 @@ const store = new Vuex.Store({
 		addVoice(state) {
 			state.ifvoice = !state.ifvoice
 		},
+		// getTaskList(state, list) {
+		// 	state.taskList = list
+		// },
 
 		addTask(state,task) {
 			let push_id = task.id + 1
